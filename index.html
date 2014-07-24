@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+	<link rel="stylesheet" href="css/leaflet.css" />
+
+	<!-- Load required libraries -->
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>	
+	<script src="js/leaflet.js"></script>
+	<script src="js/proj4-compressed.js"></script>
+	<script src="js/proj4leaflet.js"></script>
+	<script src="js/cmap.js"></script>
+
+	<!-- Demo javascript -->
+	<script src="demo.js"></script>
+
+	<style>
+		body {
+			padding: 0px;
+			margin: 0px;
+		}
+		#xmap { 
+			width: 80%; 
+			height: 100%; 
+		}
+
+		#btn {
+			position: absolute;
+			right:10px;
+			width:17%;
+			height: 50px;
+			z-index:2;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body onload="test()">
+	<div id="btn">
+		<h4>Demo</h4>
+
+		Select <select id='selbasemap'>
+			<option value='osm_tile_map@EPSG3857' selected>OSM Tile Map EPSG3857</option>
+			<option value='opencyclemap@EPSG3857'>OpenCycleMap EPSG3857</option>
+			<option value='jotunheimen@EPSG32632'>jotunheimen EPSG32632</option>
+			<option value='worldboundariesmap@EPSG4326'>worldboundariesmap EPSG4326</option>
+			<option value='worldboundariesmap@EPSG3573'>worldboundariesmap@EPSG3573</option>
+			<option value='worldboundariesmap@ESRI102016'>worldboundariesmap@ESRI102016</option>
+			<option value='worldboundariesmap@ESRI102018'>worldboundariesmap@ESRI102018</option>			
+		</select>		
+
+		<button onclick="changeBaseMap()">Change BaseMap</button><br>
+		<br>
+		<button onclick="gotoMap(0)">Goto (Market Mall)</button><br>
+		<button onclick="gotoMap(1)">Goto (UoC)</button><br>
+		<br>
+		<button onclick="add_layer('mark1')">Add Layer (marker)</button><br>
+		<button onclick="showhide_toggle('mark1')">Show/Hide (McHall marker layer)</button><br>
+		<button onclick="remove_layer('mark1')">Remove Layer (marker)</button><br>
+	</div>
+	<div id="msg">Please wait... Loading EPSG and ESRI meta files....</div>
+	<div id="xmap"></div>
+</body>
+</html>
