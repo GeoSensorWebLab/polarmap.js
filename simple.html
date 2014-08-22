@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <title>Leaflet Example</title>
+
+  <!-- Load required libraries -->
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="js/leaflet.js"></script>
+  <script src="js/proj4-compressed.js"></script>
+  <script src="js/proj4leaflet.js"></script>
+
+  <style>
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+  #xmap {
+    min-width: 300px;
+    min-height: 300px;
+  }
+  </style>
+</head>
+<body>
+  <div id="xmap"></div>
+
+  <script>
+  // Resize map container to full-screen
+  var resize = function () {
+    $("#xmap").css({
+      width: $(window).width(),
+      height: $(window).height()
+    });
+  };
+
+  $(document).ready(function () {
+    // All the details specific to the custom tile layer.
+    // TODO: Find source for origin numbers.
+    var tileDetails = {
+      code: 'EPSG:3573',
+      proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+      origin: [-20036842.762, 20036842.762],
+      tilesURL: 'http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png',
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      zoom: {
+        min: 0,
+        max: 18
+      }
+    };
+
+    // Generate Resolutions Array from origin information.
+    var resolutions = [];
+    for (var i = tileDetails.zoom.min; i <= tileDetails.zoom.max; i++) {
+      resolutions.push(((tileDetails.origin[1] - tileDetails.origin[0]) / 256) / Math.pow(2, i));
+    };
+
+    // Create new CRS for EPSG:3573.
+    // Proj4 definition string can be found online.
+    var CRS = new L.Proj.CRS(tileDetails.code,
+      tileDetails.proj4def, {
+        origin: tileDetails.origin,
+        resolutions: resolutions
+      });
+
+    var map = L.map('xmap', {
+      continuousWorld: true,
+      minZoom: tileDetails.zoom.min,
+      maxZoom: tileDetails.zoom.max,
+      crs: CRS
+    });
+
+    L.tileLayer(tileDetails.tilesURL, {
+      attribution: tileDetails.attribution
+    }).addTo(map);
+
+    // Use standard Lat/Lng for markers, they will be reprojected to the
+    // map's CRS automatically.
+    L.marker([51, -114]).addTo(map);
+    L.marker([90, 0]).addTo(map);
+    L.marker([0, 0]).addTo(map);
+
+    map.setView([75, -100], 5);
+
+    // Keep map full-size
+    $(window).on("resize", function () {
+      resize();
+      map.invalidateSize({
+        debounceMoveend: true
+      });
+    });
+    $(window).trigger("resize");
+  });
+</script>
+</body>
+</html>
