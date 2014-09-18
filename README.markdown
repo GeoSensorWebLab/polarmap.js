@@ -12,6 +12,14 @@ See `simple.html` for an example of how to use Leaflet, Proj4JS, and Proj4Leafet
 
 Does not include support for projection switching.
 
+## Development
+
+To run a local webserver for testing the app, you can use a one-line Ruby command to run on port 3000:
+
+    $ ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd).start'
+
+There are similar options available for Python and Node.js.
+
 ## License
 
 See LICENSE file.
