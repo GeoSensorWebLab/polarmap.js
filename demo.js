@@ -62,7 +62,7 @@ var Demo = {
 		map.changeBasemap(map_name, crs_code);
 	},
 
-	gotoMap: function(target) {
+	gotoLocation: function(target) {
 		var addMarker = function (location, message) {
 			var layer = map.newMarkerLayer();
 			layer.addMarker(location, {
