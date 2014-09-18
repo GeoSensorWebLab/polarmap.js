@@ -2,48 +2,39 @@ var map;
 
 // Create object to define tile provider settings and transformations.
 var mapProviders = {
+	// Default OSM Provider. Uses EPSG:3857 projection.
 	"osm_tile_map@EPSG3857": {
 		url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+		// max zoom range from tile provider
 		zoom_range: [0, 18],
+		// use inverse coordinates if the provider is a TMS. Mapnik is not a TMS.
 		tms_inverse: false,
+		// Default centre when this map is loaded
 		center: [51.080126, -114.13380900]
 	},
+
+	// OpenCycleMap, a variant of the OSM stylesheet.
 	"opencyclemap@EPSG3857": {
 		url: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
 		zoom_range: [0, 18],
 		tms_inverse: false,
 		center: [51.080126, -114.13380900]
 	},
+
+	// A limited world view that demos EPSG:32632.
+	// http://blog.thematicmapping.org/2012/07/using-custom-projections-with-tilecache.html
 	"jotunheimen@EPSG32632": {
 		url: "http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png",
 		zoom_range: [0, 4],
 		tms_inverse: false,
+		// Apply a transformation for this projection. (Source on values?)
 		transformation: new L.Transformation(1, -432000, -1, 6850000),
+		// Use a custom scale for the zoom, as the tile sizes are different for
+		// this projection. (Source for 234.375?)
 		scale: function(zoom) {
 			return 1 / (234.375 / Math.pow(2, zoom));
 		},
 		center: [61.636, 8.3135]
-	},
-	"worldboundariesmap@EPSG4326": {
-		url: "http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@EPSG4326/{z}/{x}/{y}.png",
-		zoom_range: [0, 4],
-		tms_inverse: true,
-		center: [51.080126, -114.13380900]
-	},
-	"worldboundariesmap@EPSG3573": {
-		url: "http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@EPSG3573/{z}/{x}/{y}.png",
-		zoom_range: [0, 4],
-		tms_inverse: true
-	},
-	"worldboundariesmap@ESRI102016": {
-		url: "http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@ESRI102016/{z}/{x}/{y}.png",
-		zoom_range: [0, 4],
-		tms_inverse: true
-	},
-	"worldboundariesmap@ESRI102018": {
-		url: "http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@ESRI102018/{z}/{x}/{y}.png",
-		zoom_range: [0, 4],
-		tms_inverse: true
 	}
 };
 
