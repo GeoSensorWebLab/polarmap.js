@@ -209,11 +209,11 @@ function PolarMap()
       /* take the first 4 characters */
       var data_type = code_name.slice(0,4);
       var data = meta[data_type];
-      for (i in data) {
+      for (var i in data) {
         if (data[i][0].replace(":","") ===  code_name)
         {
           var header = data[0], obj = {};
-          for (j in header) {
+          for (var j in header) {
             obj[header[j]] = data[i][j];
           }
           return obj;
@@ -238,7 +238,7 @@ function PolarMap()
 
     var tilemap_def = this._map.tile_maps[map_name + "@" + crs_code];
 
-    if (tilemap_def == undefined) {
+    if (tilemap_def === undefined) {
       alert("Not registered map: " + map_name + "@" + crs_code);
       return;
     } else {
@@ -259,10 +259,10 @@ function PolarMap()
       console.log("NOT LEAFTLET CRS");
 
       /* find and get projection profile */
-      crs = this.getProjectionCodeProfile(crs_code);
+      var crs = this.getProjectionCodeProfile(crs_code);
 
       /* if not found just return null */
-      if (crs == null) {
+      if (crs === null) {
         this.error2div("Not Found Code : "+crs_code);
         return;
       }
@@ -322,18 +322,18 @@ function PolarMap()
       /* if the leaflet map is created */
 
       /* reconfigure crs */
-      var map_options = this._map.leaflet.options;
+      map_options = this._map.leaflet.options;
       map_options.crs = crs_profile;
       // map_options.continuousWorld = false;
 
       /* update all markers for the changed crs */
       /* check all layers */
-      for (lname in this._map.allLayers) {
+      for (var lname in this._map.allLayers) {
         /* if a layer is 'marker layer' type, update all markers. */
         if (this._map.allLayers[lname]._layer._type=="marker_layer") {
           /* get markers array */
           var markers = this._map.allLayers[lname]._layer._markers;
-          for (m in markers) {
+          for (var m in markers) {
             /* call marker's udpate() to be rearranged on the new projection(CRS). */
             markers[m].update();
           }
@@ -575,6 +575,7 @@ function CSVToArray( strData, strDelimiter ) {
 
         // Get the delimiter that was found.
         var strMatchedDelimiter = arrMatches[ 1 ];
+        var strMatchedValue;
 
         // Check to see if the given delimiter has a length
         // (is not the start of string) and if it matches
@@ -598,16 +599,14 @@ function CSVToArray( strData, strDelimiter ) {
 
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
-            var strMatchedValue = arrMatches[ 2 ].replace(
+            strMatchedValue = arrMatches[ 2 ].replace(
               new RegExp( "\"\"", "g" ),
               "\""
               );
 
           } else {
-
             // We found a non-quoted value.
-            var strMatchedValue = arrMatches[ 3 ];
-
+            strMatchedValue = arrMatches[ 3 ];
           }
 
         // Now that we have our value string, let's add
