@@ -40,18 +40,15 @@ var mapProviders = {
 
 // Define interface actions as part of Demo object
 var Demo = {
-	add_layer: function(layerName) {
-		if (layerName === "mark1")
-		{
-			// add markers layer at UoC Student Center
-			var l = map.newMarkerLayer();
-			l.addMarker([51.079237, -114.13244351], { msg: "mchall" });
-			l.addMarker([51.078227, -114.13244351]);
-			l.addMarker([51.077229, -114.13244451]);
-			l.addMarker([51.078227, -114.13080351]);
-			l.addMarker([51.078227, -114.13414351]);
-			map.addLayer(layerName, l);
-		}
+	addDemoLayer: function() {
+		// add markers layer at UofC Student Centre
+		var layer = map.newMarkerLayer();
+		layer.addMarker([51.079237, -114.13244351], { msg: "MacEwan Student Centre" });
+		layer.addMarker([51.078227, -114.13244351]);
+		layer.addMarker([51.077229, -114.13244451]);
+		layer.addMarker([51.078227, -114.13080351]);
+		layer.addMarker([51.078227, -114.13414351]);
+		map.addLayer("marker1", layer);
 	},
 
 	changeBaseMap: function() {
@@ -65,33 +62,34 @@ var Demo = {
 		map.changeBasemap(map_name, crs_code);
 	},
 
-	gotoMap: function(mapIndex) {
-		if(mapIndex === 0) {
-			var loc_market_mall = [51.084783,-114.155502];
-			var l = map.newMarkerLayer();
-			l.addMarker(loc_market_mall, { msg: "Market Mall", popup: true });
-			map.addLayer("mark3", l);
-			map.goto(loc_market_mall, map._map.init_zoom);
-		}
-		else if(mapIndex === 1) {
-			var loc_uoc = [51.080126, -114.13380900];
-			map.goto(loc_uoc, map._map.init_zoom);
-		}
+	gotoMap: function(target) {
+		var addMarker = function (location, message) {
+			var layer = map.newMarkerLayer();
+			layer.addMarker(location, {
+				msg: message,
+				popup: true
+			});
+			map.addLayer("aLayer", layer);
+			map.goto(location, map._map.init_zoom);
+		};
+
+		var targetName = $(target).data('name');
+		switch(targetName) {
+			case 'Market Mall':
+				addMarker([51.084783, -114.155502], "Market Mall");
+			break;
+			case 'UofC':
+				addMarker([51.080126, -114.13380900], "UofC");
+			break;
+		};
 	},
 
-	remove_layer: function(layerName) {
-		map.removeLayer(layerName);
+	removeDemoLayer: function() {
+		map.removeLayer("marker1");
 	},
 
-	showhide_toggle: function(layerName) {
-		/* get current status (without the second argument) */
-		var flag = map.showhideLayer(layerName);
-
-		if (flag) {
-			umap.showhideLayer(layerName, false);
-		} else {
-			umap.showhideLayer(layerName, true);
-		}
+	toggleDemoLayer: function() {
+		map.showhideLayer("marker1", !map.showhideLayer("marker1"));
 	}
 };
 
@@ -117,6 +115,12 @@ $(document).ready(function() {
 		markerLayer.addMarker([51.080126, -114.13380900], { msg: "Alec, here?", popup: true });
 		markerLayer.addMarker([61.636, 8.3135], { msg: "jotunheimen", popup: true });
 		map.addLayer("markers", markerLayer);
+	});
+
+	// Bind actions to elements
+	$('body').on('click', '[data-action]', function() {
+	  var action = $(this).data('action');
+	  if (action in Demo) Demo[action](this);
 	});
 });
 

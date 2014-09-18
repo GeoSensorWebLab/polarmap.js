@@ -49,22 +49,19 @@
         <option value='osm_tile_map@EPSG3857' selected>OSM Tile Map EPSG3857</option>
         <option value='opencyclemap@EPSG3857'>OpenCycleMap EPSG3857</option>
         <option value='jotunheimen@EPSG32632'>jotunheimen EPSG32632</option>
-      </select>
+      </select><br>
+      <button data-action="changeBaseMap">Change BaseMap</button>
     </p>
 
     <p>
-      <button onclick="Demo.changeBaseMap()">Change BaseMap</button>
+      <button data-action="gotoMap" data-name="Market Mall">Goto (Market Mall)</button><br>
+      <button data-action="gotoMap" data-name="UofC">Goto (UofC)</button>
     </p>
 
     <p>
-      <button onclick="Demo.gotoMap(0)">Goto (Market Mall)</button><br>
-      <button onclick="Demo.gotoMap(1)">Goto (UoC)</button>
-    </p>
-
-    <p>
-      <button onclick="Demo.add_layer('mark1')">Add Layer (marker)</button><br>
-      <button onclick="Demo.showhide_toggle('mark1')">Show/Hide (McHall marker layer)</button><br>
-      <button onclick="Demo.remove_layer('mark1')">Remove Layer (marker)</button>
+      <button data-action="addDemoLayer">Add Layer (marker)</button><br>
+      <button data-action="toggleDemoLayer">Show/Hide (MSC marker layer)</button><br>
+      <button data-action="removeDemoLayer">Remove Layer (marker)</button>
     </p>
   </div>
   <div id="msg">Please wait, loading EPSG and ESRI meta files&hellip;</div>
