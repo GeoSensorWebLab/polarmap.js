@@ -1,4 +1,4 @@
-# cmap
+# PolarMap.js
 
 A JavaScript library that can re-project Leaflet maps and map features. Includes a demo app (index.html).
 

@@ -1,11 +1,6 @@
 //
 //
-// CMap: A Wrapper for Leaflet with projection supports using proj4
-//
-// Author: D. Lee
-// Version: 0.1
-// Last updated: April 1, 2014
-//
+// PolarMap.js: A Wrapper for Leaflet with projection supports using proj4
 //
 
 /* Marker Layer */
@@ -24,7 +19,7 @@ function MarkerLayer(name) {
 
 		/* popup message if available */
 		if(mattr)
-			if("msg" in mattr) {	
+			if("msg" in mattr) {
 				obj.bindPopup(mattr.msg).openPopup();
 			}
 	};
@@ -40,7 +35,7 @@ function TileLayer(name, crs_code, tilemap_def) {
 
 /* Main Library */
 
-function CMap() 
+function PolarMap()
 {
 	if(!window.jQuery) {
 		alert("Need jqeury.js was not loaded. Please check it.");
@@ -75,23 +70,23 @@ function CMap()
 		return;
 	}
 
-	this.LEAFLET_CRS = {  "EPSG3857":L.CRS.EPSG3857, 
-						  "EPSG4326":L.CRS.EPSG4326, 
+	this.LEAFLET_CRS = {  "EPSG3857":L.CRS.EPSG3857,
+						  "EPSG4326":L.CRS.EPSG4326,
 						  "EPSG3395":L.CRS.EPSG3395 };
 
-	this.METAFILES = [ { "code":"EPSG", "url":"js/data/epsg.csv" }, 
-					   { "code":"ESRI", "url":"js/data/esri.csv" } ]; 
+	this.METAFILES = [ { "code":"EPSG", "url":"js/data/epsg.csv" },
+					   { "code":"ESRI", "url":"js/data/esri.csv" } ];
 
 	/* class instance variables */
-	this._map = { 	
+	this._map = {
 		/* leaflet map instance */
-		leaflet:null,  
+		leaflet:null,
 		/* current map name */
 		map_name:"",
 		/* registered tile maps */
 		tile_maps:{},
-		/* div tag id */		
-		div:null, 
+		/* div tag id */
+		div:null,
 		/* Default EPSG of Leaflet */
 		/* EPSG:3857 is a Spherical Mercator projection coordinate system popularized by web services such as Google and later OpenStreetMap. */
 		crs_profile:L.CRS.EPSG3857,
@@ -130,12 +125,12 @@ function CMap()
 
 	this.init_remained = function() {
 		/* Callback after loading metafiles */
-		/* check epsg codes those that are already supported by leaflet */		
+		/* check epsg codes those that are already supported by leaflet */
 
 		var crs_code = this._map.crs_code;
 		var map_name = this._map.map_name;
 
-		/* set map */ 
+		/* set map */
 		this.changeBasemap(map_name, crs_code);
 
 		/* call onready callback */
@@ -161,12 +156,12 @@ function CMap()
 			var code_url = file.url;
 
 			/* prevent reload it after once it loaded */
-			if(code_name in meta) 
+			if(code_name in meta)
 			{
 				console.log("Warn: "+code_name+" Already loaded");
 			} else {
 				/* fetch the file */
-			    $.ajax({ context:self, type: "GET", cache: false, url:code_url, dataType: "text", 
+			    $.ajax({ context:self, type: "GET", cache: false, url:code_url, dataType: "text",
 			    	success:function(data) {
 			    		this.loadMetaDataRecv(data, code_name, callback);
 			    	} });
@@ -181,14 +176,14 @@ function CMap()
 		/* meat[code_name][0] is header and others are data array not object format */
 		/* to save memory, when getProjectionCodeProfile is called, it returns an object having header keys */
 
-		meta[code_name] = CSVToArray(data);							
+		meta[code_name] = CSVToArray(data);
 		console.log("Loaded: "+code_name+" size="+meta[code_name].length);
 
 		if(Object.keys(meta).length==this.METAFILES.length)
 		{
 			/* finalize the init */
 			console.log("Loaded All meta data.");
-			this.init_remained();						
+			this.init_remained();
 		}
 	};
 
@@ -198,21 +193,21 @@ function CMap()
 		code_name = code_name.toUpperCase();
 
 		/* EPSG or ESRI */
-		if(code_name.indexOf("EPSG")>=0 || code_name.indexOf("ESRI")>=0) 
+		if(code_name.indexOf("EPSG")>=0 || code_name.indexOf("ESRI")>=0)
 		{
 			/* take the first 4 characters */
 			var data_type = code_name.slice(0,4);
 			var data = meta[data_type];
 			for(i in data) {
-				if(data[i][0].replace(":","") ==  code_name) 
+				if(data[i][0].replace(":","") ==  code_name)
 				{
 					var header = data[0], obj = {};
-					for(j in header) obj[header[j]] = data[i][j];					
-					return obj;			
+					for(j in header) obj[header[j]] = data[i][j];
+					return obj;
 				}
 			}
 			return null;
-		} else 
+		} else
 		{
 			console.log("Error: Not supported type");
 			return null;
@@ -232,7 +227,7 @@ function CMap()
 
 		var tilemap_def = this._map.tile_maps[map_name+"@"+crs_code];
 
-		if(tilemap_def == undefined) 
+		if(tilemap_def == undefined)
 		{
 			alert("Not registered map: "+map_name+"@"+crs_code);
 			return;
@@ -250,9 +245,9 @@ function CMap()
 		{
 			crs_profile = this.LEAFLET_CRS[crs_code];
 			console.log("LEAFTLET CRS", crs_profile);
-		} 
+		}
 		/* Not one of Leaflet's supported CRSs */
-		else 
+		else
 		{
 			console.log("NOT LEAFTLET CRS");
 
@@ -272,20 +267,20 @@ function CMap()
 				console.log("centering based on CRS", tilemap_def.center);
 			}
 
-			/* if transformation is available */ 
+			/* if transformation is available */
 			if(tilemap_def.transformation) {
 				console.log("Yes transformation");
-				crs_profile = L.CRS.proj4js(crs.Code, crs.Proj4, tilemap_def.transformation);				
+				crs_profile = L.CRS.proj4js(crs.Code, crs.Proj4, tilemap_def.transformation);
 			}
 			else{
 				console.log("No transformation");
-				crs_profile = L.CRS.proj4js(crs.Code, crs.Proj4);				
+				crs_profile = L.CRS.proj4js(crs.Code, crs.Proj4);
 			}
 
 			/* if scale is available */
 			if(tilemap_def.scale) {
 				console.log("Yes Scale");
- 				crs_profile.scale = tilemap_def.scale;				
+ 				crs_profile.scale = tilemap_def.scale;
 			} else {
 				console.log("No Scale. Use default scale function.");
 				crs_profile.scale = function(zoom) { return 256*Math.pow(2,0); };
@@ -298,19 +293,19 @@ function CMap()
 		/* add one layer. For the basemap, it have the name of basemaplayer. */
 
 		/* if the layer is already existed, just return */
-		if(basemap_layer_name in this._map.allLayers) 
+		if(basemap_layer_name in this._map.allLayers)
 		{
 			console.log("ChangeBaseMap: Already exists. Remove current layer and add.");
 
 			/* delete from this._map.alllayers */
-			this.removeLayer(basemap_layer_name);			
+			this.removeLayer(basemap_layer_name);
 		}
 
 		var basemaplayer = this.addLayer(basemap_layer_name, tlayer, true);
 
 		/* create leaflet map instance */
 
-		if(this._map.leaflet==null) 
+		if(this._map.leaflet==null)
 		{
 			map_options.crs = crs_profile;
 			// map_options.continuousWorld = false;
@@ -319,8 +314,8 @@ function CMap()
 			/* if the leaflet map is not created */
 			this._map.leaflet = L.map(this._map.div, map_options);
 			this._map.leaflet.setView(this._map.init_loc, Math.min(tlayer._tilemap_def.zoom_range[1], this._map.init_zoom));
-		} 
-		else 
+		}
+		else
 		{
 			/* if the leaflet map is created */
 
@@ -331,18 +326,18 @@ function CMap()
 
 			/* update all markers for the changed crs */
 			/* check all layers */
-			for(lname in this._map.allLayers) 
+			for(lname in this._map.allLayers)
 			{
 				/* if a layer is 'marker layer' type, update all markers. */
-				if(this._map.allLayers[lname]._layer._type=="marker_layer") 
+				if(this._map.allLayers[lname]._layer._type=="marker_layer")
 				{
 					/* get markers array */
 					var markers = this._map.allLayers[lname]._layer._markers;
-					for(m in markers) 
+					for(m in markers)
 					{
 						/* call marker's udpate() to be rearranged on the new projection(CRS). */
-						markers[m].update();	
-					}					
+						markers[m].update();
+					}
 				}
 			}
 
@@ -361,8 +356,8 @@ function CMap()
 			"basemapName": map_name,
 			"CRScode": crs_code,
 			"message": "This basemap is the current basemap"
-			// "message":  "This basemap is the current basemap" or 
-			// 			"No such basemap" or 
+			// "message":  "This basemap is the current basemap" or
+			// 			"No such basemap" or
 			// 			"This service is not currently supported"
 		};
 	};
@@ -372,33 +367,33 @@ function CMap()
 
 		var leaflet_layer;
 
-		if(layer_name in this._map.allLayers) 
+		if(layer_name in this._map.allLayers)
 		{
 			console.log("Already exists.");
 			return;
 		}
 
 		/* if the layer is basemap */
-		if(is_basemap) 
+		if(is_basemap)
 		{
 			/* baesmap will be added to L.map */
-			leaflet_layer = L.tileLayer(newlayer._tilemap_def.url, 
+			leaflet_layer = L.tileLayer(newlayer._tilemap_def.url,
 								{ tms:newlayer._tilemap_def.tms_inverse,
 								  minZoom:newlayer._tilemap_def.zoom_range[0],
-								  maxZoom:newlayer._tilemap_def.zoom_range[1] 
+								  maxZoom:newlayer._tilemap_def.zoom_range[1]
 								});
-		} 
-		else 
+		}
+		else
 		{
 			/* other layers just added in this step */
-			if(newlayer._type=="marker_layer") 
+			if(newlayer._type=="marker_layer")
 			{
 				leaflet_layer = L.layerGroup(newlayer._markers);
-				leaflet_layer.addTo(this._map.leaflet);				
+				leaflet_layer.addTo(this._map.leaflet);
 			}
-			else if(newlayer._type=="tile_layer") 
+			else if(newlayer._type=="tile_layer")
 			{
-				leaflet_layer = L.tileLayer(newlayer._tilemap_def.url, 
+				leaflet_layer = L.tileLayer(newlayer._tilemap_def.url,
 								{ tms:newlayer._tilemap_def.tms_inverse,
 								  minZoom:newlayer._tilemap_def.zoom_range[0],
 								  maxZoom:newlayer._tilemap_def.zoom_range[1],
@@ -430,11 +425,11 @@ function CMap()
 	this.showhideLayer = function(layer_name, flag_show) {
 		var the_layer = this._map.allLayers[layer_name];
 		/* return the availabity of the layer */
-		if(flag_show) 
+		if(flag_show)
 			return the_layer != undefined;
 
 		/* if the layer is available */
-		if(the_layer) 
+		if(the_layer)
 		{
 			/* if the layer is shown, hide it */
 			if(the_layer.show) {
@@ -445,14 +440,14 @@ function CMap()
 				the_layer.show = true;
 				this._map.leaflet.addLayer(the_layer.layer);
 			}
-		}			
+		}
 		else
 			console.log("The requested layer is not available.");
 	};
 
 	/* remove Layer */
 	this.removeLayer = function(layer_name) {
-		if(layer_name in this._map.allLayers) 
+		if(layer_name in this._map.allLayers)
 		{
 			var the_layer = this._map.allLayers[layer_name];
 
@@ -466,7 +461,7 @@ function CMap()
 
 	/* goto a location */
 	this.goto = function(loc, zoomlevel) {
-		if(!zoomlevel)  
+		if(!zoomlevel)
 			zoomlevel = this._map.leaflet.getZoom();
 
 		// var map = this._map.tile_maps[this._map.map_name];
@@ -484,12 +479,12 @@ function CMap()
 	// 	var obj;
 
 	// 	/* default setting */
-	// 	if(mtype==undefined) 
-	// 	{ 
+	// 	if(mtype==undefined)
+	// 	{
 	// 		mtype = "marker";
 	// 		mattr = DEFAULT;
 	// 	}
- 
+
 	// 	/* set with default value if not set */
 	// 	if(!("size" in mattr)) mattr.size = DEFAULT.size;
 	// 	if(!("color" in mattr)) mattr.color = DEFAULT.color;
@@ -497,19 +492,19 @@ function CMap()
 	// 	if(!("fillOpacity" in mattr)) mattr.fillOpacity = DEFAULT.fillOpacity;
 
 	// 	/* marker */
-	// 	if(mtype == "marker") 
+	// 	if(mtype == "marker")
 	// 	{
 	// 		// obj = L.marker(loc).addTo(this._map.leaflet);
 	// 		obj = L.marker(loc).addLayer(layer);
 	// 	}
 	// 	/* circle */
-	// 	else if(mtype == "circle") 
+	// 	else if(mtype == "circle")
 	// 	{
 	// 		// obj = L.circle(loc, mattr.size, {
 	// 		//    	color: mattr.color,
 	// 		//    	fillColor: mattr.fillColor,
 	// 		//    	fillOpacity: mattr.fillOpacity
-	// 		// }).addTo(this._map.leaflet);			
+	// 		// }).addTo(this._map.leaflet);
 	// 		obj = L.circle(loc, mattr.size, {
 	// 	    	color: mattr.color,
 	// 	    	fillColor: mattr.fillColor,
@@ -519,21 +514,21 @@ function CMap()
 	// 	{
 	// 		console.log("Unknown marker type: "+mtype);
 	// 		return;
-	// 	} 
+	// 	}
 
 	// 	/* popup message if available */
-	// 	if("msg" in mattr) {			
+	// 	if("msg" in mattr) {
 	// 		obj.bindPopup(mattr.msg).openPopup();
 	// 	}
 
 	// 	/* keep track of all markers created */
-	// 	if(obj!=undefined) 
+	// 	if(obj!=undefined)
 	// 		this._map.markers.push(obj);
 	// };
 
 	// this.clearMarkers = function() {
 	// 	/* delete all markers created */
-	// 	for(i in this._map.markers) 
+	// 	for(i in this._map.markers)
 	// 	{
 	// 		var m = this._map.markers[i];
 	// 		this._map.leaflet.removeLayer(m);

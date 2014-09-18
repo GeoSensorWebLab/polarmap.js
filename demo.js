@@ -14,7 +14,7 @@ function changeBaseMap()
 	// umap.clearMarkers();
 }
 
-function gotoMap(which) 
+function gotoMap(which)
 {
 	if(which==0) {
 		var loc_market_mall = [51.084783,-114.155502];
@@ -26,13 +26,13 @@ function gotoMap(which)
 	else if(which==1) {
 		var loc_uoc = [51.080126, -114.13380900];
 		umap.goto(loc_uoc, umap._map.init_zoom);
-	}	
+	}
 }
 
 function add_layer(lname)
 {
-	if(lname == "mark1") 
-	{	
+	if(lname == "mark1")
+	{
 		// add markers layer at UoC Student Center
 		var l = umap.newMarkerLayer();
 		l.addMarker([51.079237, -114.13244351], { msg:"mchall" });
@@ -62,19 +62,19 @@ function showhide_toggle(lname)
 		umap.showhideLayer(lname, true);
 }
 
-function test() 
+function test()
 {
-	umap = new CMap();
+	umap = new PolarMap();
 
 	/* register tile maps for future use. */
-	umap.registerTileMaps({ 
-			"osm_tile_map@EPSG3857":{ 
-				url:"http://{s}.tile.osm.org/{z}/{x}/{y}.png", 
+	umap.registerTileMaps({
+			"osm_tile_map@EPSG3857":{
+				url:"http://{s}.tile.osm.org/{z}/{x}/{y}.png",
 				zoom_range:[0, 18],
 				tms_inverse:false,
 				center:[51.080126, -114.13380900] },
-			"opencyclemap@EPSG3857":{ 
-				url:"http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png", 
+			"opencyclemap@EPSG3857":{
+				url:"http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
 				zoom_range:[0, 18],
 				tms_inverse:false,
 				center:[51.080126, -114.13380900] },
@@ -85,8 +85,8 @@ function test()
 				transformation:new L.Transformation(1, -432000, -1, 6850000),
 				scale:function(zoom) { return 1 / (234.375 / Math.pow(2, zoom)); },
 				center:[61.636, 8.3135] },
-			"worldboundariesmap@EPSG4326":{ 
-				url:"http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@EPSG4326/{z}/{x}/{y}.png", 
+			"worldboundariesmap@EPSG4326":{
+				url:"http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@EPSG4326/{z}/{x}/{y}.png",
 				zoom_range:[0, 4],
 				tms_inverse:true,
 				center:[51.080126, -114.13380900] },
@@ -94,12 +94,12 @@ function test()
 				url:"http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@EPSG3573/{z}/{x}/{y}.png",
 				zoom_range:[0, 4],
 				// transformation:new L.Transformation(1, -9000000, -1, 9000000),
-				tms_inverse:true },				
+				tms_inverse:true },
 			"worldboundariesmap@ESRI102016":{
 				url:"http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@ESRI102016/{z}/{x}/{y}.png",
 				zoom_range:[0, 4],
 				// transformation:new L.Transformation(1, -9000000, -1, 9000000),
-				tms_inverse:true },				
+				tms_inverse:true },
 			"worldboundariesmap@ESRI102018":{
 				url:"http://xiaohong.geocens.ca:8080/TileServer/GetTileImage/worldboundariesmap@ESRI102018/{z}/{x}/{y}.png",
 				zoom_range:[0, 4],
@@ -110,7 +110,7 @@ function test()
 	/* init */
 	umap.init({ div_id:"xmap", map_name:"osm_tile_map", crs_code:"EPSG3857", zoom_level:15 });
 
-	var ready_callback = function() 
+	var ready_callback = function()
 	{
 		// add markers at UoC Student Center
 		var l = umap.newMarkerLayer();
