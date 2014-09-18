@@ -41,7 +41,6 @@ var mapProviders = {
 // Define interface actions as part of Demo object
 var Demo = {
 	addDemoLayer: function() {
-		// add markers layer at UofC Student Centre
 		var layer = map.newMarkerLayer();
 		layer.addMarker([51.079237, -114.13244351], { msg: "MacEwan Student Centre" });
 		layer.addMarker([51.078227, -114.13244351]);
@@ -110,7 +109,6 @@ $(document).ready(function() {
 	});
 
 	map.onready(function() {
-		// Add markers at UofC Student Centre
 		var markerLayer = map.newMarkerLayer();
 		markerLayer.addMarker([51.080126, -114.13380900], { msg: "Alec, here?", popup: true });
 		markerLayer.addMarker([61.636, 8.3135], { msg: "jotunheimen", popup: true });
