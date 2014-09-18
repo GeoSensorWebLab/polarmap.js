@@ -98,6 +98,8 @@ var Demo = {
 
 // Initialization
 $(document).ready(function() {
+	Autosize.enable();
+
 	map = new PolarMap();
 
 	map.registerTileMaps(mapProviders);
