@@ -10,15 +10,18 @@ var mapProviders = {
 		// use inverse coordinates if the provider is a TMS. Mapnik is not a TMS.
 		tms_inverse: false,
 		// Default centre when this map is loaded
-		center: [51.080126, -114.13380900]
+		center: [51.080126, -114.13380900],
+		// Map attribution text for tiles and/or data
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	},
 
 	// OpenCycleMap, a variant of the OSM stylesheet.
 	"opencyclemap@EPSG3857": {
-		url: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
+		url: "http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
 		zoom_range: [0, 18],
 		tms_inverse: false,
-		center: [51.080126, -114.13380900]
+		center: [51.080126, -114.13380900],
+		attribution: 'Maps &copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	},
 
 	// A limited world view that demos EPSG:32632.
@@ -34,7 +37,8 @@ var mapProviders = {
 		scale: function(zoom) {
 			return 1 / (234.375 / Math.pow(2, zoom));
 		},
-		center: [61.636, 8.3135]
+		center: [61.636, 8.3135],
+		attribution: 'Data from <a href="http://www.viewfinderpanoramas.org/dem3.html">Viewfinder Panoramas</a> and <a href="http://www.skogoglandskap.no/kart/arealressurskart/artikler/2007/nedlasting_arealressurser">Norwegian Forest and Landscape Institute</a>'
 	}
 };
 
