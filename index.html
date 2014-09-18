@@ -33,7 +33,7 @@
 		}
 	</style>
 </head>
-<body onload="test()">
+<body>
 	<div id="btn">
 		<h4>Demo</h4>
 
@@ -47,16 +47,16 @@
 			<option value='worldboundariesmap@ESRI102018'>worldboundariesmap@ESRI102018</option>
 		</select>
 
-		<button onclick="changeBaseMap()">Change BaseMap</button><br>
+		<button onclick="Demo.changeBaseMap()">Change BaseMap</button><br>
 		<br>
-		<button onclick="gotoMap(0)">Goto (Market Mall)</button><br>
-		<button onclick="gotoMap(1)">Goto (UoC)</button><br>
+		<button onclick="Demo.gotoMap(0)">Goto (Market Mall)</button><br>
+		<button onclick="Demo.gotoMap(1)">Goto (UoC)</button><br>
 		<br>
-		<button onclick="add_layer('mark1')">Add Layer (marker)</button><br>
-		<button onclick="showhide_toggle('mark1')">Show/Hide (McHall marker layer)</button><br>
-		<button onclick="remove_layer('mark1')">Remove Layer (marker)</button><br>
+		<button onclick="Demo.add_layer('mark1')">Add Layer (marker)</button><br>
+		<button onclick="Demo.showhide_toggle('mark1')">Show/Hide (McHall marker layer)</button><br>
+		<button onclick="Demo.remove_layer('mark1')">Remove Layer (marker)</button><br>
 	</div>
-	<div id="msg">Please wait... Loading EPSG and ESRI meta files....</div>
+	<div id="msg">Please wait, loading EPSG and ESRI meta files&hellip;</div>
 	<div id="xmap"></div>
 </body>
 </html>
