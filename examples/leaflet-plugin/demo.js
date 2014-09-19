@@ -96,6 +96,15 @@ var projectedTiles = {
   }
 };
 
+// Define interface actions as part of Demo object
+var Demo = {
+  switchMap: function(target) {
+    var targetName = $(target).data('name');
+    map.loadTileProjection(projectedTiles[targetName]);
+  }
+};
+
+
 // Initialization
 $(document).ready(function() {
   Autosize.enable();

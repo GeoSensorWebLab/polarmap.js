@@ -9,7 +9,7 @@
 }(this, function(root, PolarMap, L, $) {
   /* Main Library */
   PolarMap.version = "0.2.0";
-  
+
   PolarMap.Map = function() {
 
     if (!window.jQuery) {
@@ -227,17 +227,17 @@
       /* If the request crs is one of Leaflet's supported CRSs */
       if (crs_code in this.LEAFLET_CRS) {
         crs_profile = this.LEAFLET_CRS[crs_code];
-        console.log("LEAFTLET CRS", crs_profile);
+        console.log("LEAFLET CRS", crs_profile);
       } else {
         /* Not one of Leaflet's supported CRSs */
-        console.log("NOT LEAFTLET CRS");
+        console.log("NOT LEAFLET CRS");
 
         /* find and get projection profile */
         var crs = this.getProjectionCodeProfile(crs_code);
 
         /* if not found just return null */
         if (crs === null) {
-          this.error2div("Not Found Code : "+crs_code);
+          this.error2div("Code Not Found: " + crs_code);
           return;
         }
 
@@ -624,6 +624,6 @@
       }
     };
   }
-  
+
   return PolarMap;
 }));

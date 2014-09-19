@@ -28,8 +28,8 @@ L.PolarMap = L.Map.extend({
       this.setMaxBounds(options.maxBounds);
     }
 
-    if (options.tileProjection.zoom !== undefined) {
-      this._zoom = this._limitZoom(options.tileProjection.zoom);
+    if (tileOptions.zoom !== undefined) {
+      this._zoom = this._limitZoom(tileOptions.zoom);
     }
 
     this._handlers = [];
@@ -43,13 +43,40 @@ L.PolarMap = L.Map.extend({
 
     // Add the projected tile layer
     var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
-    this._addLayers([baseLayer]);
+    this.addLayer(baseLayer, true);
 
-    if (options.tileProjection.center && options.tileProjection.zoom !== undefined) {
-      this.setView(L.latLng(options.tileProjection.center), options.tileProjection.zoom, {reset: true});
+    if (tileOptions.center && tileOptions.zoom !== undefined) {
+      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
     }
   },
 
+  // Public Functions
+  loadTileProjection: function (tileOptions) {
+    // Check for existing layer
+    if (this._usingTileProjection(tileOptions)) {
+      console.log("That tile layer is already active.");
+    } else {
+      // Drop base tile layers
+      this._dropTileLayers();
+
+      // Change Map CRS
+      this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
+
+      // Reproject other layers
+      this._updateAllLayers(this);
+
+      // Add new base layer
+      var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
+      this.addLayer(baseLayer, true);
+
+      // Update the View
+      if (tileOptions.center && tileOptions.zoom !== undefined) {
+      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
+    }
+    }
+  },
+
+  // Private Functions
   _defineMapCRS: function (crs, options) {
     if (options.origin) {
       options.transformation = new L.Transformation(1, -options.origin[0], -1, options.origin[1]);
@@ -63,6 +90,16 @@ L.PolarMap = L.Map.extend({
     return new L.Proj.CRS(crs, options.proj4def, {
         origin: options.origin,
         resolutions: resolutions
+    });
+  },
+
+  _dropTileLayers: function () {
+    var map = this;
+
+    map.eachLayer(function (layer) {
+      if (layer instanceof L.TileLayer) {
+        map.removeLayer(layer);
+      }
     });
   },
 
@@ -81,6 +118,36 @@ L.PolarMap = L.Map.extend({
         return this._defineMapCRS(crs, options);
       break;
     }
+  },
+
+  _updateAllLayers: function (group) {
+    var map = this;
+
+    if (group.eachLayer) {
+      group.eachLayer(function (layer) {
+        map._updateAllLayers(layer);
+      });
+    } else {
+      if (group.redraw) {
+        group.redraw();
+      } else if (group.update) {
+        group.update();
+      } else {
+        console.log("Don't know how to update", group);
+      }
+    }
+  },
+
+  _usingTileProjection: function (tileOptions) {
+    var alreadyActive = false;
+    var layers = this._layers;
+    for (var layer in layers) {
+      if (layers.hasOwnProperty(layer)) {
+        alreadyActive = (layers[layer]._url && (layers[layer]._url === tileOptions.url));
+        if (alreadyActive) break;
+      }
+    }
+    return alreadyActive;
   }
 });
 
