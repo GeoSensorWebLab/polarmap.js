@@ -375,11 +375,12 @@ function PolarMap()
     /* if the layer is basemap */
     if (is_basemap) {
       /* baesmap will be added to L.map */
-      leaflet_layer = L.tileLayer(newlayer._tilemap_def.url,
-        { tms:newlayer._tilemap_def.tms_inverse,
-          minZoom:newlayer._tilemap_def.zoom_range[0],
-          maxZoom:newlayer._tilemap_def.zoom_range[1]
-        });
+      leaflet_layer = L.tileLayer(newlayer._tilemap_def.url, {
+        tms:         newlayer._tilemap_def.tms_inverse,
+        minZoom:     newlayer._tilemap_def.zoom_range[0],
+        maxZoom:     newlayer._tilemap_def.zoom_range[1],
+        attribution: newlayer._tilemap_def.attribution
+      });
     } else {
       /* other layers just added in this step */
       if (newlayer._type === "marker_layer") {
@@ -390,7 +391,8 @@ function PolarMap()
           tms:              newlayer._tilemap_def.tms_inverse,
           minZoom:          newlayer._tilemap_def.zoom_range[0],
           maxZoom:          newlayer._tilemap_def.zoom_range[1],
-          continuousWorld:  false
+          continuousWorld:  false,
+          attribution:      newlayer._tilemap_def.attribution
         });
         leaflet_layer.addTo(this._map.leaflet);
       } else {
