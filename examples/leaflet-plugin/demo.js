@@ -82,6 +82,25 @@ var projectedTiles = {
     zoom: 1,
     continuousWorld: true,
     attribution: 'Data from <a href="http://www.viewfinderpanoramas.org/dem3.html">Viewfinder Panoramas</a> and <a href="http://www.skogoglandskap.no/kart/arealressurskart/artikler/2007/nedlasting_arealressurser">Norwegian Forest and Landscape Institute</a>'
+  },
+
+  "arctic_connect@EPSG:3573": {
+    name: "arctic_connect@EPSG:3573",
+    crs: "EPSG:3573",
+    proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+    url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
+    minZoom: 0,
+    maxZoom: 18,
+    tms: false,
+    // (Source on values?)
+    transformation: new L.Transformation(1, 20036842.762, -1, 20036842.762),
+    scale: function(zoom) {
+      return (40073685.524 / 256) / Math.pow(2, zoom);
+    },
+    center: [0, 0],
+    zoom: 4,
+    continuousWorld: true,
+    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }
 };
 
@@ -91,7 +110,7 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.polarMap('xmap', {
-    tileProjection: projectedTiles["jotunheimen@EPSG:32632"]
+    tileProjection: projectedTiles["arctic_connect@EPSG:3573"]
   });
 
   // Load Default Leaflet Map
