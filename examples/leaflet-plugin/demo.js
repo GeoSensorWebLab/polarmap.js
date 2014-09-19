@@ -1,6 +1,7 @@
 var map;
 
-// Create object to define tile provider settings and transformations.
+// Create object to define tile provider settings and transformations. Supports
+// all Leaflet TileLayer options.
 var projectedTiles = {
   // Example projected tile provider
   /*
@@ -8,6 +9,8 @@ var projectedTiles = {
     // name for searching/querying active projected tile provider. Should be
     // unique.
     name: "arctic_connect@EPSG:3573",
+    // CRS Code for the tiles
+    crs: "EPSG:3573",
     // URL to tiles
     url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     // max zoom range from tile provider
@@ -39,6 +42,7 @@ var projectedTiles = {
   // Default OSM Provider. Uses EPSG:3857 projection.
   "osm_tile_map@EPSG:3857": {
     name: "osm_tile_map@EPSG:3857",
+    crs: "EPSG:3857",
     url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
@@ -51,6 +55,7 @@ var projectedTiles = {
   // OpenCycleMap, a variant of the OSM stylesheet.
   "opencyclemap@EPSG:3857": {
     name: "opencyclemap@EPSG:3857",
+    crs: "EPSG:3857",
     url: "http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
@@ -64,6 +69,8 @@ var projectedTiles = {
   // http://blog.thematicmapping.org/2012/07/using-custom-projections-with-tilecache.html
   "jotunheimen@EPSG:32632": {
     name: "jotunheimen@EPSG:32632",
+    crs: "EPSG:32632",
+    proj4def: '+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs',
     url: "http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 4,
@@ -74,7 +81,8 @@ var projectedTiles = {
       return 1 / (234.375 / Math.pow(2, zoom));
     },
     center: [61.636, 8.3135],
-    zoom: 0,
+    zoom: 1,
+    continuousWorld: true,
     attribution: 'Data from <a href="http://www.viewfinderpanoramas.org/dem3.html">Viewfinder Panoramas</a> and <a href="http://www.skogoglandskap.no/kart/arealressurskart/artikler/2007/nedlasting_arealressurser">Norwegian Forest and Landscape Institute</a>'
   }
 };
@@ -84,20 +92,20 @@ $(document).ready(function() {
   Autosize.enable();
 
   // Load PolarMap
-  // map = L.polarMap('xmap', {
-  //   tileProjection: mapProviders["osm_tile_map@EPSG:3857"]
-  // });
+  map = L.polarMap('xmap', {
+    tileProjection: projectedTiles["jotunheimen@EPSG:32632"]
+  });
 
   // Load Default Leaflet Map
-  map = L.map('xmap', {
-    center: [51.080126, -114.13380900],
-    zoom: 15,
-    layers: [
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      })
-    ]
-  });
+  // map = L.map('xmap', {
+  //   center: [51.080126, -114.13380900],
+  //   zoom: 15,
+  //   layers: [
+  //     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  //       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  //     })
+  //   ]
+  // });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
