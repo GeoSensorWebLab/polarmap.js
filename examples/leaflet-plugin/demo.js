@@ -2,21 +2,49 @@ var map;
 
 // Create object to define tile provider settings and transformations.
 var projectedTiles = {
-  // Default OSM Provider. Uses EPSG:3857 projection.
-  "osm_tile_map@EPSG:3857": {
+  // Example projected tile provider
+  /*
+  "arctic_connect@EPSG:3573": {
     // name for searching/querying active projected tile provider. Should be
     // unique.
-    name: "osm_tile_map@EPSG:3857",
-    url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+    name: "arctic_connect@EPSG:3573",
+    // URL to tiles
+    url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     // max zoom range from tile provider
     minZoom: 0,
     maxZoom: 18,
     // use inverse coordinates if the provider is a TMS. Mapnik is not a TMS.
     tms: false,
+    // Apply a transformation for this projection, if applicable. Can be
+    // omitted. This example transformation does nothing.
+    transformation: new L.Transformation(1, 0, 1, 0),
+    // Use a custom scale for the zoom, as the tile sizes are different for
+    // this projection. The following is the Leaflet default.
+    scale: function(zoom) {
+      return Math.pow(2, zoom);
+    },
+    // The Proj4 string for this projection
+    proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+    // origin for this projection
+    origin: [-20036842.762, 20036842.762],
     // Default centre when this map is loaded
     center: [51.080126, -114.13380900],
+    // Default zoom level
     zoom: 15,
     // Map attribution text for tiles and/or data
+    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }
+  */
+
+  // Default OSM Provider. Uses EPSG:3857 projection.
+  "osm_tile_map@EPSG:3857": {
+    name: "osm_tile_map@EPSG:3857",
+    url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+    minZoom: 0,
+    maxZoom: 18,
+    tms: false,
+    center: [51.080126, -114.13380900],
+    zoom: 15,
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   },
 
@@ -40,10 +68,8 @@ var projectedTiles = {
     minZoom: 0,
     maxZoom: 4,
     tms: false,
-    // Apply a transformation for this projection. (Source on values?)
+    // (Source on values?)
     transformation: new L.Transformation(1, -432000, -1, 6850000),
-    // Use a custom scale for the zoom, as the tile sizes are different for
-    // this projection. (Source for 234.375?)
     scale: function(zoom) {
       return 1 / (234.375 / Math.pow(2, zoom));
     },
