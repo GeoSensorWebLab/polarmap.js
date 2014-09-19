@@ -44,7 +44,7 @@ L.PolarMap = L.Map.extend({
 
     // Set the map CRS
     this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
-    this.options.scale = tileOptions.scale;
+    this.options.crs.scale = tileOptions.scale;
 
     // Add the projected tile layer
     var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
@@ -52,22 +52,8 @@ L.PolarMap = L.Map.extend({
   },
 
   _defineMapCRS: function (crs, options) {
-    // Set the tiles origin from the transformation, if not already available
-    if (options.origin === null || options.origin === undefined) {
-      var origin = L.point(0, 0);
-      options.origin = options.transformation.transform(origin);
-    }
-
-    // Generate CRS Resolutions array from origin information
-    var resolutions = [];
-    for (var i = options.minZoom; i <= options.maxZoom; i++) {
-      resolutions.push(((options.origin[1] - options.origin[0]) / 256) / Math.pow(2, i));
-    };
-
-    return new L.Proj.CRS(crs,
-      options.proj4def, {
-        origin: options.origin,
-        resolutions: resolutions
+    return new L.Proj.CRS(crs, options.proj4def, {
+        transformation: options.transformation
     });
   },
 

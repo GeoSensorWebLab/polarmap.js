@@ -28,8 +28,6 @@ var projectedTiles = {
     },
     // The Proj4 string for this projection
     proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
-    // origin for this projection
-    origin: [-20036842.762, 20036842.762],
     // Default centre when this map is loaded
     center: [51.080126, -114.13380900],
     // Default zoom level
