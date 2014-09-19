@@ -11,6 +11,8 @@ var projectedTiles = {
     name: "arctic_connect@EPSG:3573",
     // CRS Code for the tiles
     crs: "EPSG:3573",
+    // The Proj4 string for this projection
+    proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
     // URL to tiles
     url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     // max zoom range from tile provider
@@ -18,16 +20,10 @@ var projectedTiles = {
     maxZoom: 18,
     // use inverse coordinates if the provider is a TMS. Mapnik is not a TMS.
     tms: false,
-    // Apply a transformation for this projection, if applicable. Can be
-    // omitted. This example transformation does nothing.
-    transformation: new L.Transformation(1, 0, 1, 0),
-    // Use a custom scale for the zoom, as the tile sizes are different for
-    // this projection. The following is the Leaflet default.
-    scale: function(zoom) {
-      return Math.pow(2, zoom);
-    },
-    // The Proj4 string for this projection
-    proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+    // Origin of the map in projected coordinates
+    origin: [-20036842.762, 20036842.762],
+    // resolution of smallest zoom level tile. calculation depends on projection
+    maxResolution: ((20036842.762 - -20036842.762) / 256),
     // Default centre when this map is loaded
     center: [51.080126, -114.13380900],
     // Default zoom level
@@ -68,16 +64,14 @@ var projectedTiles = {
   "jotunheimen@EPSG:32632": {
     name: "jotunheimen@EPSG:32632",
     crs: "EPSG:32632",
-    proj4def: '+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs',
+    proj4def: '+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
     url: "http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 4,
     tms: false,
     // (Source on values?)
-    transformation: new L.Transformation(1, -432000, -1, 6850000),
-    scale: function(zoom) {
-      return 1 / (234.375 / Math.pow(2, zoom));
-    },
+    origin: [432000, 6850000],
+    maxResolution: 234.375,
     center: [61.636, 8.3135],
     zoom: 1,
     continuousWorld: true,
@@ -93,11 +87,9 @@ var projectedTiles = {
     maxZoom: 18,
     tms: false,
     // (Source on values?)
-    transformation: new L.Transformation(1, 20036842.762, -1, 20036842.762),
-    scale: function(zoom) {
-      return (40073685.524 / 256) / Math.pow(2, zoom);
-    },
-    center: [0, 0],
+    origin: [-20036842.762, 20036842.762],
+    maxResolution: ((20036842.762 - -20036842.762) / 256),
+    center: [90, 0],
     zoom: 4,
     continuousWorld: true,
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -126,8 +118,9 @@ $(document).ready(function() {
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
-    L.marker([51.080126, -114.13380900]).bindPopup("Alec, here?"),
-    L.marker([61.636, 8.3135]).bindPopup("jotunheimen")
+    L.marker([51.080126, -114.13380900]).bindPopup("University of Calgary"),
+    L.marker([61.636, 8.3135]).bindPopup("Galdhøpiggen 2469 m"),
+    L.marker([90, 100]).bindPopup("North Pole")
   ]).addTo(map);
 
   // Bind demo page actions to elements

@@ -32,10 +32,6 @@ L.PolarMap = L.Map.extend({
       this._zoom = this._limitZoom(options.tileProjection.zoom);
     }
 
-    if (options.tileProjection.center && options.tileProjection.zoom !== undefined) {
-      this.setView(L.latLng(options.tileProjection.center), options.tileProjection.zoom, {reset: true});
-    }
-
     this._handlers = [];
     this._layers = {};
     this._zoomBoundLayers = {};
@@ -44,16 +40,29 @@ L.PolarMap = L.Map.extend({
 
     // Set the map CRS
     this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
-    this.options.crs.scale = tileOptions.scale;
 
     // Add the projected tile layer
     var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
     this._addLayers([baseLayer]);
+
+    if (options.tileProjection.center && options.tileProjection.zoom !== undefined) {
+      this.setView(L.latLng(options.tileProjection.center), options.tileProjection.zoom, {reset: true});
+    }
   },
 
   _defineMapCRS: function (crs, options) {
+    if (options.origin) {
+      options.transformation = new L.Transformation(1, -options.origin[0], -1, options.origin[1]);
+    }
+
+    var resolutions = [];
+    for (var zoom = options.minZoom; zoom <= options.maxZoom; zoom++) {
+      resolutions.push(options.maxResolution / Math.pow(2, zoom));
+    };
+
     return new L.Proj.CRS(crs, options.proj4def, {
-        transformation: options.transformation
+        origin: options.origin,
+        resolutions: resolutions
     });
   },
 
