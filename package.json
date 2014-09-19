@@ -1,0 +1,24 @@
+{
+  "name": "polarmap.js",
+  "version": "0.1.0",
+  "description": "Leaflet library for polar map projection switching",
+  "main": "polarmap.js",
+  "private": true,
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:geosensorweblab/polarmap.js.git"
+  },
+  "keywords": [
+    "leaflet",
+    "arctic",
+    "maps"
+  ],
+  "author": "GeoSensor Web Lab",
+  "license": "All rights reserved"
+}
