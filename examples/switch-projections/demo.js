@@ -101,7 +101,7 @@ var Demo = {
 $(document).ready(function() {
 	Autosize.enable();
 
-	map = new PolarMap();
+	map = new PolarMap.Map();
 
 	map.registerTileMaps(mapProviders);
 
