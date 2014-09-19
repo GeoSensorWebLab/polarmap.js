@@ -8,7 +8,7 @@
   root.PolarMap = factory(root, {}, root.L, (root.jQuery || root.$));
 }(this, function(root, PolarMap, L, $) {
   /* Main Library */
-  PolarMap.version = "0.1.0";
+  PolarMap.version = "0.2.0";
   
   PolarMap.Map = function() {
 
