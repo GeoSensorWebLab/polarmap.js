@@ -72,6 +72,7 @@ var projectedTiles = {
     // (Source on values?)
     origin: [432000, 6850000],
     maxResolution: 234.375,
+    bounds: [[61.2383915756, 7.73317925531], [61.7828577605, 8.84834020725]],
     center: [61.636, 8.3135],
     zoom: 1,
     continuousWorld: true,

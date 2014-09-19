@@ -48,6 +48,8 @@ L.PolarMap = L.Map.extend({
     if (tileOptions.center && tileOptions.zoom !== undefined) {
       this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
     }
+
+    this.setMaxBounds(tileOptions.bounds);
   },
 
   // Public Functions
@@ -71,8 +73,9 @@ L.PolarMap = L.Map.extend({
 
       // Update the View
       if (tileOptions.center && tileOptions.zoom !== undefined) {
-      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
-    }
+        this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
+      }
+      this.setMaxBounds(tileOptions.bounds);
     }
   },
 
