@@ -50,9 +50,13 @@
     };
 
     // Generate Resolutions Array from origin information.
+    // maxResolution is map width/height (origin[1] - origin[0]) metres divided
+    // by 256 pixels (size of zoom level 0 tile). All other zoom levels, or
+    // resolutions, are a factor of that.
+    var maxResolution = (tileDetails.origin[1] - tileDetails.origin[0]) / 256;
     var resolutions = [];
     for (var i = tileDetails.zoom.min; i <= tileDetails.zoom.max; i++) {
-      resolutions.push(((tileDetails.origin[1] - tileDetails.origin[0]) / 256) / Math.pow(2, i));
+      resolutions.push(maxResolution / Math.pow(2, i));
     };
 
     // Create new CRS for EPSG:3573.
