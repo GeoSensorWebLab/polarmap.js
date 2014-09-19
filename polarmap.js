@@ -78,8 +78,8 @@ function PolarMap()
   };
 
   this.METAFILES = [
-    { "code": "EPSG", "url": "js/data/epsg.csv" },
-    { "code": "ESRI", "url": "js/data/esri.csv" }
+    { "code": "EPSG", "url": $("#epsg-data").prop('href') },
+    { "code": "ESRI", "url": $("#esri-data").prop('href') }
   ];
 
   /* class instance variables */

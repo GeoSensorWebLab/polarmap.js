@@ -2,17 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="../../css/leaflet.css" />
 
   <!-- Load required libraries -->
   <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="js/leaflet.js"></script>
-  <script src="js/proj4-compressed.js"></script>
-  <script src="js/proj4leaflet.js"></script>
-  <script src="js/polarmap.js"></script>
+  <script src="../../js/leaflet.js"></script>
+  <script src="../../js/proj4-compressed.js"></script>
+  <script src="../../js/proj4leaflet.js"></script>
+
+  <!-- Load PolarMap.js -->
+  <link id="epsg-data" href="../../data/epsg.csv" type="text/csv"></link>
+  <link id="esri-data" href="../../data/esri.csv" type="text/csv"></link>
+  <script src="../../polarmap.js"></script>
 
   <!-- Demo javascript -->
-  <script src="js/autosize.js"></script>
+  <script src="../../js/autosize.js"></script>
   <script src="demo.js"></script>
 
   <title>PolarMap.js Demo</title>
