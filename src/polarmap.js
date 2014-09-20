@@ -38,17 +38,15 @@ L.PolarMap = L.Map.extend({
 
     this.callInitHooks();
 
-    // Set the map CRS
     this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
 
-    // Add the projected tile layer
-    var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
-    this.addLayer(baseLayer, true);
+    this.addLayer(L.tileLayer(tileOptions.url, tileOptions), true);
 
     if (tileOptions.center && tileOptions.zoom !== undefined) {
-      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
+      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {
+        reset: true
+      });
     }
-
     this.setMaxBounds(tileOptions.bounds);
   },
 
@@ -73,7 +71,9 @@ L.PolarMap = L.Map.extend({
 
       // Update the View
       if (tileOptions.center && tileOptions.zoom !== undefined) {
-        this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {reset: true});
+        this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {
+          reset: true
+        });
       }
       this.setMaxBounds(tileOptions.bounds);
     }
@@ -81,10 +81,6 @@ L.PolarMap = L.Map.extend({
 
   // Private Functions
   _defineMapCRS: function (crs, options) {
-    if (options.origin) {
-      options.transformation = new L.Transformation(1, -options.origin[0], -1, options.origin[1]);
-    }
-
     var resolutions = [];
     for (var zoom = options.minZoom; zoom <= options.maxZoom; zoom++) {
       resolutions.push(options.maxResolution / Math.pow(2, zoom));
@@ -106,6 +102,8 @@ L.PolarMap = L.Map.extend({
     });
   },
 
+  // Use default CRS classes for common codes, fallback to custom for all other
+  // codes.
   _setMapCRS: function (crs, options) {
     switch(crs) {
       case "EPSG:3857":
@@ -123,6 +121,8 @@ L.PolarMap = L.Map.extend({
     }
   },
 
+  // This recurses through all the map's layers to update layer positions after
+  // their positions moved.
   _updateAllLayers: function (group) {
     var map = this;
 
