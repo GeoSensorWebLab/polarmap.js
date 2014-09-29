@@ -1,5 +1,10 @@
 var map;
 
+// Globally define projections for Proj4js. If not defined here, then they must
+// be defined in tile provider definitions below.
+proj4.defs("EPSG:3573","+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
+proj4.defs("EPSG:32632","+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs");
+
 // Create object to define tile provider settings and transformations. Supports
 // all Leaflet TileLayer options.
 var projectedTiles = {
@@ -11,7 +16,8 @@ var projectedTiles = {
     name: "arctic_connect@EPSG:3573",
     // CRS Code for the tiles
     crs: "EPSG:3573",
-    // The Proj4 string for this projection
+    // The Proj4 string for this projection. Alternatively, this string can be
+    // defined globally in proj4js.
     proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
     // URL to tiles
     url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
@@ -64,7 +70,6 @@ var projectedTiles = {
   "jotunheimen@EPSG:32632": {
     name: "jotunheimen@EPSG:32632",
     crs: "EPSG:32632",
-    proj4def: '+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
     url: "http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 4,
@@ -82,7 +87,6 @@ var projectedTiles = {
   "arctic_connect@EPSG:3573": {
     name: "arctic_connect@EPSG:3573",
     crs: "EPSG:3573",
-    proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
     url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
