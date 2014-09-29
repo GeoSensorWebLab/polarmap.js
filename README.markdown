@@ -12,6 +12,10 @@ See [examples/tiles-only](examples/tiles-only) for an example of how to use Leaf
 
 Does not include support for projection switching.
 
+## Loading EPSG Definitions
+
+See [examples/epsg-loading](examples/epsg-loading) for loading EPSG proj4 definitions into Proj4js from a remote JSON file. Could easily be modified to load from a web service that returns EPSG proj4 definitions.
+
 ## Development
 
 To run a local webserver for testing the app, you can use a one-line Ruby command to run on port 3000:

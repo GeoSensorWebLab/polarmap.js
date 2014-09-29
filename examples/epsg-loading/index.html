@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../css/leaflet.css" />
+
+  <!-- Load required libraries -->
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/leaflet.js"></script>
+  <script src="../../js/proj4.js"></script>
+  <script src="../../js/proj4leaflet.js"></script>
+
+  <!-- Load PolarMap.js -->
+  <script src="../../src/polarmap.js"></script>
+
+  <!-- Demo javascript -->
+  <script src="../../js/autosize.js"></script>
+  <script src="demo.js"></script>
+
+  <title>PolarMap.js Demo with EPSG Loader</title>
+
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      height: 100%;
+      width: 100%;
+    }
+    #xmap {
+      width: 80%;
+      height: 100%;
+    }
+
+    #controls {
+      position: absolute;
+      right: 10px;
+      width: 17%;
+      height: 50px;
+      z-index: 2;
+      padding: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <h4>Demo Controls</h4>
+    <p>
+      <button data-action="switchMap" data-name="osm_tile_map@EPSG:3857">Use OSM</button><br>
+      <button data-action="switchMap" data-name="jotunheimen@EPSG:32632">Use jotunheimen</button><br>
+      <button data-action="switchMap" data-name="arctic_connect@EPSG:3573">Use ArcticConnect</button>
+    </p>
+
+  </div>
+  <div id="xmap"></div>
+</body>
+</html>
