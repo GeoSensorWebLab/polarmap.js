@@ -2,13 +2,9 @@
 
 A JavaScript library that can re-project Leaflet maps and map features.
 
-## Usage
-
-(WIP)
-
 ## Projection Switching
 
-See [examples/switch-projections](examples/switch-projections) for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
+See [examples/leaflet-plugin](examples/leaflet-plugin) for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
 
 ## Simple Tile Usage
 
