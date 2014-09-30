@@ -4,7 +4,7 @@ L.PolarMap.Map = L.Map.extend({
   // Default options
   options: {
     /*
-    tileProjection: Object
+    baseLayer: Object
     */
 
     fadeAnimation: true,
@@ -14,7 +14,7 @@ L.PolarMap.Map = L.Map.extend({
 
   initialize: function (id, options) {
     options = L.setOptions(this, options);
-    var tileOptions = options.tileProjection;
+    var baseLayerOptions = options.baseLayer.options;
 
     this._initContainer(id);
     this._initLayout();
@@ -28,8 +28,8 @@ L.PolarMap.Map = L.Map.extend({
       this.setMaxBounds(options.maxBounds);
     }
 
-    if (tileOptions.zoom !== undefined) {
-      this._zoom = this._limitZoom(tileOptions.zoom);
+    if (baseLayerOptions.zoom !== undefined) {
+      this._zoom = this._limitZoom(baseLayerOptions.zoom);
     }
 
     this._handlers = [];
@@ -38,24 +38,25 @@ L.PolarMap.Map = L.Map.extend({
 
     this.callInitHooks();
 
-    this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
+    this.options.crs = this._setMapCRS(baseLayerOptions.crs, baseLayerOptions);
 
-    this.addLayer(L.tileLayer(tileOptions.url, tileOptions), true);
+    this.addLayer(options.baseLayer, true);
 
-    if (tileOptions.center && tileOptions.zoom !== undefined) {
-      this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {
+    if (baseLayerOptions.center && baseLayerOptions.zoom !== undefined) {
+      this.setView(L.latLng(baseLayerOptions.center), baseLayerOptions.zoom, {
         reset: true
       });
     }
-    this.setMaxBounds(tileOptions.bounds);
+    this.setMaxBounds(baseLayerOptions.bounds);
   },
 
   // Public Functions
-  loadTileProjection: function (tileOptions) {
+  loadTileProjection: function (tileLayer) {
     // Check for existing layer
-    if (this._usingTileProjection(tileOptions)) {
+    if (this._usingTileProjection(tileLayer)) {
       console.log("That tile layer is already active.");
     } else {
+      var tileOptions = tileLayer.options;
       // Drop base tile layers
       this._dropTileLayers();
 
@@ -66,8 +67,7 @@ L.PolarMap.Map = L.Map.extend({
       this._updateAllLayers(this);
 
       // Add new base layer
-      var baseLayer = L.tileLayer(tileOptions.url, tileOptions);
-      this.addLayer(baseLayer, true);
+      this.addLayer(tileLayer, true);
 
       // Update the View
       if (tileOptions.center && tileOptions.zoom !== undefined) {
@@ -141,14 +141,12 @@ L.PolarMap.Map = L.Map.extend({
     }
   },
 
-  _usingTileProjection: function (tileOptions) {
+  _usingTileProjection: function (tileLayer) {
     var alreadyActive = false;
     var layers = this._layers;
     for (var layer in layers) {
-      if (layers.hasOwnProperty(layer)) {
-        alreadyActive = (layers[layer]._url && (layers[layer]._url === tileOptions.url));
-        if (alreadyActive) break;
-      }
+      alreadyActive = (layers[layer] === tileLayer);
+      if (alreadyActive) break;
     }
     return alreadyActive;
   }
