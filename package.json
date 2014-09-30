@@ -20,5 +20,8 @@
     "maps"
   ],
   "author": "GeoSensor Web Lab",
-  "license": "All rights reserved"
+  "license": "All rights reserved",
+  "devDependencies": {
+    "jake": "^8.0.9"
+  }
 }
