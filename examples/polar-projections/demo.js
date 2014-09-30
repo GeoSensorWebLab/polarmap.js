@@ -55,7 +55,7 @@ $(document).ready(function() {
   Autosize.enable();
 
   // Load PolarMap
-  map = L.polarMap('xmap', {
+  map = L.PolarMap.map('xmap', {
     tileProjection: projectedTiles["arctic_connect@EPSG:3573"]
   });
 

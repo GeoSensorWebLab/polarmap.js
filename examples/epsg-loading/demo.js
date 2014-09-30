@@ -122,7 +122,7 @@ $(document).ready(function() {
 
   var createMap = function() {
       // Load PolarMap
-      map = L.polarMap('xmap', {
+      map = L.PolarMap.map('xmap', {
         tileProjection: projectedTiles["osm_tile_map@EPSG:3857"]
       });
 
