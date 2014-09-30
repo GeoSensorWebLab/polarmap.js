@@ -8,7 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "jake build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "license": "All rights reserved",
   "devDependencies": {
     "jake": "^8.0.9",
+    "leaflet": "^0.7.3",
     "uglify-js": "^2.4.15"
   }
 }
