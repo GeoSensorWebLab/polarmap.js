@@ -19,7 +19,7 @@ two copies of PolarMap.js will be generated in the `dist` directory, one with co
 
 ## Projection Switching
 
-See [examples/leaflet-plugin](examples/leaflet-plugin) for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
+See [examples/basic](examples/basic) for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
 
 ## Simple Tile Usage
 
