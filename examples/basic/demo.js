@@ -5,12 +5,13 @@ var map;
 proj4.defs("EPSG:3573","+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
 proj4.defs("EPSG:32632","+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs");
 
-// Create object to define tile provider settings and transformations. Supports
-// all Leaflet TileLayer options.
+// Create object to define tile provider settings and transformations.
 var projectedTiles = {
   // Example projected tile provider
   /*
-  "arctic_connect@EPSG:3573": {
+  // URL to tiles is first argument
+  "arctic_connect@EPSG:3573":
+    L.PolarMap.tileLayer("http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
     // name for searching/querying active projected tile provider. Should be
     // unique.
     name: "arctic_connect@EPSG:3573",
@@ -19,8 +20,6 @@ var projectedTiles = {
     // The Proj4 string for this projection. Alternatively, this string can be
     // defined globally in proj4js.
     proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
-    // URL to tiles
-    url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     // max zoom range from tile provider
     minZoom: 0,
     maxZoom: 18,
@@ -36,41 +35,41 @@ var projectedTiles = {
     zoom: 15,
     // Map attribution text for tiles and/or data
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }
+  })
   */
 
   // Default OSM Provider. Uses EPSG:3857 projection.
-  "osm_tile_map@EPSG:3857": {
+  "osm_tile_map@EPSG:3857":
+    L.PolarMap.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
     name: "osm_tile_map@EPSG:3857",
     crs: "EPSG:3857",
-    url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
     tms: false,
     center: [51.080126, -114.13380900],
     zoom: 15,
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  },
+  }),
 
   // OpenCycleMap, a variant of the OSM stylesheet.
-  "opencyclemap@EPSG:3857": {
+  "opencyclemap@EPSG:3857":
+    L.PolarMap.tileLayer("http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png", {
     name: "opencyclemap@EPSG:3857",
     crs: "EPSG:3857",
-    url: "http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
     tms: false,
     center: [51.080126, -114.13380900],
     zoom: 15,
     attribution: 'Maps &copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  },
+  }),
 
   // A limited world view that demos EPSG:32632.
   // http://blog.thematicmapping.org/2012/07/using-custom-projections-with-tilecache.html
-  "jotunheimen@EPSG:32632": {
+  "jotunheimen@EPSG:32632":
+    L.PolarMap.tileLayer("http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png", {
     name: "jotunheimen@EPSG:32632",
     crs: "EPSG:32632",
-    url: "http://thematicmapping.org/playground/terrain/map/tiles/jotunheimen/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 4,
     tms: false,
@@ -82,12 +81,12 @@ var projectedTiles = {
     zoom: 1,
     continuousWorld: true,
     attribution: 'Data from <a href="http://www.viewfinderpanoramas.org/dem3.html">Viewfinder Panoramas</a> and <a href="http://www.skogoglandskap.no/kart/arealressurskart/artikler/2007/nedlasting_arealressurser">Norwegian Forest and Landscape Institute</a>'
-  },
+  }),
 
-  "arctic_connect@EPSG:3573": {
+  "arctic_connect@EPSG:3573":
+    L.PolarMap.tileLayer("http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
     name: "arctic_connect@EPSG:3573",
     crs: "EPSG:3573",
-    url: "http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
     tms: false,
@@ -98,7 +97,7 @@ var projectedTiles = {
     zoom: 4,
     continuousWorld: true,
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }
+  })
 };
 
 // Define interface actions as part of Demo object
@@ -116,19 +115,8 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    tileProjection: projectedTiles["arctic_connect@EPSG:3573"]
+    baseLayer: projectedTiles["osm_tile_map@EPSG:3857"]
   });
-
-  // Load Default Leaflet Map
-  // map = L.map('xmap', {
-  //   center: [51.080126, -114.13380900],
-  //   zoom: 15,
-  //   layers: [
-  //     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  //       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  //     })
-  //   ]
-  // });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([

@@ -25,10 +25,10 @@ proj4.defs([
 var projectedTiles = {};
 
 $.each(projections, function (index, value) {
-  projectedTiles["arctic_connect@" + value] = {
+  var url = "http://tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
+  projectedTiles["arctic_connect@" + value] = L.PolarMap.tileLayer(url, {
     name: "arctic_connect@" + value,
     crs: value,
-    url: "http://tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png",
     minZoom: 0,
     maxZoom: 18,
     tms: false,
@@ -38,7 +38,7 @@ $.each(projections, function (index, value) {
     zoom: 4,
     continuousWorld: true,
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  };
+  });
 });
 
 // Define interface actions as part of Demo object
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    tileProjection: projectedTiles["arctic_connect@EPSG:3573"]
+    baseLayer: projectedTiles["arctic_connect@EPSG:3573"]
   });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
