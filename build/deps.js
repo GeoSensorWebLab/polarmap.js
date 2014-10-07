@@ -1,6 +1,7 @@
 var deps = {
   Core: {
     src: ['polarmap.js',
+          'control/Control.Rotation.js',
           'layer/tile/TileLayer.js',
           'map/Map.js'
           ],

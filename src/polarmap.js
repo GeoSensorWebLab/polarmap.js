@@ -4,7 +4,8 @@ if (typeof(L) === "undefined") {
 }
 
 L.PolarMap = {
-  version: '0.3.0'
+  version: '0.3.0',
+  Control: {}
 };
 
 if (typeof module === 'object' && typeof module.exports === 'object') {

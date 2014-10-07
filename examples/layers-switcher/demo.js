@@ -59,5 +59,8 @@ $(document).ready(function() {
   L.control.layers(projectedTiles, null, {
     collapsed: false
   }).addTo(map);
+
+  var rotationControls = L.PolarMap.Control.rotation({});
+  rotationControls.addTo(map);
 });
 
