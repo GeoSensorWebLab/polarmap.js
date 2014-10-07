@@ -15,8 +15,10 @@ task('build', {async: true}, function (compsBase32, buildName) {
   });
 });
 
-task('default', ['build']);
-
-jake.addListener('complete', function () {
-  process.exit();
+watchTask(['build'], function () {
+  this.watchFiles.include([
+    './src/**/*.js'
+  ]);
 });
+
+task('default', ['build']);
