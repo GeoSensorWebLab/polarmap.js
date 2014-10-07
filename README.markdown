@@ -31,6 +31,10 @@ Does not include support for projection switching.
 
 See [examples/epsg-loading](examples/epsg-loading) for loading EPSG proj4 definitions into Proj4js from a remote JSON file. Could easily be modified to load from a web service that returns EPSG proj4 definitions.
 
+# Tile Switching and Rotation
+
+See [examples/layers-switcher](examples/layers-switcher) for how to use a Layers Control to switch between available projections, and a custom Rotation control for "rotating" the map by switching the projections.
+
 ## Development
 
 To run a local webserver for testing the app, use the packaged Node http-server:
