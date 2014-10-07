@@ -1,0 +1,11 @@
+/* Rotation controls */
+.leaflet-control-rotation-cw,
+.leaflet-control-rotation-ccw {
+  font: bold 18px Tahoma, Verdana, sans-serif;
+  text-indent: 1px;
+}
+
+.leaflet-touch .leaflet-control-rotation-cw,
+.leaflet-touch .leaflet-control-rotation-ccw {
+  font-size: 22px;
+}
