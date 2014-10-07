@@ -25,7 +25,7 @@ proj4.defs([
 var projectedTiles = {};
 
 $.each(projections, function (index, value) {
-  var url = "http://tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
+  var url = "http://{s}.tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
   projectedTiles["arctic_connect@" + value] = L.PolarMap.tileLayer(url, {
     name: "arctic_connect@" + value,
     crs: value,

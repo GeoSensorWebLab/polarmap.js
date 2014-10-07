@@ -48,7 +48,7 @@ var projectedTiles = {
   }),
 
   "arctic_connect@EPSG:3573":
-    L.PolarMap.tileLayer("http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
+    L.PolarMap.tileLayer("http://{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
     name: "arctic_connect@EPSG:3573",
     crs: "EPSG:3573",
     minZoom: 0,
