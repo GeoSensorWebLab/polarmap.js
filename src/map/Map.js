@@ -37,29 +37,17 @@ L.PolarMap.Map = L.Map.extend({
     this._zoomBoundLayers = {};
 
     this.callInitHooks();
+
+    // Update when base layer changed from map control
     this.on('baselayerchange', function (e) {
       var layerOptions = e.layer.options;
-      this.options.crs = this._setMapCRS(layerOptions.crs, layerOptions);
-      this._updateAllLayers(this);
-      // Update the View
-      if (layerOptions.center && layerOptions.zoom !== undefined) {
-        this.setView(L.latLng(layerOptions.center), layerOptions.zoom, {
-          reset: true
-        });
-      }
-      this.setMaxBounds(layerOptions.bounds);
+      this._updateCRSAndLayers(layerOptions);
+      this._updateView(layerOptions);
     });
 
-    this.options.crs = this._setMapCRS(baseLayerOptions.crs, baseLayerOptions);
-
+    this._updateCRSAndLayers(baseLayerOptions);
     this.addLayer(options.baseLayer, true);
-
-    if (baseLayerOptions.center && baseLayerOptions.zoom !== undefined) {
-      this.setView(L.latLng(baseLayerOptions.center), baseLayerOptions.zoom, {
-        reset: true
-      });
-    }
-    this.setMaxBounds(baseLayerOptions.bounds);
+    this._updateView(baseLayerOptions);
   },
 
   // Public Functions
@@ -72,22 +60,11 @@ L.PolarMap.Map = L.Map.extend({
       // Drop base tile layers
       this._dropTileLayers();
 
-      // Change Map CRS
-      this.options.crs = this._setMapCRS(tileOptions.crs, tileOptions);
-
-      // Reproject other layers
-      this._updateAllLayers(this);
+      this._updateCRSAndLayers(layerOptions);
 
       // Add new base layer
       this.addLayer(tileLayer, true);
-
-      // Update the View
-      if (tileOptions.center && tileOptions.zoom !== undefined) {
-        this.setView(L.latLng(tileOptions.center), tileOptions.zoom, {
-          reset: true
-        });
-      }
-      this.setMaxBounds(tileOptions.bounds);
+      this._updateView(layerOptions);
     }
   },
 
@@ -151,6 +128,20 @@ L.PolarMap.Map = L.Map.extend({
         console.log("Don't know how to update", group);
       }
     }
+  },
+
+  _updateCRSAndLayers: function (layerOptions) {
+    this.options.crs = this._setMapCRS(layerOptions.crs, layerOptions);
+    this._updateAllLayers(this);
+  },
+
+  _updateView: function (layerOptions) {
+    if (layerOptions.center && layerOptions.zoom !== undefined) {
+      this.setView(L.latLng(layerOptions.center), layerOptions.zoom, {
+        reset: true
+      });
+    }
+    this.setMaxBounds(layerOptions.bounds);
   },
 
   _usingTileProjection: function (tileLayer) {
