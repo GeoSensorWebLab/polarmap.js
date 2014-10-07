@@ -33,11 +33,11 @@ See [examples/epsg-loading](examples/epsg-loading) for loading EPSG proj4 defini
 
 ## Development
 
-To run a local webserver for testing the app, you can use a one-line Ruby command to run on port 3000:
+To run a local webserver for testing the app, use the packaged Node http-server:
 
-    $ ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd).start'
+    $ jake server
 
-There are similar options available for Python and Node.js.
+It will serve the local directory over HTTP on port 8080.
 
 ## License
 
