@@ -26,8 +26,8 @@ var projectedTiles = {};
 
 $.each(projections, function (index, value) {
   var url = "http://tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
-  projectedTiles["arctic_connect@" + value] = L.PolarMap.tileLayer(url, {
-    name: "arctic_connect@" + value,
+  projectedTiles["Arctic Connect: " + value] = L.PolarMap.tileLayer(url, {
+    name: "Arctic Connect: " + value,
     crs: value,
     minZoom: 0,
     maxZoom: 18,
@@ -35,7 +35,7 @@ $.each(projections, function (index, value) {
     origin: [-20036842.762, 20036842.762],
     maxResolution: ((20036842.762 - -20036842.762) / 256),
     center: [90,0],
-    zoom: 4,
+    zoom: 2,
     continuousWorld: true,
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   });
@@ -47,7 +47,7 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    baseLayer: projectedTiles["arctic_connect@EPSG:3573"]
+    baseLayer: projectedTiles["Arctic Connect: EPSG:3571"]
   });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
@@ -56,5 +56,8 @@ $(document).ready(function() {
     L.marker([90, 100]).bindPopup("North Pole")
   ]).addTo(map);
 
-  L.control.layers(projectedTiles).addTo(map);
+  L.control.layers(projectedTiles, null, {
+    collapsed: false
+  }).addTo(map);
 });
+

@@ -37,6 +37,18 @@ L.PolarMap.Map = L.Map.extend({
     this._zoomBoundLayers = {};
 
     this.callInitHooks();
+    this.on('baselayerchange', function (e) {
+      var layerOptions = e.layer.options;
+      this.options.crs = this._setMapCRS(layerOptions.crs, layerOptions);
+      this._updateAllLayers(this);
+      // Update the View
+      if (layerOptions.center && layerOptions.zoom !== undefined) {
+        this.setView(L.latLng(layerOptions.center), layerOptions.zoom, {
+          reset: true
+        });
+      }
+      this.setMaxBounds(layerOptions.bounds);
+    });
 
     this.options.crs = this._setMapCRS(baseLayerOptions.crs, baseLayerOptions);
 
