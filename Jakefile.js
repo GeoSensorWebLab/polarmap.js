@@ -15,6 +15,14 @@ task('build', {async: true}, function (compsBase32, buildName) {
   });
 });
 
+desc('Serve example demo files');
+task('server', function () {
+  jake.exec('node node_modules/.bin/http-server .', {
+    printStdout: true,
+    printStderr: true
+  });
+});
+
 watchTask(['build'], function () {
   this.watchFiles.include([
     './src/**/*.js'
