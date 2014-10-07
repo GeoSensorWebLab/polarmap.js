@@ -41,6 +41,17 @@ $.each(projections, function (index, value) {
   });
 });
 
+// Set up next/prev linked list
+$.each(projectedTiles, function (layerName, layer) {
+  var keys = Object.keys(projectedTiles);
+  var index = keys.indexOf(layerName);
+  var prev = (index === 0) ? keys.length - 1 : index - 1;
+  var next = (index === keys.length - 1) ? 0 : index + 1;
+
+  layer.prev = projectedTiles[keys[prev]];
+  layer.next = projectedTiles[keys[next]];
+});
+
 // Initialization
 $(document).ready(function() {
   Autosize.enable();
@@ -56,11 +67,31 @@ $(document).ready(function() {
     L.marker([90, 100]).bindPopup("North Pole")
   ]).addTo(map);
 
-  L.control.layers(projectedTiles, null, {
+  var layersControl = L.control.layers(projectedTiles, null, {
     collapsed: false
-  }).addTo(map);
+  });
+  layersControl.addTo(map);
 
-  var rotationControls = L.PolarMap.Control.rotation({});
+  // Wire up rotation controls
+  var getBaseLayer = function() {
+    var foundLayer = null;
+    $.each(projectedTiles, function (layerName, layer) {
+      if (map.hasLayer(layer)) {
+        foundLayer = layer;
+      }
+    });
+    return foundLayer;
+  };
+
+  var rotationControls = L.PolarMap.Control.rotation({
+    onRotateCW: function() {
+      map.loadTileProjection(getBaseLayer().next);
+    },
+
+    onRotateCCW: function() {
+      map.loadTileProjection(getBaseLayer().prev);
+    }
+  });
   rotationControls.addTo(map);
 });
 

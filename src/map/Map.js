@@ -60,11 +60,11 @@ L.PolarMap.Map = L.Map.extend({
       // Drop base tile layers
       this._dropTileLayers();
 
-      this._updateCRSAndLayers(layerOptions);
+      this._updateCRSAndLayers(tileOptions);
 
       // Add new base layer
       this.addLayer(tileLayer, true);
-      this._updateView(layerOptions);
+      this._updateView(tileOptions);
     }
   },
 
