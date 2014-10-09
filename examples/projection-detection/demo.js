@@ -95,6 +95,28 @@ $(document).ready(function() {
   });
   rotationControls.addTo(map);
 
+  // Projection Selection
+  var setProjectionForLongitude = function (longitude) {
+    var value;
+    if (longitude >= -180 && longitude <= -165) {
+      value = "EPSG:3571";
+    } else if (longitude > -165 && longitude <= -125) {
+      value = "EPSG:3572";
+    } else if (longitude > -125 && longitude <= -70) {
+      value = "EPSG:3573";
+    } else if (longitude > -70 && longitude <= -15) {
+      value = "EPSG:3574";
+    } else if (longitude > -15 && longitude <= 50) {
+      value = "EPSG:3575";
+    } else if (longitude > 50 && longitude <= 135) {
+      value = "EPSG:3576";
+    } else {
+      value = "EPSG:3571";
+    }
+
+    map.loadTileProjection(projectedTiles["Arctic Connect: " + value]);
+  };
+
   // Automatic Location and Projection Detection
   var userLocation = L.circle();
 
@@ -106,13 +128,13 @@ $(document).ready(function() {
     if (!map.hasLayer(userLocation)) {
       userLocation.addTo(map);
     }
-    map.setView(e.latlng, 17);
+
+    setProjectionForLongitude(e.longitude);
   });
 
   map.on('locationerror', function (e) {
     console.warn("Location detection error:", e);
   });
-
 
   map.locate();
 });
