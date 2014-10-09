@@ -77,7 +77,8 @@ L.PolarMap.Map = L.Map.extend({
 
     return new L.Proj.CRS(crs, options.proj4def, {
         origin: options.origin,
-        resolutions: resolutions
+        resolutions: resolutions,
+        bounds: options.projectedBounds
     });
   },
 
