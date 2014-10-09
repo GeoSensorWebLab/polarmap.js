@@ -26,14 +26,18 @@ var projectedTiles = {};
 
 $.each(projections, function (index, value) {
   var url = "http://{s}.tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
+  // Custom extent for our EPSG:3571-3576 tiles
+  var extent = 11000000 + 9036842.762 + 667;
+
   projectedTiles["Arctic Connect: " + value] = L.PolarMap.tileLayer(url, {
     name: "Arctic Connect: " + value,
     crs: value,
     minZoom: 0,
     maxZoom: 18,
     tms: false,
-    origin: [-20036842.762, 20036842.762],
-    maxResolution: ((20036842.762 - -20036842.762) / 256),
+    origin: [-extent, extent],
+    maxResolution: ((extent - -extent) / 256),
+    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
     center: [90,0],
     zoom: 2,
     continuousWorld: false,

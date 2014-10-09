@@ -36,11 +36,12 @@
 
   $(document).ready(function () {
     // All the details specific to the custom tile layer.
-    // TODO: Find source for origin numbers.
+    // Custom extent for our EPSG:3571-3576 tiles
+    var extent = 11000000 + 9036842.762 + 667;
     var tileDetails = {
       code: 'EPSG:3573',
       proj4def: '+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
-      origin: [-20036842.762, 20036842.762],
+      origin: [-extent, extent],
       tilesURL: 'http://{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png',
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: {

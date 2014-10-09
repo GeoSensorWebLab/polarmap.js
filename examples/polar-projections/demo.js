@@ -1,4 +1,4 @@
-var map, marker;
+var map;
 
 var projections = [
   "EPSG:3571",
@@ -26,7 +26,7 @@ var projectedTiles = {};
 
 $.each(projections, function (index, value) {
   var url = "http://{s}.tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
-  var extent = 11000000 + 9036842.762;
+  var extent = 11000000 + 9036842.762 + 667;
 
   projectedTiles["arctic_connect@" + value] = L.PolarMap.tileLayer(url, {
     name: "arctic_connect@" + value,
@@ -60,18 +60,14 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    baseLayer: projectedTiles["arctic_connect@EPSG:3571"]
+    baseLayer: projectedTiles["arctic_connect@EPSG:3575"]
   });
-
-  marker = L.marker([51.080126, -114.13380900]).bindPopup("University of Calgary");
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
-    marker,
+    L.marker([51.080126, -114.13380900]).bindPopup("University of Calgary"),
     L.marker([90, 100]).bindPopup("North Pole")
   ]).addTo(map);
-
-  map.setView([51.080126, -114.13380900], 18);
 
   // Bind demo page actions to elements
   $('body').on('click', '[data-action]', function() {

@@ -5,6 +5,9 @@ var map;
 proj4.defs("EPSG:3573","+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
 proj4.defs("EPSG:32632","+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs");
 
+// Custom extent for our EPSG:3571-3576 tiles
+var extent = 11000000 + 9036842.762 + 667;
+
 // Create object to define tile provider settings and transformations.
 var projectedTiles = {
   // Example projected tile provider
@@ -26,9 +29,9 @@ var projectedTiles = {
     // use inverse coordinates if the provider is a TMS. Mapnik is not a TMS.
     tms: false,
     // Origin of the map in projected coordinates
-    origin: [-20036842.762, 20036842.762],
+    origin: [-20037509.762, 20037509.762],
     // resolution of smallest zoom level tile. calculation depends on projection
-    maxResolution: ((20036842.762 - -20036842.762) / 256),
+    maxResolution: ((20037509.762 - -20037509.762) / 256),
     // Default centre when this map is loaded
     center: [51.080126, -114.13380900],
     // Default zoom level
@@ -90,9 +93,9 @@ var projectedTiles = {
     minZoom: 0,
     maxZoom: 18,
     tms: false,
-    // (Source on values?)
-    origin: [-20036842.762, 20036842.762],
-    maxResolution: ((20036842.762 - -20036842.762) / 256),
+    origin: [-extent, extent],
+    maxResolution: ((extent - -extent) / 256),
+    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
     center: [90, 0],
     zoom: 4,
     continuousWorld: false,

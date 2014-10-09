@@ -1,5 +1,8 @@
 var map;
 
+// Custom extent for our EPSG:3571-3576 tiles
+var extent = 11000000 + 9036842.762 + 667;
+
 // Create object to define tile provider settings and transformations.
 var projectedTiles = {
   // Default OSM Provider. Uses EPSG:3857 projection.
@@ -54,9 +57,9 @@ var projectedTiles = {
     minZoom: 0,
     maxZoom: 18,
     tms: false,
-    // (Source on values?)
-    origin: [-20036842.762, 20036842.762],
-    maxResolution: ((20036842.762 - -20036842.762) / 256),
+    origin: [-extent, extent],
+    maxResolution: ((extent - -extent) / 256),
+    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
     center: [90, 0],
     zoom: 4,
     continuousWorld: false,
