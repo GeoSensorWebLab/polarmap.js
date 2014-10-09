@@ -36,7 +36,8 @@ $.each(projections, function (index, value) {
     maxResolution: ((20036842.762 - -20036842.762) / 256),
     center: [90,0],
     zoom: 4,
-    continuousWorld: true,
+    continuousWorld: false,
+    noWrap: true,
     attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   });
 });
