@@ -19,21 +19,25 @@ two copies of PolarMap.js will be generated in the `dist` directory, one with co
 
 ## Projection Switching
 
-See [examples/basic](examples/basic) for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
+See examples/basic for an example of how to dynamically switch projection systems with PolarMap.js and Leaflet JS.
 
 ## Simple Tile Usage
 
-See [examples/tiles-only](examples/tiles-only) for an example of how to use Leaflet, Proj4JS, and Proj4Leafet to use the Arctic Web Map EPSG 3573 tiles.
+See examples/tiles-only for an example of how to use Leaflet, Proj4JS, and Proj4Leafet to use the Arctic Web Map EPSG 3573 tiles.
 
 Does not include support for projection switching.
 
 ## Loading EPSG Definitions
 
-See [examples/epsg-loading](examples/epsg-loading) for loading EPSG proj4 definitions into Proj4js from a remote JSON file. Could easily be modified to load from a web service that returns EPSG proj4 definitions.
+See examples/epsg-loading for loading EPSG proj4 definitions into Proj4js from a remote JSON file. Could easily be modified to load from a web service that returns EPSG proj4 definitions.
 
 # Tile Switching and Rotation
 
-See [examples/layers-switcher](examples/layers-switcher) for how to use a Layers Control to switch between available projections, and a custom Rotation control for "rotating" the map by switching the projections.
+See examples/layers-switcher for how to use a Layers Control to switch between available projections, and a custom Rotation control for "rotating" the map by switching the projections.
+
+# Location Saved in URL Hash
+
+See examples/location-hash for how to use the [leaflet-hash plugin](https://github.com/mlevans/leaflet-hash) to save the current view in the URL hash.
 
 ## Development
 
