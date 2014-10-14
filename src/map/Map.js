@@ -7,6 +7,7 @@ L.PolarMap.Map = L.Map.extend({
     baseLayer: Object
     */
 
+    changingMap: false,
     fadeAnimation: true,
     trackResize: true,
     markerZoomAnimation: true
@@ -28,8 +29,8 @@ L.PolarMap.Map = L.Map.extend({
       this.setMaxBounds(options.maxBounds);
     }
 
-    if (baseLayerOptions.zoom !== undefined) {
-      this._zoom = this._limitZoom(baseLayerOptions.zoom);
+    if (options.center && options.zoom !== undefined) {
+      this.setView(L.latLng(options.center), options.zoom, {reset: true});
     }
 
     this._handlers = [];
@@ -41,17 +42,18 @@ L.PolarMap.Map = L.Map.extend({
     // Update when base layer changed from map control
     this.on('baselayerchange', function (e) {
       var layerOptions = e.layer.options;
-      this._updateCRSAndLayers(layerOptions);
-      this._updateView(layerOptions);
+      this._update(e.layer);
     });
 
-    this._updateCRSAndLayers(baseLayerOptions);
-    this.addLayer(options.baseLayer, true);
-    this._updateView(baseLayerOptions);
+    this._update(options.baseLayer);
   },
 
   // Public Functions
   loadTileProjection: function (tileLayer) {
+    if (this.options.changingMap) {
+      return false;
+    }
+
     // Check for existing layer
     if (this._usingTileProjection(tileLayer)) {
       console.log("That tile layer is already active.");
@@ -59,12 +61,7 @@ L.PolarMap.Map = L.Map.extend({
       var tileOptions = tileLayer.options;
       // Drop base tile layers
       this._dropTileLayers();
-
-      this._updateCRSAndLayers(tileOptions);
-
-      // Add new base layer
-      this.addLayer(tileLayer, true);
-      this._updateView(tileOptions);
+      this._update(tileLayer);
     }
   },
 
@@ -111,6 +108,25 @@ L.PolarMap.Map = L.Map.extend({
     }
   },
 
+  _update: function (layer) {
+    if (this.options.changingMap) {
+      return false;
+    } else {
+      this.options.changingMap = true;
+
+      // preserve map center/zoom level
+      var center = this.getCenter(),
+          zoom = this.getZoom();
+
+      this._updateCRSAndLayers(layer.options);
+      this.addLayer(layer, true);
+      this.setView(center, zoom, {reset: true});
+      this.setMaxBounds(layer.options.bounds);
+
+      this.options.changingMap = false;
+    }
+  },
+
   // This recurses through all the map's layers to update layer positions after
   // their positions moved.
   _updateAllLayers: function (group) {
@@ -134,15 +150,6 @@ L.PolarMap.Map = L.Map.extend({
   _updateCRSAndLayers: function (layerOptions) {
     this.options.crs = this._setMapCRS(layerOptions.crs, layerOptions);
     this._updateAllLayers(this);
-  },
-
-  _updateView: function (layerOptions) {
-    if (layerOptions.center && layerOptions.zoom !== undefined) {
-      this.setView(L.latLng(layerOptions.center), layerOptions.zoom, {
-        reset: true
-      });
-    }
-    this.setMaxBounds(layerOptions.bounds);
   },
 
   _usingTileProjection: function (tileLayer) {

@@ -63,7 +63,9 @@ $(document).ready(function() {
 
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    baseLayer: projectedTiles["Arctic Connect: EPSG:3571"]
+    baseLayer: projectedTiles["Arctic Connect: EPSG:3571"],
+    center: [90, 0],
+    zoom: 2
   });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
