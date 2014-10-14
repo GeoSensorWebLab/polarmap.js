@@ -66,7 +66,7 @@ $(document).ready(function() {
     baseLayer: projectedTiles["Arctic Connect: EPSG:3571"]
   });
 
-  var hash = new L.Hash(map);
+  var hash = L.PolarMap.Util.hash(map);
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
