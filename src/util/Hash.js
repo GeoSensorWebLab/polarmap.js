@@ -20,49 +20,57 @@ L.PolarMap.Util.Hash = L.Class.extend({
     changeDefer: 100,
     changeTimeout: null,
     isListening: false,
-    hashChangeInterval: null
+    hashChangeInterval: null,
+    getBaseLayer: null,
+    setBaseLayer: null
   },
 
-  initialize: function (map) {
-    this.onHashChange = L.Util.bind(this.onHashChange, this);
-
-    this.map = map;
-
-    // reset the hash
-    this.lastHash = null;
-    this.onHashChange();
-
-    if (!this.isListening) {
-      this.startListening();
-    }
+  initialize: function (map, options) {
+    options = L.setOptions(this, options);
 
     this.HAS_HASHCHANGE = (function() {
       var doc_mode = window.documentMode;
       return ('onhashchange' in window) &&
         (doc_mode === undefined || doc_mode > 7);
     })();
+
+    this.onHashChange = L.Util.bind(this.onHashChange, this);
+
+    this.map = map;
+
+    // reset the hash
+    this.options.lastHash = null;
+    this.onHashChange();
+
+    if (!this.options.isListening) {
+      this.startListening();
+    }
   },
 
   formatHash: function (map) {
-    var center = map.getCenter(),
+    var hashComponents = [],
+        center = map.getCenter(),
         zoom = map.getZoom(),
         precision = Math.max(0, Math.ceil(Math.log(zoom) / Math.LN2));
 
-    return "#" + [zoom,
-      center.lat.toFixed(precision),
-      center.lng.toFixed(precision)
-    ].join("/");
+    if (this.options.getBaseLayer !== null) {
+      hashComponents.push(this.options.getBaseLayer());
+    }
+
+    hashComponents.push(zoom, center.lat.toFixed(precision), center.lng.toFixed(precision));
+
+    return "#" + hashComponents.join("/");
   },
 
   onHashChange: function () {
     // throttle calls to update() so that they only happen every
     // `changeDefer` ms
-    if (!this.changeTimeout) {
+    if (!this.options.changeTimeout) {
       var that = this;
-      this.changeTimeout = setTimeout(function() {
+      this.options.changeTimeout = setTimeout(function() {
         that.update();
-        that.changeTimeout = null;
-      }, this.changeDefer);
+        that.options.changeTimeout = null;
+      }, this.options.changeDefer);
     }
   },
 
@@ -70,14 +78,14 @@ L.PolarMap.Util.Hash = L.Class.extend({
     // bail if we're moving the map (updating from a hash),
     // or if the map is not yet loaded
 
-    if (this.movingMap || !this.map._loaded) {
+    if (this.options.movingMap || !this.map._loaded) {
       return false;
     }
 
     var hash = this.formatHash(this.map);
-    if (this.lastHash != hash) {
+    if (this.options.lastHash != hash) {
       location.replace(hash);
-      this.lastHash = hash;
+      this.options.lastHash = hash;
     }
   },
 
@@ -86,7 +94,22 @@ L.PolarMap.Util.Hash = L.Class.extend({
       hash = hash.substr(1);
     }
     var args = hash.split("/");
-    if (args.length == 3) {
+    if (args.length === 4) {
+      var baseLayer = args[0],
+          zoom = parseInt(args[1], 10),
+          lat = parseFloat(args[2]),
+          lon = parseFloat(args[3]);
+
+      if (baseLayer === "" || isNaN(zoom) || isNaN(lat) || isNaN(lon)) {
+        return false;
+      } else {
+        return {
+          baseLayer: baseLayer,
+          center: new L.LatLng(lat, lon),
+          zoom: zoom
+        };
+      }
+    } else if (args.length === 3) {
       var zoom = parseInt(args[0], 10),
       lat = parseFloat(args[1]),
       lon = parseFloat(args[2]);
@@ -104,11 +127,11 @@ L.PolarMap.Util.Hash = L.Class.extend({
   },
 
   removeFrom: function (map) {
-    if (this.changeTimeout) {
-      clearTimeout(this.changeTimeout);
+    if (this.options.changeTimeout) {
+      clearTimeout(this.options.changeTimeout);
     }
 
-    if (this.isListening) {
+    if (this.options.isListening) {
       this.stopListening();
     }
 
@@ -121,10 +144,10 @@ L.PolarMap.Util.Hash = L.Class.extend({
     if (this.HAS_HASHCHANGE) {
       L.DomEvent.addListener(window, "hashchange", this.onHashChange);
     } else {
-      clearInterval(this.hashChangeInterval);
-      this.hashChangeInterval = setInterval(this.onHashChange, 50);
+      clearInterval(this.options.hashChangeInterval);
+      this.options.hashChangeInterval = setInterval(this.onHashChange, 50);
     }
-    this.isListening = true;
+    this.options.isListening = true;
   },
 
   stopListening: function () {
@@ -133,29 +156,33 @@ L.PolarMap.Util.Hash = L.Class.extend({
     if (this.HAS_HASHCHANGE) {
       L.DomEvent.removeListener(window, "hashchange", this.onHashChange);
     } else {
-      clearInterval(this.hashChangeInterval);
+      clearInterval(this.options.hashChangeInterval);
     }
-    this.isListening = false;
+    this.options.isListening = false;
   },
 
   update: function () {
     var hash = location.hash;
-    if (hash === this.lastHash) {
+    if (hash === this.options.lastHash) {
       return;
     }
     var parsed = this.parseHash(hash);
     if (parsed) {
-      this.movingMap = true;
+      this.options.movingMap = true;
+
+      if (parsed.baseLayer !== undefined) {
+        this.options.setBaseLayer(parsed.baseLayer);
+      }
 
       this.map.setView(parsed.center, parsed.zoom);
 
-      this.movingMap = false;
+      this.options.movingMap = false;
     } else {
       this.onMapMove(this.map);
     }
   }
 });
 
-L.PolarMap.Util.hash = function (map) {
-  return new L.PolarMap.Util.Hash(map);
+L.PolarMap.Util.hash = function (map, options) {
+  return new L.PolarMap.Util.Hash(map, options);
 };

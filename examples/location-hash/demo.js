@@ -30,7 +30,7 @@ $.each(projections, function (index, value) {
   var extent = 11000000 + 9036842.762 + 667;
 
   projectedTiles["Arctic Connect: " + value] = L.PolarMap.tileLayer(url, {
-    name: "Arctic Connect: " + value,
+    name: "ac_" + (3571 + index),
     crs: value,
     minZoom: 0,
     maxZoom: 18,
@@ -66,8 +66,6 @@ $(document).ready(function() {
     baseLayer: projectedTiles["Arctic Connect: EPSG:3571"]
   });
 
-  var hash = L.PolarMap.Util.hash(map);
-
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
     L.marker([51.080126, -114.13380900]).bindPopup("University of Calgary"),
@@ -100,5 +98,20 @@ $(document).ready(function() {
     }
   });
   rotationControls.addTo(map);
+
+  // Set location hash
+  var hash = L.PolarMap.Util.hash(map, {
+    getBaseLayer: function () {
+      return getBaseLayer().options.name;
+    },
+
+    setBaseLayer: function (name) {
+      $.each(projectedTiles, function (layerName, layer) {
+        if (layer.options.name === name) {
+          map.loadTileProjection(layer);
+        }
+      });
+    }
+  });
 });
 
