@@ -59,8 +59,11 @@ $(document).ready(function() {
   Autosize.enable();
 
   // Load PolarMap
+  var defaultLayer = projectedTiles["arctic_connect@EPSG:3575"];
   map = L.PolarMap.map('xmap', {
-    baseLayer: projectedTiles["arctic_connect@EPSG:3575"]
+    baseLayer: defaultLayer,
+    center: defaultLayer.options.center,
+    zoom: defaultLayer.options.zoom
   });
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.

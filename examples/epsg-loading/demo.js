@@ -94,8 +94,11 @@ $(document).ready(function() {
 
   var createMap = function() {
       // Load PolarMap
+      var defaultLayer = projectedTiles["osm_tile_map@EPSG:3857"];
       map = L.PolarMap.map('xmap', {
-        baseLayer: projectedTiles["osm_tile_map@EPSG:3857"]
+        baseLayer: defaultLayer,
+        center: defaultLayer.options.center,
+        zoom: defaultLayer.options.zoom
       });
 
       // Add a Leaflet layer group. Assumed to be EPSG:3857.
