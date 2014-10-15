@@ -10,7 +10,9 @@ L.PolarMap.Map = L.Map.extend({
     changingMap: false,
     fadeAnimation: true,
     trackResize: true,
-    markerZoomAnimation: true
+    markerZoomAnimation: true,
+    center: L.latLng([90,0]),
+    zoom: 1
   },
 
   initialize: function (id, options) {

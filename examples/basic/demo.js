@@ -117,10 +117,14 @@ var Demo = {
 $(document).ready(function() {
   Autosize.enable();
 
+  var defaultLayer = projectedTiles["osm_tile_map@EPSG:3857"];
+
   // Load PolarMap
   map = L.PolarMap.map('xmap', {
-    baseLayer: projectedTiles["osm_tile_map@EPSG:3857"]
+    baseLayer: defaultLayer
   });
+
+  map.setView(defaultLayer.options.center, defaultLayer.options.zoom);
 
   // Add a Leaflet layer group. Assumed to be EPSG:3857.
   L.layerGroup([
