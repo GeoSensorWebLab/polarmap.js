@@ -4,7 +4,7 @@ if (typeof(L) === "undefined") {
 }
 
 L.PolarMap = {
-  version: '0.4.0',
+  version: '0.5.0',
   Control: {},
   Util: {}
 };
