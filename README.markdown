@@ -43,6 +43,10 @@ See examples/location-hash for how to use the [leaflet-hash plugin](https://gith
 
 See examples/geosearch for how to use the [L.GeoSearch plugin](https://github.com/smeijer/L.GeoSearch) to search for locations using [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim). Alternatively, add other providers from L.GeoSearch to search from ESRI, Google, Bing, or Nokia.
 
+# Vector Layers
+
+See examples/vector-layers for an example of how the projections handle Leaflet vector layers (polylines, circles, and polygons). Try switching the projection/base layer to see how the vectors are re-projected.
+
 ## Development
 
 To run a local webserver for testing the app, use the packaged Node http-server:
