@@ -39,6 +39,10 @@ See examples/layers-switcher for how to use a Layers Control to switch between a
 
 See examples/location-hash for how to use the [leaflet-hash plugin](https://github.com/mlevans/leaflet-hash) to save the current view in the URL hash.
 
+# GeoSearch
+
+See examples/geosearch for how to use the [L.GeoSearch plugin](https://github.com/smeijer/L.GeoSearch) to search for locations using [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim). Alternatively, add other providers from L.GeoSearch to search from ESRI, Google, Bing, or Nokia.
+
 ## Development
 
 To run a local webserver for testing the app, use the packaged Node http-server:
