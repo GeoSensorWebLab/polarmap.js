@@ -1,0 +1,1002 @@
+[
+    {
+        "boundingbox": [
+            "60.8277803",
+            "60.8577803",
+            "-115.7973184",
+            "-115.7673184"
+        ],
+        "category": "aeroway",
+        "display_name": "Hay River Airport, Airport Road, Hay River, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.44820442219665002,
+        "lat": "60.8427803",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-115.7823184",
+        "osm_id": "159074847",
+        "osm_type": "node",
+        "place_id": "540369",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "68.2906164",
+            "68.3206164",
+            "-133.5050365",
+            "-133.4750365"
+        ],
+        "category": "aeroway",
+        "display_name": "Inuvik Airport, Dempster Highway, Inuvik, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.31606775332942999,
+        "lat": "68.3056164",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-133.4900365",
+        "osm_id": "343650051",
+        "osm_type": "node",
+        "place_id": "2474421",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "70.7478021",
+            "70.7778021",
+            "-117.8209998",
+            "-117.7909998"
+        ],
+        "category": "aeroway",
+        "display_name": "Ulukhaktok Holman Airport, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.30108919297928999,
+        "lat": "70.7628021",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-117.8059998",
+        "osm_id": "1042031238",
+        "osm_type": "node",
+        "place_id": "10647537",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "81.3944009",
+            "81.4244009",
+            "-76.8966986",
+            "-76.8666986"
+        ],
+        "category": "aeroway",
+        "display_name": "Tanquary Fiord Airport, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.29401684500863001,
+        "lat": "81.4094009",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-76.8816986",
+        "osm_id": "1042026393",
+        "osm_type": "node",
+        "place_id": "10754330",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "72.9903024",
+            "73.0203024",
+            "-85.0480963",
+            "-85.0180963"
+        ],
+        "category": "aeroway",
+        "display_name": "Arctic Bay Airport, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.29018007380830002,
+        "lat": "73.0053024",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-85.0330963",
+        "osm_id": "1042026532",
+        "osm_type": "node",
+        "place_id": "11028081",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.1644014",
+            "62.1944014",
+            "-75.6830643",
+            "-75.6530643"
+        ],
+        "category": "aeroway",
+        "display_name": "Salluit Airport, Salluit, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.28611063262913999,
+        "lat": "62.1794014",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-75.6680643",
+        "osm_id": "1042031689",
+        "osm_type": "node",
+        "place_id": "10861664",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "63.3319009",
+            "63.3619009",
+            "-90.746102",
+            "-90.716102"
+        ],
+        "category": "aeroway",
+        "display_name": "Chesterfield Inlet Airport, Chesterfield Inlet, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.28611063262913999,
+        "lat": "63.3469009",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-90.731102",
+        "osm_id": "1042030978",
+        "osm_type": "node",
+        "place_id": "11105086",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "64.0291288",
+            "64.0591288",
+            "-139.1370714",
+            "-139.1070714"
+        ],
+        "category": "aeroway",
+        "display_name": "Klondike Highway, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.28611063262913999,
+        "lat": "64.0441288",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-139.1220714",
+        "osm_id": "499644392",
+        "osm_type": "node",
+        "place_id": "4557954",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.0058758",
+            "60.0358758",
+            "-111.9720689",
+            "-111.9420689"
+        ],
+        "category": "aeroway",
+        "display_name": "Fort Smith Airport, McDougal Road, Fort Smith, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.28177847009038998,
+        "lat": "60.0208758",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.9570689",
+        "osm_id": "1042031507",
+        "osm_type": "node",
+        "place_id": "11105179",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "68.6198624",
+            "68.6498624",
+            "-95.8560234",
+            "-95.8260234"
+        ],
+        "category": "aeroway",
+        "display_name": "Gjoa Haven Airport, Gjoa Haven, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.27714730829695,
+        "lat": "68.6348624",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-95.8410234",
+        "osm_id": "1042031243",
+        "osm_type": "node",
+        "place_id": "10952539",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "70.4710992",
+            "70.5010992",
+            "-68.5317007",
+            "-68.5017007"
+        ],
+        "category": "aeroway",
+        "display_name": "Clyde River Airport, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.27217279423731,
+        "lat": "70.4860992",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-68.5167007",
+        "osm_id": "1042030986",
+        "osm_type": "node",
+        "place_id": "11015486",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "64.4963983",
+            "64.5263983",
+            "-110.3040015",
+            "-110.2740015"
+        ],
+        "category": "aeroway",
+        "display_name": "Diavik Airport, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.27217279423731,
+        "lat": "64.5113983",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.2890015",
+        "osm_id": "1042024641",
+        "osm_type": "node",
+        "place_id": "10588786",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.804178",
+            "60.834178",
+            "-78.1637226",
+            "-78.1337226"
+        ],
+        "category": "aeroway",
+        "display_name": "Akulivik Airport, Akulivik, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26679990974023998,
+        "lat": "60.819178",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-78.1487226",
+        "osm_id": "1042031342",
+        "osm_type": "node",
+        "place_id": "10911010",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "68.7611002",
+            "68.7911002",
+            "-81.2585989",
+            "-81.2285989"
+        ],
+        "category": "aeroway",
+        "display_name": "Hall Beach Airport, Hall Beach, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26679990974023998,
+        "lat": "68.7761002",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-81.2435989",
+        "osm_id": "1042031526",
+        "osm_type": "node",
+        "place_id": "10911113",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "65.1960977",
+            "65.2260977",
+            "-123.450997",
+            "-123.420997"
+        ],
+        "category": "aeroway",
+        "display_name": "D\u00e9line Airport, edit-area-of-interest, D\u00e9l\u012fne, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26679990974023998,
+        "lat": "65.2110977",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-123.435997",
+        "osm_id": "1042031542",
+        "osm_type": "node",
+        "place_id": "10952740",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.5719374",
+            "61.6019374",
+            "-71.9452724",
+            "-71.9152724"
+        ],
+        "category": "aeroway",
+        "display_name": "Kangiqsujuaq (Wakeham Bay) Airport, Kangiqsujuaq, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26095925177045998,
+        "lat": "61.5869374",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-71.9302724",
+        "osm_id": "1042031339",
+        "osm_type": "node",
+        "place_id": "11028533",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.1018523",
+            "60.1318523",
+            "-128.8341237",
+            "-128.8041237"
+        ],
+        "category": "aeroway",
+        "display_name": "Watson Lake Airport (YQH), Airport Road, Two Mile Village, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26095925177045998,
+        "lat": "60.1168523",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-128.8191237",
+        "osm_id": "320053799",
+        "osm_type": "node",
+        "place_id": "1515550",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "67.5523747",
+            "67.5823747",
+            "-139.8642747",
+            "-139.8342747"
+        ],
+        "category": "aeroway",
+        "display_name": "Old Crow Airport, Old Crow, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.26095925177045998,
+        "lat": "67.5673747",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-139.8492747",
+        "osm_id": "409290033",
+        "osm_type": "node",
+        "place_id": "3832327",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.0121988",
+            "60.0421988",
+            "-70.0141989",
+            "-69.9841989"
+        ],
+        "category": "aeroway",
+        "display_name": "Kangirsuk Airport, Kangirsuk, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "60.0271988",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-69.9991989",
+        "osm_id": "1042030793",
+        "osm_type": "node",
+        "place_id": "11012735",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "66.1299966",
+            "66.1599966",
+            "-65.7286002",
+            "-65.6986002"
+        ],
+        "category": "aeroway",
+        "display_name": "Pangnirtung Airport, Pangnirtung, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "66.1449966",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-65.7136002",
+        "osm_id": "1042031610",
+        "osm_type": "node",
+        "place_id": "10589628",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "69.5316995",
+            "69.5616995",
+            "-93.5916983",
+            "-93.5616983"
+        ],
+        "category": "aeroway",
+        "display_name": "Taloyoak Airport, Taloyoak, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "69.5466995",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-93.5766983",
+        "osm_id": "1042031676",
+        "osm_type": "node",
+        "place_id": "11015654",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.8349985",
+            "62.8649985",
+            "-69.8983008",
+            "-69.8683008"
+        ],
+        "category": "aeroway",
+        "display_name": "Kimmirut Airport, Kimmirut, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "62.8499985",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-69.8833008",
+        "osm_id": "1042031363",
+        "osm_type": "node",
+        "place_id": "10869507",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.1589957",
+            "60.1889957",
+            "-132.7493401",
+            "-132.7193401"
+        ],
+        "category": "aeroway",
+        "display_name": "Teslin Airport (YZW), Teslin Airport Subdivision, Teslin, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "60.1739957",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-132.7343401",
+        "osm_id": "317784916",
+        "osm_type": "node",
+        "place_id": "1505145",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.9419016",
+            "61.9719016",
+            "-128.2180029",
+            "-128.1880029"
+        ],
+        "category": "aeroway",
+        "display_name": "Tungsten (Cantung) Airport, Tungsten, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.254561534822,
+        "lat": "61.9569016",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-128.2030029",
+        "osm_id": "1042024262",
+        "osm_type": "node",
+        "place_id": "11104046",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.4023012",
+            "62.4323012",
+            "-77.9403006",
+            "-77.9103006"
+        ],
+        "category": "aeroway",
+        "display_name": "Ivujivik Airport, Ivugivik, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.24748918685134,
+        "lat": "62.4173012",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-77.9253006",
+        "osm_id": "1042031308",
+        "osm_type": "node",
+        "place_id": "11015560",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.9577839",
+            "61.9877839",
+            "-132.4413711",
+            "-132.4113711"
+        ],
+        "category": "aeroway",
+        "display_name": "Ross River Airport (CYDM), Airport Road, Ross River, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.24748918685134,
+        "lat": "61.9727839",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-132.4263711",
+        "osm_id": "317892398",
+        "osm_type": "node",
+        "place_id": "1496869",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.7741998",
+            "60.8041998",
+            "-137.5610052",
+            "-137.5310052"
+        ],
+        "category": "aeroway",
+        "display_name": "Haines Junction Airport, Tait Road, Haines Junction, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.24748918685134,
+        "lat": "60.7891998",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-137.5460052",
+        "osm_id": "1042031271",
+        "osm_type": "node",
+        "place_id": "10869482",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "66.225799",
+            "66.255799",
+            "-128.666001",
+            "-128.636001"
+        ],
+        "category": "aeroway",
+        "display_name": "Fort Good Hope Airport, Fort Good Hope, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.24748918685134,
+        "lat": "66.240799",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-128.651001",
+        "osm_id": "1042031145",
+        "osm_type": "node",
+        "place_id": "11053114",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "64.1758035",
+            "64.2058035",
+            "-114.0920035",
+            "-114.0620035"
+        ],
+        "category": "aeroway",
+        "display_name": "Wekwe\u00e8t\u00ec Airport, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.24748918685134,
+        "lat": "64.1908035",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.0770035",
+        "osm_id": "1042025598",
+        "osm_type": "node",
+        "place_id": "11120898",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "63.1949933",
+            "63.2249933",
+            "-123.4496567",
+            "-123.4196567"
+        ],
+        "category": "aeroway",
+        "display_name": "Wrigley Airport (YWY), Mackenzie Highway, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.23958297447186,
+        "lat": "63.2099933",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-123.4346567",
+        "osm_id": "318132818",
+        "osm_type": "node",
+        "place_id": "1500885",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "66.6881021",
+            "66.7181021",
+            "-119.7220007",
+            "-119.6920007"
+        ],
+        "category": "aeroway",
+        "display_name": "Great Bear Lake Airport, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.23958297447186,
+        "lat": "66.7031021",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-119.7070007",
+        "osm_id": "1042025566",
+        "osm_type": "node",
+        "place_id": "11027919",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.8516992",
+            "61.8816992",
+            "-121.3809973",
+            "-121.3509973"
+        ],
+        "category": "aeroway",
+        "display_name": "Fort Simpson Island Airport, Antoine Drive, Fort Simpson, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.23958297447186,
+        "lat": "61.8666992",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-121.3659973",
+        "osm_id": "1042025378",
+        "osm_type": "node",
+        "place_id": "10951807",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "69.3460992",
+            "69.3760992",
+            "-124.0739981",
+            "-124.0439981"
+        ],
+        "category": "aeroway",
+        "display_name": "Paulatuk Airport, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.23061965013967001,
+        "lat": "69.3610992",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-124.0589981",
+        "osm_id": "1042031449",
+        "osm_type": "node",
+        "place_id": "10589509",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.5088991",
+            "61.5388991",
+            "-128.2839972",
+            "-128.2539972"
+        ],
+        "category": "aeroway",
+        "display_name": "Hyland Airport, Nahanni Range Road, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.20803387666472001,
+        "lat": "61.5238991",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-128.2689972",
+        "osm_id": "1042025717",
+        "osm_type": "node",
+        "place_id": "11052404",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.0139001",
+            "61.0439001",
+            "-138.4230048",
+            "-138.3930048"
+        ],
+        "category": "aeroway",
+        "display_name": "Silver City Airport, Alaska Highway, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.20803387666472001,
+        "lat": "61.0289001",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-138.4080048",
+        "osm_id": "1042025673",
+        "osm_type": "node",
+        "place_id": "11014519",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "71.9788965",
+            "72.0088965",
+            "-125.2579962",
+            "-125.2279962"
+        ],
+        "category": "aeroway",
+        "display_name": "Sachs Harbour Airport, Sachs Harbour, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.20803387666472001,
+        "lat": "71.9938965",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-125.2429962",
+        "osm_id": "1042031515",
+        "osm_type": "node",
+        "place_id": "11015642",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.3850015",
+            "62.4150015",
+            "-110.765",
+            "-110.735"
+        ],
+        "category": "aeroway",
+        "display_name": "Lutselk'E Seaplane Base, Great Slave Lake, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "62.4000015",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.75",
+        "osm_id": "1042024757",
+        "osm_type": "node",
+        "place_id": "10951666",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.4559394",
+            "62.4859394",
+            "-114.4534901",
+            "-114.4234901"
+        ],
+        "category": "aeroway",
+        "display_name": "Yellowknife, Yellowknife Highway; Frontier Trail, Yellowknife, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "62.4709394",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.4384901",
+        "osm_id": "637906807",
+        "osm_type": "node",
+        "place_id": "6210358",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.7940195",
+            "60.8240195",
+            "-135.19393",
+            "-135.16393"
+        ],
+        "category": "aeroway",
+        "display_name": "Cousins Airport, Cousins Airfield Road, Crestview, Whitehorse, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "60.8090195",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-135.17893",
+        "osm_id": "1042025663",
+        "osm_type": "node",
+        "place_id": "10860691",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.6951459",
+            "60.7251459",
+            "-135.0804976",
+            "-135.0504976"
+        ],
+        "category": "aeroway",
+        "display_name": "Whitehorse International Airport, Lodestar Lane, Whitehorse, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "60.7101459",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-135.0654976",
+        "osm_id": "257147414",
+        "osm_type": "node",
+        "place_id": "783602",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.6761011",
+            "60.7061011",
+            "-135.0520026",
+            "-135.0220026"
+        ],
+        "category": "aeroway",
+        "display_name": "Whitehorse Seaplane Base, Miles Canyon Road, Whitehorse, Yukon Territory, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "60.6911011",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-135.0370026",
+        "osm_id": "1042025504",
+        "osm_type": "node",
+        "place_id": "11104224",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.6490156",
+            "61.6790156",
+            "-73.3251099",
+            "-73.2951099"
+        ],
+        "category": "aeroway",
+        "display_name": "Kattiniq/Donaldson Airport, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "61.6640156",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-73.3101099",
+        "osm_id": "1042030073",
+        "osm_type": "node",
+        "place_id": "10754844",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "61.6493427",
+            "61.6793427",
+            "-73.3187761",
+            "-73.2887761"
+        ],
+        "category": "aeroway",
+        "display_name": "Kattiniq, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "61.6643427",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-73.3037761",
+        "osm_id": "717911567",
+        "osm_type": "node",
+        "place_id": "6893043",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "62.0962082",
+            "62.1262082",
+            "-74.5704512",
+            "-74.5404512"
+        ],
+        "category": "aeroway",
+        "display_name": "Deception Airport, Quebec, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "62.1112082",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-74.5554512",
+        "osm_id": "676299042",
+        "osm_type": "node",
+        "place_id": "6326632",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "68.3086012",
+            "68.3386012",
+            "-133.6385147",
+            "-133.6085147"
+        ],
+        "category": "aeroway",
+        "display_name": "Inuvik / Shell Lake Seaplane Base, Dempster Highway, Inuvik, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "68.3236012",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-133.6235147",
+        "osm_id": "1042024846",
+        "osm_type": "node",
+        "place_id": "10643633",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "69.1072",
+            "69.1372",
+            "-105.0360037",
+            "-105.0060037"
+        ],
+        "category": "aeroway",
+        "display_name": "Cambridge Bay Seaplane Base, Natik Street, Cambridge Bay, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "69.1222",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-105.0210037",
+        "osm_id": "1042025930",
+        "osm_type": "node",
+        "place_id": "10951920",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "69.4182962",
+            "69.4482962",
+            "-133.041001",
+            "-133.011001"
+        ],
+        "category": "aeroway",
+        "display_name": "Tuktoyaktuk Airport, Beaufort Drive, Tuktoyaktuk, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "69.4332962",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-133.026001",
+        "osm_id": "1042031524",
+        "osm_type": "node",
+        "place_id": "10869686",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "60.4183",
+            "60.4483",
+            "-121.265",
+            "-121.235"
+        ],
+        "category": "aeroway",
+        "display_name": "Trout Lake Seaplane Base, Trout Lake, Northwest Territories, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "60.4333",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-121.25",
+        "osm_id": "1042025015",
+        "osm_type": "node",
+        "place_id": "10868098",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "69.0910827",
+            "69.1210827",
+            "-105.1379338",
+            "-105.1079338"
+        ],
+        "category": "aeroway",
+        "display_name": "Airport Road, Cambridge Bay, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "69.1060827",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-105.1229338",
+        "osm_id": "713298596",
+        "osm_type": "node",
+        "place_id": "6800730",
+        "place_rank": "30",
+        "type": "aerodrome"
+    },
+    {
+        "boundingbox": [
+            "79.9796976",
+            "80.0096976",
+            "-85.8292014",
+            "-85.7992014"
+        ],
+        "category": "aeroway",
+        "display_name": "Eureka Airport, Nunavut, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/transport_airport2.p.20.png",
+        "importance": 0.10100000000000001,
+        "lat": "79.9946976",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-85.8142014",
+        "osm_id": "1042031079",
+        "osm_type": "node",
+        "place_id": "10644622",
+        "place_rank": "30",
+        "type": "aerodrome"
+    }
+]
