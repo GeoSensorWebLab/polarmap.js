@@ -1,0 +1,1001 @@
+[
+    {
+        "boundingbox": [
+            "53.546667",
+            "53.586667",
+            "-113.42",
+            "-113.38"
+        ],
+        "category": "place",
+        "display_name": "Beverly, Edmonton, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.38128284560462999,
+        "lat": "53.566667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-113.4",
+        "osm_id": "51970574",
+        "osm_type": "node",
+        "place_id": "248229",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.5266917",
+            "51.5666917",
+            "-114.5108728",
+            "-114.4708728"
+        ],
+        "category": "place",
+        "display_name": "Cremona, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.34354646925471,
+        "lat": "51.5466917",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.4908728",
+        "osm_id": "29702932",
+        "osm_type": "node",
+        "place_id": "159570",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.9352765",
+            "50.9752765",
+            "-110.0284001",
+            "-109.9884001"
+        ],
+        "category": "place",
+        "display_name": "Empress, Alberta, Canada, North America",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.33452569928643,
+        "lat": "50.9552765",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.0084001",
+        "osm_id": "51971237",
+        "osm_type": "node",
+        "place_id": "247341",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "49.5490098",
+            "49.5890098",
+            "-114.0933252",
+            "-114.0533252"
+        ],
+        "category": "place",
+        "display_name": "Cowley, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.32926765694172999,
+        "lat": "49.5690098",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.0733252",
+        "osm_id": "51971222",
+        "osm_type": "node",
+        "place_id": "246145",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.43",
+            "50.47",
+            "-111.67",
+            "-111.63"
+        ],
+        "category": "place",
+        "display_name": "Tilley, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.32926765694172999,
+        "lat": "50.45",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.65",
+        "osm_id": "51970528",
+        "osm_type": "node",
+        "place_id": "248180",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.413333",
+            "52.453333",
+            "-111.803333",
+            "-111.763333"
+        ],
+        "category": "place",
+        "display_name": "Alliance, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.32356246868833999,
+        "lat": "52.433333",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.783333",
+        "osm_id": "51971485",
+        "osm_type": "node",
+        "place_id": "249036",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.746667",
+            "52.786667",
+            "-112.986667",
+            "-112.946667"
+        ],
+        "category": "place",
+        "display_name": "Ferintosh, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.32079972394797002,
+        "lat": "52.766667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.966667",
+        "osm_id": "51971112",
+        "osm_type": "node",
+        "place_id": "249907",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.8701826",
+            "51.9101826",
+            "-106.8350795",
+            "-106.7950795"
+        ],
+        "category": "place",
+        "display_name": "Pike Lake Provincial Park, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.30912306964399999,
+        "lat": "51.8901826",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-106.8150795",
+        "osm_id": "30198915",
+        "osm_type": "node",
+        "place_id": "166237",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.1245531",
+            "51.1264641",
+            "-114.1999823",
+            "-114.1967671"
+        ],
+        "category": "landuse",
+        "display_name": "The Village, Arbour Lake, Calgary, Alberta, T3G2V7, Canada",
+        "importance": 0.29999999999999999,
+        "lat": "51.12560055",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.198390590342",
+        "osm_id": "9334479",
+        "osm_type": "way",
+        "place_id": "47063010",
+        "place_rank": "22",
+        "type": "retail"
+    },
+    {
+        "boundingbox": [
+            "58.696667",
+            "58.736667",
+            "-111.17",
+            "-111.13"
+        ],
+        "category": "place",
+        "display_name": "Fort Chipewyan, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.28323539012287002,
+        "lat": "58.716667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.15",
+        "osm_id": "51972828",
+        "osm_type": "node",
+        "place_id": "248655",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.0361536",
+            "52.0761536",
+            "-107.5647954",
+            "-107.5247954"
+        ],
+        "category": "place",
+        "display_name": "Perdue, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27810883699101002,
+        "lat": "52.0561536",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-107.5447954",
+        "osm_id": "29821265",
+        "osm_type": "node",
+        "place_id": "162574",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "55.826111",
+            "55.866111",
+            "-110.927222",
+            "-110.887222"
+        ],
+        "category": "place",
+        "display_name": "Chard, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "55.846111",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.907222",
+        "osm_id": "51970593",
+        "osm_type": "node",
+        "place_id": "247231",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "55.071667",
+            "55.111667",
+            "-112.907778",
+            "-112.867778"
+        ],
+        "category": "place",
+        "display_name": "Calling River, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "55.091667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.887778",
+        "osm_id": "51971314",
+        "osm_type": "node",
+        "place_id": "246153",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.161389",
+            "54.201389",
+            "-111.0475",
+            "-111.0075"
+        ],
+        "category": "place",
+        "display_name": "Rife, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.181389",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.0275",
+        "osm_id": "51970885",
+        "osm_type": "node",
+        "place_id": "249331",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.191667",
+            "54.231667",
+            "-110.623333",
+            "-110.583333"
+        ],
+        "category": "place",
+        "display_name": "Muriel Lake, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.211667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.603333",
+        "osm_id": "51970103",
+        "osm_type": "node",
+        "place_id": "249279",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.132778",
+            "54.172778",
+            "-111.45",
+            "-111.41"
+        ],
+        "category": "place",
+        "display_name": "Boscombe, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.152778",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.43",
+        "osm_id": "51971539",
+        "osm_type": "node",
+        "place_id": "249597",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.220556",
+            "54.260556",
+            "-110.824167",
+            "-110.784167"
+        ],
+        "category": "place",
+        "display_name": "Fresnoy, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.240556",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.804167",
+        "osm_id": "51972234",
+        "osm_type": "node",
+        "place_id": "246182",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "57.3621332",
+            "57.4021332",
+            "-111.6521026",
+            "-111.6121026"
+        ],
+        "category": "place",
+        "display_name": "Bitumount, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "57.3821332",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.6321026",
+        "osm_id": "51970777",
+        "osm_type": "node",
+        "place_id": "247276",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.4075",
+            "54.4475",
+            "-112.974722",
+            "-112.934722"
+        ],
+        "category": "place",
+        "display_name": "Alpen Siding, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.4275",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.954722",
+        "osm_id": "51971475",
+        "osm_type": "node",
+        "place_id": "246156",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.313333",
+            "50.353333",
+            "-110.103333",
+            "-110.063333"
+        ],
+        "category": "place",
+        "display_name": "Schuler, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "50.333333",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.083333",
+        "osm_id": "51972219",
+        "osm_type": "node",
+        "place_id": "249540",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.619444",
+            "54.659444",
+            "-111.366389",
+            "-111.326389"
+        ],
+        "category": "place",
+        "display_name": "Snug Cove, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.639444",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.346389",
+        "osm_id": "51969648",
+        "osm_type": "node",
+        "place_id": "248067",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "53.984722",
+            "54.024722",
+            "-112.425",
+            "-112.385"
+        ],
+        "category": "place",
+        "display_name": "Pakan, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.004722",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.405",
+        "osm_id": "51970305",
+        "osm_type": "node",
+        "place_id": "245027",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.336667",
+            "54.376667",
+            "-111.596944",
+            "-111.556944"
+        ],
+        "category": "place",
+        "display_name": "Sugden, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.356667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.576944",
+        "osm_id": "51969336",
+        "osm_type": "node",
+        "place_id": "245875",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.800556",
+            "54.840556",
+            "-112.898611",
+            "-112.858611"
+        ],
+        "category": "place",
+        "display_name": "Properity, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.820556",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.878611",
+        "osm_id": "51970949",
+        "osm_type": "node",
+        "place_id": "245213",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.218611",
+            "54.258611",
+            "-112.796667",
+            "-112.756667"
+        ],
+        "category": "place",
+        "display_name": "Hollow Lake, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.238611",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.776667",
+        "osm_id": "51969815",
+        "osm_type": "node",
+        "place_id": "248049",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.563333",
+            "50.603333",
+            "-112.07",
+            "-112.03"
+        ],
+        "category": "place",
+        "display_name": "Cassils, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "50.583333",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.05",
+        "osm_id": "51971245",
+        "osm_type": "node",
+        "place_id": "246150",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.613333",
+            "52.653333",
+            "-111.236667",
+            "-111.196667"
+        ],
+        "category": "place",
+        "display_name": "Rosyth, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "52.633333",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.216667",
+        "osm_id": "51971018",
+        "osm_type": "node",
+        "place_id": "245235",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.867222",
+            "54.907222",
+            "-111.906667",
+            "-111.866667"
+        ],
+        "category": "place",
+        "display_name": "Owl River, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.887222",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.886667",
+        "osm_id": "51973039",
+        "osm_type": "node",
+        "place_id": "246257",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.68",
+            "51.72",
+            "-110.82",
+            "-110.78"
+        ],
+        "category": "place",
+        "display_name": "Naco, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "51.7",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.8",
+        "osm_id": "51970716",
+        "osm_type": "node",
+        "place_id": "246122",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.467222",
+            "54.507222",
+            "-111.511667",
+            "-111.471667"
+        ],
+        "category": "place",
+        "display_name": "Helina, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.487222",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.491667",
+        "osm_id": "51970974",
+        "osm_type": "node",
+        "place_id": "249868",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.7425",
+            "54.7825",
+            "-112.708333",
+            "-112.668333"
+        ],
+        "category": "place",
+        "display_name": "Sarrail, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.7625",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.688333",
+        "osm_id": "51971885",
+        "osm_type": "node",
+        "place_id": "248559",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.633611",
+            "54.673611",
+            "-112.383333",
+            "-112.343333"
+        ],
+        "category": "place",
+        "display_name": "Noral, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "54.653611",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.363333",
+        "osm_id": "51970136",
+        "osm_type": "node",
+        "place_id": "249462",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.9180262",
+            "50.9580262",
+            "-105.712206",
+            "-105.672206"
+        ],
+        "category": "place",
+        "display_name": "Aylesbury, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.27500000000000002,
+        "lat": "50.9380262",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-105.692206",
+        "osm_id": "26704924",
+        "osm_type": "node",
+        "place_id": "138671",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.8317289",
+            "50.8717289",
+            "-105.5864778",
+            "-105.5464778"
+        ],
+        "category": "place",
+        "display_name": "Chamberlain, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.2423836653823,
+        "lat": "50.8517289",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-105.5664778",
+        "osm_id": "26705025",
+        "osm_type": "node",
+        "place_id": "138414",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.3850653",
+            "52.4250653",
+            "-107.2586498",
+            "-107.2186498"
+        ],
+        "category": "place",
+        "display_name": "Borden, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.23670773196559,
+        "lat": "52.4050653",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-107.2386498",
+        "osm_id": "26659105",
+        "osm_type": "node",
+        "place_id": "134955",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "52.5045697",
+            "52.5445697",
+            "-106.7510469",
+            "-106.7110469"
+        ],
+        "category": "place",
+        "display_name": "Hepburn, Saskatchewan, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.22123378027700999,
+        "lat": "52.5245697",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-106.7310469",
+        "osm_id": "26658779",
+        "osm_type": "node",
+        "place_id": "133942",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.2259029",
+            "50.2659029",
+            "-111.1885912",
+            "-111.1485912"
+        ],
+        "category": "place",
+        "display_name": "Ralston, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.19401684500863001,
+        "lat": "50.2459029",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.1685912",
+        "osm_id": "51970443",
+        "osm_type": "node",
+        "place_id": "245064",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.9704543",
+            "51.0104543",
+            "-114.5243434",
+            "-114.4843434"
+        ],
+        "category": "place",
+        "display_name": "Redwood Meadows, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.19401684500863001,
+        "lat": "50.9904543",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.5043434",
+        "osm_id": "29772180",
+        "osm_type": "node",
+        "place_id": "161194",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.396667",
+            "51.436667",
+            "-112.653333",
+            "-112.613333"
+        ],
+        "category": "place",
+        "display_name": "Rosedale, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.18611063262913999,
+        "lat": "51.416667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-112.633333",
+        "osm_id": "51971363",
+        "osm_type": "node",
+        "place_id": "245258",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.78",
+            "50.82",
+            "-110.703333",
+            "-110.663333"
+        ],
+        "category": "place",
+        "display_name": "Buffalo, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.18177847009039,
+        "lat": "50.8",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.683333",
+        "osm_id": "51972421",
+        "osm_type": "node",
+        "place_id": "245341",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "51.4070111",
+            "51.4470111",
+            "-114.2989537",
+            "-114.2589537"
+        ],
+        "category": "place",
+        "display_name": "Madden, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.18177847009039,
+        "lat": "51.4270111",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-114.2789537",
+        "osm_id": "29700271",
+        "osm_type": "node",
+        "place_id": "161614",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "50.6794525",
+            "50.7194525",
+            "-111.6957745",
+            "-111.6557745"
+        ],
+        "category": "place",
+        "display_name": "Patricia, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.17217279423731,
+        "lat": "50.6994525",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.6757745",
+        "osm_id": "51969742",
+        "osm_type": "node",
+        "place_id": "247095",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "53.5515357",
+            "53.5915357",
+            "-110.7370534",
+            "-110.6970534"
+        ],
+        "category": "place",
+        "display_name": "Clandonald, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.17217279423731,
+        "lat": "53.5715357",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.7170534",
+        "osm_id": "51971462",
+        "osm_type": "node",
+        "place_id": "249010",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "53.3884668",
+            "53.4284668",
+            "-111.7004218",
+            "-111.6604218"
+        ],
+        "category": "place",
+        "display_name": "Ranfurly, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.17217279423731,
+        "lat": "53.4084668",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.6804218",
+        "osm_id": "51969806",
+        "osm_type": "node",
+        "place_id": "248581",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "53.746667",
+            "53.786667",
+            "-110.536667",
+            "-110.496667"
+        ],
+        "category": "place",
+        "display_name": "Heinsburg, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.17217279423731,
+        "lat": "53.766667",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.516667",
+        "osm_id": "51972329",
+        "osm_type": "node",
+        "place_id": "245318",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.365556",
+            "54.405556",
+            "-111.372222",
+            "-111.332222"
+        ],
+        "category": "place",
+        "display_name": "Goodridge, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.17217279423731,
+        "lat": "54.385556",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.352222",
+        "osm_id": "51972436",
+        "osm_type": "node",
+        "place_id": "249667",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.3377452",
+            "54.3777452",
+            "-110.1048442",
+            "-110.0648442"
+        ],
+        "category": "place",
+        "display_name": "Cherry Grove, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.16095925177046,
+        "lat": "54.3577452",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.0848442",
+        "osm_id": "51972372",
+        "osm_type": "node",
+        "place_id": "246212",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "53.8579601",
+            "53.8979601",
+            "-110.6942256",
+            "-110.6542256"
+        ],
+        "category": "place",
+        "display_name": "Lindbergh, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.16095925177046,
+        "lat": "53.8779601",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.6742256",
+        "osm_id": "51972446",
+        "osm_type": "node",
+        "place_id": "250015",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.220556",
+            "54.260556",
+            "-111.275833",
+            "-111.235833"
+        ],
+        "category": "place",
+        "display_name": "Therien, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.16095925177046,
+        "lat": "54.240556",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-111.255833",
+        "osm_id": "51971258",
+        "osm_type": "node",
+        "place_id": "248330",
+        "place_rank": "19",
+        "type": "village"
+    },
+    {
+        "boundingbox": [
+            "54.121111",
+            "54.161111",
+            "-110.774167",
+            "-110.734167"
+        ],
+        "category": "place",
+        "display_name": "Gurneyville, Alberta, Canada",
+        "icon": "http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "importance": 0.16095925177046,
+        "lat": "54.141111",
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright",
+        "lon": "-110.754167",
+        "osm_id": "51970478",
+        "osm_type": "node",
+        "place_id": "247219",
+        "place_rank": "19",
+        "type": "village"
+    }
+]
