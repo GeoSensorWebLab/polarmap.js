@@ -55,6 +55,10 @@ See examples/marker-cluster for an integration with the popular [Leaflet MarkerC
 
 Note that the `removeOutsideVisibleBounds` function is disabled for MarkerCluster. By default, it works fine with the EPSG:3857 (web mercator) projection but has issues with the LAEA projections at low zoom levels.
 
+# Natural Earth Shapefiles
+
+[Natural Earth Data](http://www.naturalearthdata.com/downloads/) shapefiles can be added to a map using [leaflet.shapefile](https://github.com/calvinmetcalf/leaflet.shapefile). A demo is included in examples/shapefiles, displaying populated place data and glacier data.
+
 ## Development
 
 To run a local webserver for testing the app, use the packaged Node http-server:
