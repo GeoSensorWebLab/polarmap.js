@@ -68,13 +68,17 @@ $(document).ready(function() {
     zoom: 2
   });
 
-  // Add a Leaflet layer group. Assumed to be EPSG:3857.
+  // Load markers from JSON file into MarkerCluster.
   map.once('viewreset', function() {
     $.ajax({
       url: 'data.json',
       dataType: "json"
     }).done(function(result) {
-      var mLayer = new L.MarkerClusterGroup();
+      var mLayer = new L.MarkerClusterGroup({
+        // the removeOutsideVisibleBounds function does not work with the LAEA
+        // projections, so it has been disabled.
+        removeOutsideVisibleBounds: false
+      });
 
       $.each(result, function (index, value) {
         mLayer.addLayer(L.marker([value.lat, value.lon], { title: value.display_name }));

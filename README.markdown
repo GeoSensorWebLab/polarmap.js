@@ -47,6 +47,14 @@ See examples/geosearch for how to use the [L.GeoSearch plugin](https://github.co
 
 See examples/vector-layers for an example of how the projections handle Leaflet vector layers (polylines, circles, and polygons). Try switching the projection/base layer to see how the vectors are re-projected.
 
+# Marker Cluster
+
+See examples/marker-cluster for an integration with the popular [Leaflet MarkerCluster plugin](https://github.com/Leaflet/Leaflet.markercluster). For this example, a set of airports from Nominatim is used. It was retrieved with the following query:
+
+    http://nominatim.openstreetmap.org/search?format=jsonv2&accept-language=en&countrycodes=ca&viewbox=-170,60,-40,90&bounded=1&limit=5000&q=[airport]
+
+Note that the `removeOutsideVisibleBounds` function is disabled for MarkerCluster. By default, it works fine with the EPSG:3857 (web mercator) projection but has issues with the LAEA projections at low zoom levels.
+
 ## Development
 
 To run a local webserver for testing the app, use the packaged Node http-server:
