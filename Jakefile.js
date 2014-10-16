@@ -17,7 +17,7 @@ task('build', {async: true}, function (compsBase32, buildName) {
 
 desc('Serve example demo files');
 task('server', function () {
-  jake.exec('node node_modules/.bin/http-server .', {
+  jake.exec('node node_modules/.bin/http-server . -a 127.0.0.1 --cors', {
     printStdout: true,
     printStderr: true
   });
