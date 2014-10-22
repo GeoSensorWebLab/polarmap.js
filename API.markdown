@@ -59,4 +59,182 @@ Aside from specifying custom initialization options, the returned object (`map`)
 
 ## Leaflet.PolarMap
 
-API documentation for the plugin portion of PolarMap.js will be added soon.
+The base classes in Leaflet.PolarMap:
+
+* `L.PolarMap.Map`
+* `L.PolarMap.TileLayer`
+* `L.PolarMap.Control.Rotation`
+* `L.PolarMap.Util.Hash`
+
+### `L.PolarMap.Map`
+
+Very similar to `L.Map`, with a few differences. Instead of initializing with an array for `layers`, pass an `L.PolarMap.TileLayer` to `baseLayer`.
+
+```javascript
+    var map = L.PolarMap.map('map_container', {
+        baseLayer: L.PolarMap.tileLayer(…)
+    });
+```
+
+`L.PolarMap.Map` also supports the other [options for L.Map](http://leafletjs.com/reference.html#map-options), aside from `crs` and `layers`. 
+
+#### L.PolarMap.Map.loadTileProjection()
+
+This method can be used to dynamically update the map with a new tile layer, even if the tile layer has a different projection.
+
+```javascript
+    map.loadTileProjection(L.PolarMap.tileLayer(…))
+```
+
+See `L.PolarMap.TileLayer` for options.
+
+### `L.PolarMap.TileLayer`
+
+A subclass of `L.TileLayer`. Should be initialized with additional options to define the tile layer's CRS and custom parameters. Be sure to define the projection in Proj4JS first.
+
+```javascript
+    proj4.defs("EPSG:3571", "+proj=laea +lat_0=90 +lon_0=180 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
+
+    // See L.TileLayer documentation for URL template
+    var url = "http://{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png";
+
+    // Extent is dependent on projection. The following is used for EPSG:3571 to
+    // EPSG:3576.
+    var extent = 11000000 + 9036842.762 + 667;
+
+    var tileLayer = L.PolarMap.tileLayer(url, {
+        // Name is required for storing the layer id in the permalink if the
+        // PolarMap permalink module is active.
+        name: "ac_3571",
+
+        // CRS for the tile layer.
+        crs: "EPSG:3571",
+
+        // Minimum/maximum zoom level for the tile provider.
+        minZoom: 0,
+        maxZoom: 18,
+
+        // Is the tile layer provided by a TMS? FYI: OSM is not a TMS.
+        tms: false,
+
+        // The tile origin for the projection. LAEA is based on the extent, may
+        // vary for other projection systems.
+        origin: [-extent, extent],
+
+        // The tile resolution at the lowest zoom level. May vary for other
+        // projection systems.
+        maxResolution: ((extent - -extent) / 256),
+
+        // The bounds for the tile layer projection. Will cause Leaflet to avoid
+        // loading tiles outside these bounds. May vary for other projection
+        // systems.
+        projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
+
+        // Whether the World map should be drawn continuously. May not make
+        // sense to use for certain projections.
+        continuousWorld: false,
+
+        // Whether to wrap tiles. May not make sense to use for certain 
+        // projections.
+        noWrap: true,
+
+        // Attribution for the tile layer. This is required for certain tile
+        // providers.
+        attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+
+        // If the tile layer is part of a set of projections that form a 
+        // complete circle, then prev/next can link to the next CCW/CW layer in
+        // the series when using the L.PolarMap.Control.Rotation module.
+        // Can be omitted if the module is not in use.
+        prev: L.PolarMap.tileLayer(…),
+        next: L.PolarMap.tileLayer(…)
+    });
+```
+
+The class does not enforce any defaults required for `L.PolarMap.Map`, but may in the future.
+
+### `L.PolarMap.Control.Rotation`
+
+A map control that adds two buttons: one to rotate the map clockwise, the other to rotate counter-clockwise. Requires custom glue code to determine which tile layer to switch to on button press.
+
+```javascript
+    var tiles = {
+        "id_1": L.PolarMap.tileLayer(…),
+        "id_2": L.PolarMap.tileLayer(…)
+    };
+
+    var map = L.PolarMap.map('map_container', {
+        baseLayer: tiles["id_1"]
+    });
+
+    var getBaseLayer: function () {
+        var foundLayer = null;
+
+        for (var layerName in tiles) {
+            if (tiles.hasOwnProperty(layerName)) {
+                if (map.hasLayer(tiles[layerName])) {
+                    foundLayer = tiles[layerName];
+                }
+            }
+        }
+        return foundLayer;
+    };
+
+    var rotationControls = L.PolarMap.Control.rotation({
+        onRotateCW: function() {
+            map.loadTileProjection(getBaseLayer().next);
+        },
+
+        onRotateCCW: function() {
+            map.loadTileProjection(getBaseLayer().prev);
+        }
+    });
+
+    rotationControls.addTo(map);
+```
+
+Assuming a map has been created using a Tile Layer with `prev` and `next` defined, then rotation controls can be used to switch between the tile layers. Note that a way to find the tile layers is required (see the `getBaseLayer` function) that can specifically get the base layer from the `L.PolarMap.Map` object; the map object does not provide such a function at this time.
+
+### `L.PolarMap.Util.Hash`
+
+Very similar to the [Leaflet Hash plugin](https://github.com/mlevans/leaflet-hash), it works identically except provides support for setting the base layer in addition to the latitude/longitude/zoom level. To do this, the `getBaseLayer` and `setBaseLayer` options must be set in the constructor.
+
+
+```javascript
+    var getBaseLayer: function () {
+        var foundLayer = null;
+
+        for (var layerName in tiles) {
+            if (tiles.hasOwnProperty(layerName)) {
+                if (map.hasLayer(tiles[layerName])) {
+                    foundLayer = tiles[layerName];
+                }
+            }
+        }
+        return foundLayer;
+    };
+
+    var setBaseLayer: function (name) {
+        for (var layerName in tiles) {
+            if (tiles.hasOwnProperty(layerName)) {
+                if (tiles[layerName].options.name === name) {
+                    map.loadTileProjection(tiles[layerName]);
+                }
+            }
+        }
+    };
+
+    L.PolarMap.Util.hash(map, {
+        getBaseLayer: function () {
+            return getBaseLayer().options.name;
+        },
+
+        setBaseLayer: function (name) {
+            setBaseLayer(name);
+        }
+    });
+```
+
+Note that glue code for determining the base layer is required.
+
+Once instantiated, the permalink code is activated and will track the map pans and zooms. When loading a URL with the projection, latitude, longitude, and zoom level in the params then these values will override any defaults set for the map object.
