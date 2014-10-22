@@ -3,7 +3,7 @@ $(document).ready(function() {
   Autosize.enable();
 
   // Load PolarMap
-  var map = PolarMap('xmap');
+  var map = polarMap('xmap');
 
   // Add a group of markers, and do not display in layer switcher
   var markerGroup = L.layerGroup([
@@ -18,7 +18,7 @@ $(document).ready(function() {
     L.marker([44.6484246,-63.5749724], { title: 'Halifax' }),
     L.marker([47.5614849,-52.7125839], { title: 'St. John\'s' })
   ]);
-  PolarMap.addLayer(markerGroup);
+  map.addLayer(markerGroup);
 
   // Add a polygon, and display in layer switcher with name
   var polygonGroup = L.layerGroup([
@@ -29,7 +29,7 @@ $(document).ready(function() {
       [20, -40]
     ])
   ]);
-  PolarMap.addLayer(polygonGroup, {
+  map.addLayer(polygonGroup, {
     name: 'Polygon',
     switcher: true
   });

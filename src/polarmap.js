@@ -114,6 +114,14 @@ window.PolarMap = L.Class.extend({
     }
   },
 
+  addLayer: function (layer, options) {
+    this.map.addLayer(layer);
+
+    if (typeof(options) !== "undefined" && options.switcher) {
+      this.layersControl.addOverlay(layer, options.name);
+    }
+  },
+
   getBaseLayer: function () {
     var foundLayer = null;
 
