@@ -2,20 +2,32 @@
 
 A JavaScript library that can re-project Leaflet maps and map features.
 
+There are two layers to PolarMap.js: the lower-level Leaflet.PolarMap plugin, and the basic PolarMap library. Each has their advantages depending on the situation. The basic PolarMap library has the default loadout of plugins and configuration for Arctic Connect tiles and services. The Leaflet.PolarMap plugin lets the developer pick and choose their integrations, at the trade-off of more code/configuration.
+
+## Requirements
+
+The Leaflet.PolarMap plugin and PolarMap library both require the following JavaScript libraries to be available:
+
+* [Leaflet 0.7.3](http://leafletjs.com/)
+* [Proj4js 2.3.3](https://github.com/proj4js/proj4js)
+* [Proj4Leaflet master branch](https://github.com/kartena/Proj4Leaflet/tree/4e445dd765d4e5cfcb156e423c6a0b7b65adf535)
+
+Support for other versions of these libraries are not currently known, use at your own risk of bugs or unexpected behaviour.
+
 ## Building
 
 It is recommended to download the latest version of PolarMap.js directly from our site. But you can build your own copy from source if you prefer.
 
 To generate a distribution copy of PolarMap.js, you will need to set up the build environment. This requires Node.js. Once Node is installed, you can use NPM to set up the dependencies:
 
-    $ npm install
     $ npm install -g jake
+    $ npm install
 
 And then generate the build products:
 
     $ jake build
 
-two copies of PolarMap.js will be generated in the `dist` directory, one with comments and the other compressed with uglifier-js.
+Two copies of PolarMap.js will be generated in the `dist` directory, one with comments and the other compressed with uglifier-js.
 
 ## Examples
 
