@@ -31,23 +31,23 @@ Does not include support for projection switching.
 
 See examples/epsg-loading for loading EPSG proj4 definitions into Proj4js from a remote JSON file. Could easily be modified to load from a web service that returns EPSG proj4 definitions.
 
-# Tile Switching and Rotation
+## Tile Switching and Rotation
 
 See examples/layers-switcher for how to use a Layers Control to switch between available projections, and a custom Rotation control for "rotating" the map by switching the projections.
 
-# Location Saved in URL Hash
+## Location Saved in URL Hash
 
 See examples/location-hash for how to use the [leaflet-hash plugin](https://github.com/mlevans/leaflet-hash) to save the current view in the URL hash.
 
-# GeoSearch
+## GeoSearch
 
 See examples/geosearch for how to use the [L.GeoSearch plugin](https://github.com/smeijer/L.GeoSearch) to search for locations using [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim). Alternatively, add other providers from L.GeoSearch to search from ESRI, Google, Bing, or Nokia.
 
-# Vector Layers
+## Vector Layers
 
 See examples/vector-layers for an example of how the projections handle Leaflet vector layers (polylines, circles, and polygons). Try switching the projection/base layer to see how the vectors are re-projected.
 
-# Marker Cluster
+## Marker Cluster
 
 See examples/marker-cluster for an integration with the popular [Leaflet MarkerCluster plugin](https://github.com/Leaflet/Leaflet.markercluster). For this example, a set of airports from Nominatim is used. It was retrieved with the following query:
 
@@ -55,9 +55,13 @@ See examples/marker-cluster for an integration with the popular [Leaflet MarkerC
 
 Note that the `removeOutsideVisibleBounds` function is disabled for MarkerCluster. By default, it works fine with the EPSG:3857 (web mercator) projection but has issues with the LAEA projections at low zoom levels.
 
-# Natural Earth Shapefiles
+## Natural Earth Shapefiles
 
 [Natural Earth Data](http://www.naturalearthdata.com/downloads/) shapefiles can be added to a map using [leaflet.shapefile](https://github.com/calvinmetcalf/leaflet.shapefile). A demo is included in examples/shapefiles, displaying populated place data and glacier data.
+
+## Style Editor
+
+PolarMap.js is compatible with the [Style Editor plugin](https://github.com/dwilhelm89/Leaflet.StyleEditor), allowing you to edit the appearance of map layers using your browser. See the demo in examples/style-editor.
 
 ## Development
 
