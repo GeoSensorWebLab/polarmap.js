@@ -72,6 +72,8 @@ window.PolarMap = L.Class.extend({
 
   initialize: function (id, options) {
     var _this = this;
+    L.Util.setOptions(this, options);
+
     /* Controls */
 
     this.layersControl = L.control.layers(tiles, null, {
@@ -102,6 +104,10 @@ window.PolarMap = L.Class.extend({
     if (this.options.permalink) {
       this._initPermalink();
     }
+
+    if (this.options.geosearch) {
+      this._initGeosearch();
+    }
   },
 
   getBaseLayer: function () {
@@ -115,6 +121,13 @@ window.PolarMap = L.Class.extend({
       }
     }
     return foundLayer;
+  },
+
+  _initGeosearch: function () {
+    new L.Control.GeoSearch({
+      provider: new L.GeoSearch.Provider.OpenStreetMap(),
+      showMarker: false
+    }).addTo(this.map);
   },
 
   _initPermalink: function () {
