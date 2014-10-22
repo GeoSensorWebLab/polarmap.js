@@ -101,12 +101,16 @@ window.PolarMap = L.Class.extend({
     this.layersControl.addTo(this.map);
     this.rotationControls.addTo(this.map);
 
-    if (this.options.permalink) {
-      this._initPermalink();
-    }
-
     if (this.options.geosearch) {
       this._initGeosearch();
+    }
+
+    if (this.options.locate) {
+      this._initLocate();
+    }
+
+    if (this.options.permalink) {
+      this._initPermalink();
     }
   },
 
@@ -130,6 +134,28 @@ window.PolarMap = L.Class.extend({
     }).addTo(this.map);
   },
 
+  _initLocate: function () {
+    var _this = this;
+    var userLocation = L.circle();
+
+    this.map.on('locationfound', function (e) {
+      userLocation.setLatLng(e.latlng);
+      userLocation.setRadius(e.accuracy);
+
+      if (!_this.map.hasLayer(userLocation)) {
+        userLocation.addTo(_this.map);
+      }
+
+      _this._setProjectionForLongitude(e.longitude);
+    });
+
+    this.map.on('locationerror', function (e) {
+      console.warn("Location detection error:", e);
+    });
+
+    this.map.locate();
+  },
+
   _initPermalink: function () {
     var _this = this;
     this.hash = L.PolarMap.Util.hash(this.map, {
@@ -147,6 +173,27 @@ window.PolarMap = L.Class.extend({
         }
       }
     });
+  },
+
+  _setProjectionForLongitude: function (longitude) {
+    var value;
+    if (longitude >= -180 && longitude <= -165) {
+      value = "EPSG:3571";
+    } else if (longitude > -165 && longitude <= -125) {
+      value = "EPSG:3572";
+    } else if (longitude > -125 && longitude <= -70) {
+      value = "EPSG:3573";
+    } else if (longitude > -70 && longitude <= -15) {
+      value = "EPSG:3574";
+    } else if (longitude > -15 && longitude <= 50) {
+      value = "EPSG:3575";
+    } else if (longitude > 50 && longitude <= 135) {
+      value = "EPSG:3576";
+    } else {
+      value = "EPSG:3571";
+    }
+
+    this.map.loadTileProjection(tiles["Arctic Connect: " + value]);
   }
 });
 
