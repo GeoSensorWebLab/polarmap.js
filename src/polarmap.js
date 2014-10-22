@@ -81,10 +81,11 @@ window.PolarMap = L.Class.extend({
   initialize: function (id, options) {
     var _this = this;
     L.Util.setOptions(this, options);
+    this.tiles = tiles;
 
     /* Controls */
 
-    this.layersControl = L.control.layers(tiles, null, {
+    this.layersControl = L.control.layers(this.tiles, null, {
       collapsed: false
     });
 
@@ -101,7 +102,7 @@ window.PolarMap = L.Class.extend({
     /* Map */
 
     this.map = L.PolarMap.map(id, {
-      baseLayer: tiles[t.tileHeader + "EPSG:3573"],
+      baseLayer: this.tiles[t.tileHeader + "EPSG:3573"],
       center: [90, 0],
       zoom: 4
     });
@@ -133,10 +134,10 @@ window.PolarMap = L.Class.extend({
   getBaseLayer: function () {
     var foundLayer = null;
 
-    for (var layer in tiles) {
-      if (tiles.hasOwnProperty(layer)) {
-        if (this.map.hasLayer(tiles[layer])) {
-          foundLayer = tiles[layer];
+    for (var layer in this.tiles) {
+      if (this.tiles.hasOwnProperty(layer)) {
+        if (this.map.hasLayer(this.tiles[layer])) {
+          foundLayer = this.tiles[layer];
         }
       }
     }
@@ -180,15 +181,21 @@ window.PolarMap = L.Class.extend({
       },
 
       setBaseLayer: function (name) {
-        for (var layer in tiles) {
-          if (tiles.hasOwnProperty(layer)) {
-            if (tiles[layer].options.name === name) {
-              _this.map.loadTileProjection(tiles[layer]);
-            }
-          }
-        }
+        _this._setBaseLayer(name);
       }
     });
+  },
+
+  _setBaseLayer: function (name) {
+    var _this = this;
+
+    for (var layer in this.tiles) {
+      if (this.tiles.hasOwnProperty(layer)) {
+        if (this.tiles[layer].options.name === name) {
+          _this.map.loadTileProjection(this.tiles[layer]);
+        }
+      }
+    }
   },
 
   _setProjectionForLongitude: function (longitude) {
@@ -209,7 +216,7 @@ window.PolarMap = L.Class.extend({
       value = "EPSG:3571";
     }
 
-    this.map.loadTileProjection(tiles[t.tileHeader + value]);
+    this.map.loadTileProjection(this.tiles[t.tileHeader + value]);
   }
 });
 
