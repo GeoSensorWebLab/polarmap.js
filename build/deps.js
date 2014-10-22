@@ -1,10 +1,11 @@
 var deps = {
   Core: {
-    src: ['polarmap.js',
+    src: ['leaflet.polarmap.js',
           'control/Control.Rotation.js',
           'layer/tile/TileLayer.js',
           'util/Hash.js',
-          'map/Map.js'
+          'map/Map.js',
+          'polarmap.js'
           ],
     desc: 'The core of the library.'
   }

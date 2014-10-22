@@ -1,5 +1,5 @@
 var build = require('./build/build.js'),
-    version = require('./src/polarmap.js').version;
+    version = require('./src/leaflet.polarmap.js').version;
 
 desc('Combine and compress PolarMap source files');
 task('build', {async: true}, function (compsBase32, buildName) {

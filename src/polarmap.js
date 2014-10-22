@@ -1,16 +1,19 @@
+window.PolarMap = L.Class.extend({
+  options: {
+    geosearch: false,
+    locate: false,
+    permalink: true
+  },
 
-if (typeof(L) === "undefined") {
-  var L = {};
-}
+  statics: {
+    VERSION: L.PolarMap.version
+  },
 
-L.PolarMap = {
-  version: '0.5.1',
-  Control: {},
-  Util: {}
+  initialize: function (id, options) {
+
+  }
+});
+
+window.polarMap = function (id, options) {
+  return new PolarMap(id, options);
 };
-
-if (typeof module === 'object' && typeof module.exports === 'object') {
-  module.exports = L.PolarMap;
-} else if (typeof define === 'function' && define.amd) {
-  define(L.PolarMap);
-}
