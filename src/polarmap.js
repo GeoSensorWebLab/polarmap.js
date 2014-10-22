@@ -1,3 +1,11 @@
+/* Strings */
+
+var t = {
+  tileHeader: "Arctic Connect: ",
+  attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  locationDetectionError: "Location detection error: "
+};
+
 /* Projections */
 
 // Globally define projections for Proj4js. If not defined here, then they must
@@ -32,7 +40,7 @@ for (var i = 0; i < projections.length; i++) {
   var epsg = 3571 + i;
   var url = "http://{s}.tiles.arcticconnect.org/osm_" + epsg + "/{z}/{x}/{y}.png";
 
-  tiles["Arctic Connect: " + projection] = L.PolarMap.tileLayer(url, {
+  tiles[t.tileHeader + projection] = L.PolarMap.tileLayer(url, {
     name: "ac_" + epsg,
     crs: projection,
     minZoom: 0,
@@ -43,7 +51,7 @@ for (var i = 0; i < projections.length; i++) {
     projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
     continuousWorld: false,
     noWrap: true,
-    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: t.attribution
   });
 };
 
@@ -52,9 +60,9 @@ for (var i = 0; i < projections.length; i++) {
 for (var i = 0; i < 6; i++) {
   var prev = (i === 0) ? 5 : i - 1;
   var next = (i === 5) ? 0 : i + 1;
-  var layer = tiles["Arctic Connect: EPSG:" + (3571 + i)];
-  layer.prev = tiles["Arctic Connect: EPSG:" + (3571 + prev)];
-  layer.next = tiles["Arctic Connect: EPSG:" + (3571 + next)];
+  var layer = tiles[t.tileHeader + "EPSG:" + (3571 + i)];
+  layer.prev = tiles[t.tileHeader + "EPSG:" + (3571 + prev)];
+  layer.next = tiles[t.tileHeader + "EPSG:" + (3571 + next)];
 };
 
 /* PolarMap Library Function */
@@ -93,7 +101,7 @@ window.PolarMap = L.Class.extend({
     /* Map */
 
     this.map = L.PolarMap.map(id, {
-      baseLayer: tiles["Arctic Connect: EPSG:3573"],
+      baseLayer: tiles[t.tileHeader + "EPSG:3573"],
       center: [90, 0],
       zoom: 4
     });
@@ -158,7 +166,7 @@ window.PolarMap = L.Class.extend({
     });
 
     this.map.on('locationerror', function (e) {
-      console.warn("Location detection error:", e);
+      console.warn(t.locationDetectionError, e);
     });
 
     this.map.locate();
@@ -201,7 +209,7 @@ window.PolarMap = L.Class.extend({
       value = "EPSG:3571";
     }
 
-    this.map.loadTileProjection(tiles["Arctic Connect: " + value]);
+    this.map.loadTileProjection(tiles[t.tileHeader + value]);
   }
 });
 
