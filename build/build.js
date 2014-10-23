@@ -142,3 +142,48 @@ exports.build = function (callback, version, compsBase32, buildName) {
   });
 };
 
+exports.test = function(complete, fail) {
+  var karma = require('karma'),
+      testConfig = {configFile : __dirname + '/../spec/karma.conf.js'};
+
+  testConfig.browsers = ['PhantomJS'];
+
+  function isArgv(optName) {
+    return process.argv.indexOf(optName) !== -1;
+  }
+
+  if (isArgv('--chrome')) {
+    testConfig.browsers.push('Chrome');
+  }
+  if (isArgv('--safari')) {
+    testConfig.browsers.push('Safari');
+  }
+  if (isArgv('--ff')) {
+    testConfig.browsers.push('Firefox');
+  }
+  if (isArgv('--ie')) {
+    testConfig.browsers.push('IE');
+  }
+
+  if (isArgv('--cov')) {
+    testConfig.preprocessors = {
+      'src/**/*.js': 'coverage'
+    };
+    testConfig.coverageReporter = {
+      type : 'html',
+      dir : 'coverage/'
+    };
+    testConfig.reporters = ['coverage'];
+  }
+
+  console.log('Running tests...');
+
+  karma.server.start(testConfig, function(exitCode) {
+    if (!exitCode) {
+      console.log('\tTests ran successfully.\n');
+      complete();
+    } else {
+      process.exit(exitCode);
+    }
+  });
+};

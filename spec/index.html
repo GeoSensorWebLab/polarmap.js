@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PolarMap.js Spec Runner</title>
+  <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+  <link rel="stylesheet" type="text/css" href="../node_modules/leaflet/dist/leaflet.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../node_modules/expect.js/index.js"></script>
+  <script type="text/javascript" src="../node_modules/mocha/mocha.js"></script>
+  <script type="text/javascript" src="../node_modules/sinon/lib/sinon.js"></script>
+
+  <!-- source files -->
+  <script type="text/javascript" src="../build/deps.js"></script>
+
+  <script>
+    mocha.setup({
+      ui: 'bdd',
+      ignoreLeaks: true
+    });
+  </script>
+
+  <!-- spec files -->
+
+  <script type="text/javascript" src="suites/SpecHelper.js"></script>
+
+  <!-- /map -->
+  <script type="text/javascript" src="suites/map/MapSpec.js"></script>
+
+  <script>
+    (window.mochaPhantomJS || window.mocha).run();
+  </script>
+</body>
+</html>
