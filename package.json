@@ -19,9 +19,12 @@
   "author": "GeoSensor Web Lab",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "expect": "^0.1.1",
+    "expect.js": "^0.3.1",
     "http-server": "^0.7.1",
     "jake": "^8.0.9",
+    "karma": "^0.12.24",
+    "karma-mocha": "^0.1.9",
+    "karma-phantomjs-launcher": "^0.1.4",
     "leaflet": "^0.7.3",
     "mocha": "^2.0.1",
     "sinon": "^1.10.3",
