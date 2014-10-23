@@ -19,6 +19,7 @@
   "author": "GeoSensor Web Lab",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "expect": "^0.1.1",
     "http-server": "^0.7.1",
     "jake": "^8.0.9",
     "leaflet": "^0.7.3",
