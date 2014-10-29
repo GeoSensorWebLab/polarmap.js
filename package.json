@@ -16,12 +16,17 @@
     "arctic",
     "maps"
   ],
+  "scripts": {
+    "postinstall": "jake build"
+  },
   "author": "GeoSensor Web Lab",
   "license": "BSD-2-Clause",
+  "dependencies": {
+    "jake": "^8.0.9",
+    "uglify-js": "^2.4.15"
+  },
   "devDependencies": {
     "http-server": "^0.7.1",
-    "jake": "^8.0.9",
-    "leaflet": "^0.7.3",
-    "uglify-js": "^2.4.15"
+    "leaflet": "^0.7.3"
   }
 }
