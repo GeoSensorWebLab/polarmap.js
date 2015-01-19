@@ -4,7 +4,7 @@ module.exports = function (config) {
   var libSources = require(__dirname+'/../build/build.js').getFiles();
 
   var files = [
-    "node_modules/sinon/lib/sinon.js",
+    "sinon.js",
     "node_modules/expect.js/index.js",
     "node_modules/leaflet/dist/leaflet-src.js",
     "node_modules/proj4/dist/proj4.js",
