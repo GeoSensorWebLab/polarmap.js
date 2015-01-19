@@ -25,7 +25,7 @@ describe("Hash", function () {
     });
   });
 
-  it("sets a hash on map move", function () {
+  it("sets a 4-part hash on map move", function () {
     var hash = L.PolarMap.Util.hash(map, {
       getBaseLayer: function () {
         return map.options.baseLayer.options.name;
@@ -36,8 +36,31 @@ describe("Hash", function () {
     expect(location.hash).to.be('#ac_3573/13/51.5050/-0.0900');
   });
 
-  it("loads the hash on page load", function () {
+  it("sets a 3-part hash on map move (no custom base layer)", function () {
+    var hash = L.PolarMap.Util.hash(map);
+    map.setView([51.505, -0.09], 13);
+    expect(location.hash).to.be('#13/51.5050/-0.0900');
+  });
+
+  it("loads a 4-part hash on page load", function () {
     location.hash = '#ac_3573/13/10/40';
+    var hash = L.PolarMap.Util.hash(map, {
+      getBaseLayer: function () {
+        return map.options.baseLayer.options.name;
+      },
+      setBaseLayer: function (name) {
+        map.loadTileProjection(baseLayer);
+      }
+    });
+    window.setTimeout(function() {
+        expect(Math.round(map.getCenter().lat)).to.be(10);
+        expect(Math.round(map.getCenter().lng)).to.be(40);
+        done();
+    }, 200);
+  });
+
+  it("loads a 3-part hash on page load", function () {
+    location.hash = '#13/10/40';
     var hash = L.PolarMap.Util.hash(map, {
       getBaseLayer: function () {
         return map.options.baseLayer.options.name;
