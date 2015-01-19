@@ -53,7 +53,23 @@ describe("Hash", function () {
     }, 200);
   });
 
-  it("changes the hash after using an initial hash");
+  it("responds to a hash change after an initial hash is set", function () {
+    map.setView([51.505, -0.09], 13);
+    location.hash = '#ac_3573/13/20/40';
+    var hash = L.PolarMap.Util.hash(map, {
+      getBaseLayer: function () {
+        return map.options.baseLayer.options.name;
+      },
+      setBaseLayer: function (name) {
+        map.loadTileProjection(baseLayer);
+      }
+    });
+    window.setTimeout(function() {
+        expect(Math.round(map.getCenter().lat)).to.be(20);
+        expect(Math.round(map.getCenter().lng)).to.be(40);
+        done();
+    }, 200);
+  });
 
   it("unbinds events when removed");
 });
