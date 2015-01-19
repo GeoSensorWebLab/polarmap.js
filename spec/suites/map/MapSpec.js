@@ -76,6 +76,7 @@ describe("Map", function () {
       expect(marker.update.called).to.be(true);
       marker.update.restore();
     });
+
     it("attempts to redraw map shapes after switch", function () {
       var polygon = L.polyline([[51.080126, -114.13380900], [52.080126, -114.13380900]]),
           spy = sinon.spy(polygon, 'redraw');
@@ -85,12 +86,21 @@ describe("Map", function () {
       expect(polygon.redraw.called).to.be(true);
       polygon.redraw.restore();
     });
+
     it("changes the map's CRS after switch", function () {
       var crs = map.options.crs;
       map.loadTileProjection(baseLayer2);
       expect(map.options.crs).to.not.be(crs);
     });
-    it("preserves the map center/zoom after switch");
+
+    it("preserves the map center/zoom after switch", function () {
+      var center = map.getCenter(),
+          zoom   = map.getZoom();
+      map.loadTileProjection(baseLayer2);
+
+      expect(map.getCenter()).to.be(center);
+      expect(map.getZoom()).to.be(zoom);
+    });
   });
 
 });
