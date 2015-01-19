@@ -35,8 +35,9 @@ describe("Map", function () {
             zoom: 2
           });
 
+      map.options.changingMap = true;
       var change = map.loadTileProjection(baseLayer);
-      expect(change).to.not.be.ok();
+      expect(change).to.be(false);
     });
     it("does nothing if the tile projection is already loaded");
     it("switches to a different tile projection");
