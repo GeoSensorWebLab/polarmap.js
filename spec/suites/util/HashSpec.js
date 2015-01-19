@@ -94,5 +94,18 @@ describe("Hash", function () {
     }, 200);
   });
 
-  it("unbinds events when removed");
+  it("unbinds events when removed", function () {
+    location.hash = '';
+    var hash = L.PolarMap.Util.hash(map, {
+      getBaseLayer: function () {
+        return map.options.baseLayer.options.name;
+      },
+      setBaseLayer: function (name) {
+        map.loadTileProjection(baseLayer);
+      }
+    });
+    map.removeControl(hash);
+    map.setView([51.505, -0.09], 13);
+    expect(location.hash).to.be('');
+  });
 });
