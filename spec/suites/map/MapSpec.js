@@ -66,8 +66,25 @@ describe("Map", function () {
       expect(map._update.called).to.be(true);
       map._update.restore();
     });
-    it("attempts to redraw map markers after switch");
-    it("attempts to redraw map shapes after switch");
+
+    it("attempts to redraw map markers after switch", function () {
+      var marker = L.marker([51.080126, -114.13380900]),
+          spy = sinon.spy(marker, 'update');
+
+      marker.addTo(map);
+      map.loadTileProjection(baseLayer2);
+      expect(marker.update.called).to.be(true);
+      marker.update.restore();
+    });
+    it("attempts to redraw map shapes after switch", function () {
+      var polygon = L.polyline([[51.080126, -114.13380900], [52.080126, -114.13380900]]),
+          spy = sinon.spy(polygon, 'redraw');
+
+      polygon.addTo(map);
+      map.loadTileProjection(baseLayer2);
+      expect(polygon.redraw.called).to.be(true);
+      polygon.redraw.restore();
+    });
     it("changes the map's CRS after switch");
     it("preserves the map center/zoom after switch");
   });
