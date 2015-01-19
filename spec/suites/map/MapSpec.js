@@ -85,7 +85,11 @@ describe("Map", function () {
       expect(polygon.redraw.called).to.be(true);
       polygon.redraw.restore();
     });
-    it("changes the map's CRS after switch");
+    it("changes the map's CRS after switch", function () {
+      var crs = map.options.crs;
+      map.loadTileProjection(baseLayer2);
+      expect(map.options.crs).to.not.be(crs);
+    });
     it("preserves the map center/zoom after switch");
   });
 
