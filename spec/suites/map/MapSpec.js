@@ -39,7 +39,19 @@ describe("Map", function () {
       var change = map.loadTileProjection(baseLayer);
       expect(change).to.be(false);
     });
-    it("does nothing if the tile projection is already loaded");
+
+    it("does nothing if the tile projection is already loaded", function () {
+      var container = document.createElement('div'),
+          map = new L.PolarMap.map(container, {
+            baseLayer: baseLayer,
+            center: [90, 0],
+            zoom: 2
+          }),
+          spy = sinon.spy(map, '_dropTileLayers');
+
+      var change = map.loadTileProjection(baseLayer);
+      expect(map._dropTileLayers.called).to.be(false);
+    });
     it("switches to a different tile projection");
     it("attempts to redraw map markers after switch");
     it("attempts to redraw map shapes after switch");
