@@ -1,5 +1,5 @@
 {
-  "name": "polarmap.js",
+  "name": "polarmap",
   "version": "0.6.2",
   "description": "Leaflet library for polar map projection switching",
   "main": "dist/polarmap-src.js",
@@ -9,14 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:geosensorweblab/polarmap.js.git"
+    "url": "https://bitbucket.org/geosensorweblab/polarmap.js"
   },
   "keywords": [
-    "leaflet",
     "arctic",
-    "maps"
+    "leaflet",
+    "maps",
+    "polar"
   ],
-  "author": "GeoSensor Web Lab",
+  "homepage": "https://bitbucket.org/geosensorweblab/polarmap.js",
+  "bugs": {
+    "url": "https://bitbucket.org/geosensorweblab/polarmap.js/issues"
+  },
+  "contributors": [
+    {
+      "name": "James Badger",
+      "email": "jpbadger@ucalgary.ca"
+    }
+  ],
   "license": "BSD-2-Clause",
   "devDependencies": {
     "expect.js": "^0.3.1",
