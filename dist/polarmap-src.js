@@ -1,5 +1,5 @@
 /*
- PolarMap.js 0.6.2 (f30bd33)
+ PolarMap.js 0.6.2 (f2d15f2)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -539,9 +539,7 @@ window.PolarMap = L.Class.extend({
 
     /* Controls */
 
-    this.layersControl = L.control.layers(this.tiles, null, {
-      collapsed: false
-    });
+    this.layersControl = L.control.layers(this.tiles, null);
 
     this.rotationControls = L.PolarMap.Control.rotation({
       onRotateCW: function() {
