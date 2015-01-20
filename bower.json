@@ -1,0 +1,38 @@
+{
+  "name": "polarmap.js",
+  "version": "0.6.2",
+  "authors": [
+    "James Badger <james@jamesbadger.ca>"
+  ],
+  "description": "Leaflet library for polar map projection switching",
+  "main": "dist/polarmap-src.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "arctic",
+    "leaflet",
+    "maps",
+    "polar"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://bitbucket.org/geosensorweblab/polarmap.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "0.7.3",
+    "proj4": "2.3.3",
+    "Proj4Leaflet": "https://github.com/kartena/Proj4Leaflet.git#4e445dd765d4e5cfcb156e423c6a0b7b65adf535"
+  },
+  "resolutions": {
+    "proj4": "2.3.3"
+  }
+}
