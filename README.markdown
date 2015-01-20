@@ -41,6 +41,10 @@ To run a local webserver for testing the app, use the packaged Node http-server:
 
 It will serve the local directory over HTTP on port 8080.
 
+## Tests
+
+This library has tests for the lower-level plugin that run using Mocha, Sinon, and Expect.js. They can be run in the browser by opening `spec/index.html` or on the command line with `jake test`.
+
 ## Code Reuse
 
 This library contains modified code from the [leaflet-hash](https://github.com/mlevans/leaflet-hash) project. Leaflet-hash is [MIT Licensed](http://opensource.org/licenses/MIT).

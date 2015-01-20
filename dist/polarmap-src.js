@@ -1,6 +1,6 @@
 /*
- PolarMap.js 0.6.2 (f4c5194)
- (c) 2014 Arctic Connect, Geo Sensor Web Lab
+ PolarMap.js 0.6.2 (f30bd33)
+ (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
 if (typeof(L) === "undefined") {

@@ -29,4 +29,9 @@ watchTask(['build'], function () {
   ]);
 });
 
+desc('Run PhantomJS tests');
+task('test', {async: true}, function () {
+  build.test(complete);
+});
+
 task('default', ['build']);
