@@ -68,9 +68,7 @@ $(document).ready(function() {
     zoom: 2
   });
 
-  var layersControl = L.control.layers(projectedTiles, null, {
-    collapsed: false
-  });
+  var layersControl = L.control.layers(projectedTiles, null);
   layersControl.addTo(map);
 
   // Wire up rotation controls

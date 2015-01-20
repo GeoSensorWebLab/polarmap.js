@@ -90,9 +90,7 @@ $(document).ready(function() {
   });
   map.addControl(styleEditor);
 
-  var layersControl = L.control.layers(projectedTiles, null, {
-    collapsed: false
-  });
+  var layersControl = L.control.layers(projectedTiles, null);
   layersControl.addTo(map);
 
   // Wire up rotation controls

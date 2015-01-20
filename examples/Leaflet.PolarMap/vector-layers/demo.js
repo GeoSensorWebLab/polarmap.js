@@ -102,9 +102,7 @@ $(document).ready(function() {
     ])
   ]).addTo(map);
 
-  var layersControl = L.control.layers(projectedTiles, null, {
-    collapsed: false
-  });
+  var layersControl = L.control.layers(projectedTiles, null);
   layersControl.addTo(map);
 
   // Wire up rotation controls

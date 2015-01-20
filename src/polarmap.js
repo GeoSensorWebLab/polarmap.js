@@ -85,9 +85,7 @@ window.PolarMap = L.Class.extend({
 
     /* Controls */
 
-    this.layersControl = L.control.layers(this.tiles, null, {
-      collapsed: false
-    });
+    this.layersControl = L.control.layers(this.tiles, null);
 
     this.rotationControls = L.PolarMap.Control.rotation({
       onRotateCW: function() {
