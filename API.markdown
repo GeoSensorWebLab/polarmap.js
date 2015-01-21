@@ -56,6 +56,9 @@ Aside from specifying custom initialization options, the returned object (`map`)
             * value: `true` or `false`
             * default value: `false` 
             * If true, will display the layer in the PolarMap Layer switching map control.
+* method: `getBaseLayer`
+    * arguments: none
+    * description: Returns the base tile layer currently used on the map
 
 ## Leaflet.PolarMap
 
@@ -63,6 +66,7 @@ The base classes in Leaflet.PolarMap:
 
 * `L.PolarMap.Map`
 * `L.PolarMap.TileLayer`
+* `L.PolarMap.LAEATileLayer`
 * `L.PolarMap.Control.Rotation`
 * `L.PolarMap.Util.Hash`
 
@@ -86,7 +90,7 @@ This method can be used to dynamically update the map with a new tile layer, eve
     map.loadTileProjection(L.PolarMap.tileLayer(…))
 ```
 
-See `L.PolarMap.TileLayer` for options.
+The object loaded in must be at least an `L.TileLayer` object. It is recommended it also defines the options set in `L.PolarMap.TileLayer` and `L.PolarMap.LAEATileLayer`.
 
 ### `L.PolarMap.TileLayer`
 
@@ -151,6 +155,21 @@ A subclass of `L.TileLayer`. Should be initialized with additional options to de
 ```
 
 The class does not enforce any defaults required for `L.PolarMap.Map`, but may in the future.
+
+### `L.PolarMap.LAEATileLayer`
+
+A subclass of `L.PolarMap.TileLayer`. Has presets for an LAEA projection already set in the options. You will be required to initialize with the URL string and include `name`, `crs`, and optionally `proj4def` in the `options` hash.
+
+A set of LAEA Tile Layer objects have been preset with Arctic Connect tile layers for LAEA projections 3571–3576.
+
+* `L.PolarMap.layer3571`
+* `L.PolarMap.layer3572`
+* `L.PolarMap.layer3573`
+* `L.PolarMap.layer3574`
+* `L.PolarMap.layer3575`
+* `L.PolarMap.layer3576`
+
+They do not need to be called as a function as they are already initialized.
 
 ### `L.PolarMap.Control.Rotation`
 
