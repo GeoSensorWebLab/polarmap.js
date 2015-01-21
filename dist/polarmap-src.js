@@ -1,5 +1,5 @@
 /*
- PolarMap.js 0.6.2 (9f2fb69)
+ PolarMap.js 0.6.2 (8352df8)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -91,12 +91,89 @@ L.PolarMap.tileLayer = function (url, options) {
 
 
 /*
+ * L.PolarMap.LAEATileLayer is used for tile layers with a LAEA projection.
+ */
+
+var extent = 11000000 + 9036842.762 + 667;
+
+L.PolarMap.LAEATileLayer = L.PolarMap.TileLayer.extend({
+  options: {
+    minZoom: 0,
+    maxZoom: 18,
+    tms: false,
+    origin: [-extent, extent],
+    maxResolution: ((extent - -extent) / 256),
+    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
+    center: [90, 0],
+    zoom: 4,
+    continuousWorld: false,
+    noWrap: true,
+    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }
+});
+
+L.PolarMap.laeaTileLayer = function (url, options) {
+  return new L.PolarMap.LAEATileLayer(url, options);
+};
+
+
+/*
+ * L.PolarMap.layer3571 presets a tile layer with the EPSG:3571 settings.
+*/
+
+L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png", {
+  name: "ac_3571",
+  crs: "EPSG:3571"
+});
+
+
+/*
+ * L.PolarMap.layer3572 presets a tile layer with the EPSG:3572 settings.
+*/
+
+L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3572/{z}/{x}/{y}.png", {
+  name: "ac_3572",
+  crs: "EPSG:3572"
+});
+
+
+/*
  * L.PolarMap.layer3573 presets a tile layer with the EPSG:3573 settings.
 */
 
 L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
   name: "ac_3573",
   crs: "EPSG:3573"
+});
+
+
+/*
+ * L.PolarMap.layer3574 presets a tile layer with the EPSG:3574 settings.
+*/
+
+L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3574/{z}/{x}/{y}.png", {
+  name: "ac_3574",
+  crs: "EPSG:3574"
+});
+
+
+/*
+ * L.PolarMap.layer3575 presets a tile layer with the EPSG:3575 settings.
+*/
+
+L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3575/{z}/{x}/{y}.png", {
+  name: "ac_3575",
+  crs: "EPSG:3575"
+});
+
+
+/*
+ * L.PolarMap.layer3576 presets a tile layer with the EPSG:3576 settings.
+*/
+
+L.PolarMap.layer3576 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3576/{z}/{x}/{y}.png", {
+  name: "ac_3576",
+  crs: "EPSG:3576"
 });
 
 
