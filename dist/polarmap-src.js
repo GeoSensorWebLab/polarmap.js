@@ -1,5 +1,5 @@
 /*
- PolarMap.js 0.6.2 (f2d15f2)
+ PolarMap.js 0.6.2 (de4a964)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -88,6 +88,29 @@ L.PolarMap.TileLayer = L.TileLayer.extend({});
 L.PolarMap.tileLayer = function (url, options) {
   return new L.PolarMap.TileLayer(url, options);
 };
+
+
+/*
+ * L.PolarMap.layer3573 presets a tile layer with the EPSG:3573 settings.
+ */
+
+ var extent = 11000000 + 9036842.762 + 667;
+
+ L.PolarMap.layer3573 = L.PolarMap.tileLayer("http://{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
+   name: "ac_3573",
+   crs: "EPSG:3573",
+   minZoom: 0,
+   maxZoom: 18,
+   tms: false,
+   origin: [-extent, extent],
+   maxResolution: ((extent - -extent) / 256),
+   projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
+   center: [90, 0],
+   zoom: 4,
+   continuousWorld: false,
+   noWrap: true,
+   attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+ });
 
 
 // Store the base layer, zoom level, and location in URL hash
