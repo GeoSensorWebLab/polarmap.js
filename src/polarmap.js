@@ -19,40 +19,15 @@ proj4.defs([
   ["EPSG:3576","+proj=laea +lat_0=90 +lon_0=90 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"]
 ]);
 
-var projections = [
-  "EPSG:3571",
-  "EPSG:3572",
-  "EPSG:3573",
-  "EPSG:3574",
-  "EPSG:3575",
-  "EPSG:3576"
-];
-
 /* Tile Layer Configuration */
 
-var tiles = {};
-
-// Custom extent for our EPSG:3571-3576 tiles
-var extent = 11000000 + 9036842.762 + 667;
-
-for (var i = 0; i < projections.length; i++) {
-  var projection = projections[i];
-  var epsg = 3571 + i;
-  var url = "http://{s}.tiles.arcticconnect.org/osm_" + epsg + "/{z}/{x}/{y}.png";
-
-  tiles[t.tileHeader + projection] = L.PolarMap.tileLayer(url, {
-    name: "ac_" + epsg,
-    crs: projection,
-    minZoom: 0,
-    maxZoom: 18,
-    tms: false,
-    origin: [-extent, extent],
-    maxResolution: ((extent - -extent) / 256),
-    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
-    continuousWorld: false,
-    noWrap: true,
-    attribution: t.attribution
-  });
+var tiles = {
+  "Arctic Connect: EPSG:3571": L.PolarMap.layer3571,
+  "Arctic Connect: EPSG:3572": L.PolarMap.layer3572,
+  "Arctic Connect: EPSG:3573": L.PolarMap.layer3573,
+  "Arctic Connect: EPSG:3574": L.PolarMap.layer3574,
+  "Arctic Connect: EPSG:3575": L.PolarMap.layer3575,
+  "Arctic Connect: EPSG:3576": L.PolarMap.layer3576
 };
 
 // Set up next/prev linked list
