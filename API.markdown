@@ -93,7 +93,6 @@ See `L.PolarMap.TileLayer` for options.
 A subclass of `L.TileLayer`. Should be initialized with additional options to define the tile layer's CRS and custom parameters. Be sure to define the projection in Proj4JS first.
 
 ```javascript
-    proj4.defs("EPSG:3571", "+proj=laea +lat_0=90 +lon_0=180 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
 
     // See L.TileLayer documentation for URL template
     var url = "http://{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png";

@@ -1,5 +1,5 @@
 /*
- PolarMap.js 0.6.2 (83d180f)
+ PolarMap.js 0.6.2 (051463c)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -138,7 +138,8 @@ L.PolarMap.laeaTileLayer = function (url, options) {
 
 L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png", {
   name: "ac_3571",
-  crs: "EPSG:3571"
+  crs: "EPSG:3571",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=180 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -148,7 +149,8 @@ L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.
 
 L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3572/{z}/{x}/{y}.png", {
   name: "ac_3572",
-  crs: "EPSG:3572"
+  crs: "EPSG:3572",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -158,7 +160,8 @@ L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.
 
 L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
   name: "ac_3573",
-  crs: "EPSG:3573"
+  crs: "EPSG:3573",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -168,7 +171,8 @@ L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.
 
 L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3574/{z}/{x}/{y}.png", {
   name: "ac_3574",
-  crs: "EPSG:3574"
+  crs: "EPSG:3574",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=-40 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -178,7 +182,8 @@ L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.
 
 L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3575/{z}/{x}/{y}.png", {
   name: "ac_3575",
-  crs: "EPSG:3575"
+  crs: "EPSG:3575",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=10 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -188,7 +193,8 @@ L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.
 
 L.PolarMap.layer3576 = L.PolarMap.laeaTileLayer("http://{s}.tiles.arcticconnect.org/osm_3576/{z}/{x}/{y}.png", {
   name: "ac_3576",
-  crs: "EPSG:3576"
+  crs: "EPSG:3576",
+  proj4def: "+proj=laea +lat_0=90 +lon_0=90 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 });
 
 
@@ -561,19 +567,6 @@ var t = {
   attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   locationDetectionError: "Location detection error: "
 };
-
-/* Projections */
-
-// Globally define projections for Proj4js. If not defined here, then they must
-// be defined in tile provider definitions below.
-proj4.defs([
-  ["EPSG:3571","+proj=laea +lat_0=90 +lon_0=180 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"],
-  ["EPSG:3572","+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"],
-  ["EPSG:3573","+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"],
-  ["EPSG:3574","+proj=laea +lat_0=90 +lon_0=-40 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"],
-  ["EPSG:3575","+proj=laea +lat_0=90 +lon_0=10 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"],
-  ["EPSG:3576","+proj=laea +lat_0=90 +lon_0=90 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"]
-]);
 
 /* Tile Layer Configuration */
 
