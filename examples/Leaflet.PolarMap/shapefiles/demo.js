@@ -1,14 +1,5 @@
 var map;
 
-var projections = [
-  "EPSG:3571",
-  "EPSG:3572",
-  "EPSG:3573",
-  "EPSG:3574",
-  "EPSG:3575",
-  "EPSG:3576"
-  ];
-
 // Globally define projections for Proj4js. If not defined here, then they must
 // be defined in tile provider definitions below.
 proj4.defs([
@@ -22,29 +13,14 @@ proj4.defs([
 
 // Create object to define tile provider settings and transformations. Supports
 // all Leaflet TileLayer options.
-var projectedTiles = {};
-
-$.each(projections, function (index, value) {
-  var url = "http://{s}.tiles.arcticconnect.org/osm_" + (3571 + index) + "/{z}/{x}/{y}.png";
-  // Custom extent for our EPSG:3571-3576 tiles
-  var extent = 11000000 + 9036842.762 + 667;
-
-  projectedTiles["Arctic Connect: " + value] = L.PolarMap.tileLayer(url, {
-    name: "ac_" + (3571 + index),
-    crs: value,
-    minZoom: 0,
-    maxZoom: 18,
-    tms: false,
-    origin: [-extent, extent],
-    maxResolution: ((extent - -extent) / 256),
-    projectedBounds: L.bounds(L.point(-extent, extent),L.point(extent, -extent)),
-    center: [90,0],
-    zoom: 2,
-    continuousWorld: false,
-    noWrap: true,
-    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  });
-});
+var projectedTiles = {
+  "Arctic Connect: EPSG:3571": L.PolarMap.layer3571,
+  "Arctic Connect: EPSG:3572": L.PolarMap.layer3572,
+  "Arctic Connect: EPSG:3573": L.PolarMap.layer3573,
+  "Arctic Connect: EPSG:3574": L.PolarMap.layer3574,
+  "Arctic Connect: EPSG:3575": L.PolarMap.layer3575,
+  "Arctic Connect: EPSG:3576": L.PolarMap.layer3576
+};
 
 // Set up next/prev linked list
 $.each(projectedTiles, function (layerName, layer) {
@@ -82,7 +58,6 @@ $(document).ready(function() {
     // avoid loading features South of 45N. Errors will occur when loading
     // Antarctic data.
     filter: function (featureData, layer) {
-      console.log(featureData);
       var coords = featureData.geometry.coordinates;
       return boundsLimit.contains(L.latLng([coords[1], coords[0]]));
     }
