@@ -83,6 +83,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
     }
 
     var hash = this.formatHash(this.map);
+
     if (this.options.lastHash != hash) {
       location.replace(hash);
       this.options.lastHash = hash;
@@ -93,12 +94,16 @@ L.PolarMap.Util.Hash = L.Class.extend({
     if(hash.indexOf('#') === 0) {
       hash = hash.substr(1);
     }
-    var args = hash.split("/");
+    var args = hash.split("/"),
+        zoom,
+        lat,
+        lon;
+
     if (args.length === 4) {
-      var baseLayer = args[0],
-          zoom = parseInt(args[1], 10),
-          lat = parseFloat(args[2]),
-          lon = parseFloat(args[3]);
+      var baseLayer = args[0];
+      zoom = parseInt(args[1], 10);
+      lat = parseFloat(args[2]);
+      lon = parseFloat(args[3]);
 
       if (baseLayer === "" || isNaN(zoom) || isNaN(lat) || isNaN(lon)) {
         return false;
@@ -110,9 +115,10 @@ L.PolarMap.Util.Hash = L.Class.extend({
         };
       }
     } else if (args.length === 3) {
-      var zoom = parseInt(args[0], 10),
-      lat = parseFloat(args[1]),
+      zoom = parseInt(args[0], 10);
+      lat = parseFloat(args[1]);
       lon = parseFloat(args[2]);
+
       if (isNaN(zoom) || isNaN(lat) || isNaN(lon)) {
         return false;
       } else {
@@ -147,6 +153,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
       clearInterval(this.options.hashChangeInterval);
       this.options.hashChangeInterval = setInterval(this.onHashChange, 50);
     }
+
     this.options.isListening = true;
   },
 
@@ -158,6 +165,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
     } else {
       clearInterval(this.options.hashChangeInterval);
     }
+
     this.options.isListening = false;
   },
 
@@ -167,6 +175,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
       return;
     }
     var parsed = this.parseHash(hash);
+
     if (parsed) {
       this.options.movingMap = true;
 

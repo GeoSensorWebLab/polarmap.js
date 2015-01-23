@@ -1,6 +1,6 @@
 
 if (typeof(L) === "undefined") {
-  var L = {};
+  L = {};
 }
 
 L.PolarMap = {

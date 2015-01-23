@@ -24,13 +24,13 @@ L.PolarMap.Control.Rotation = L.Control.extend({
     return container;
   },
 
-  _rotateCW: function (e) {
+  _rotateCW: function () {
     if (this.options.onRotateCW) {
       this.options.onRotateCW();
     }
   },
 
-  _rotateCCW: function (e) {
+  _rotateCCW: function () {
     if (this.options.onRotateCCW) {
       this.options.onRotateCCW();
     }

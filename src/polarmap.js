@@ -25,7 +25,7 @@ for (var i = 0; i < 6; i++) {
   var layer = tiles[t.tileHeader + "EPSG:" + (3571 + i)];
   layer.prev = tiles[t.tileHeader + "EPSG:" + (3571 + prev)];
   layer.next = tiles[t.tileHeader + "EPSG:" + (3571 + next)];
-};
+}
 
 /* PolarMap Library Function */
 
@@ -181,5 +181,5 @@ window.PolarMap = L.Class.extend({
 });
 
 window.polarMap = function (id, options) {
-  return new PolarMap(id, options);
+  return new window.PolarMap(id, options);
 };

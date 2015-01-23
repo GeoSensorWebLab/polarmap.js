@@ -17,7 +17,6 @@ L.PolarMap.Map = L.Map.extend({
 
   initialize: function (id, options) {
     options = L.setOptions(this, options);
-    var baseLayerOptions = options.baseLayer.options;
 
     this._initContainer(id);
     this._initLayout();
@@ -43,7 +42,6 @@ L.PolarMap.Map = L.Map.extend({
 
     // Update when base layer changed from map control
     this.on('baselayerchange', function (e) {
-      var layerOptions = e.layer.options;
       this._update(e.layer);
     });
 
@@ -60,7 +58,6 @@ L.PolarMap.Map = L.Map.extend({
     if (this._usingTileProjection(tileLayer)) {
       console.log("That tile layer is already active.");
     } else {
-      var tileOptions = tileLayer.options;
       // Drop base tile layers
       this._dropTileLayers();
       this._update(tileLayer);
@@ -72,7 +69,7 @@ L.PolarMap.Map = L.Map.extend({
     var resolutions = [];
     for (var zoom = options.minZoom; zoom <= options.maxZoom; zoom++) {
       resolutions.push(options.maxResolution / Math.pow(2, zoom));
-    };
+    }
 
     return new L.Proj.CRS(crs, options.proj4def, {
         origin: options.origin,
@@ -97,16 +94,12 @@ L.PolarMap.Map = L.Map.extend({
     switch(crs) {
       case "EPSG:3857":
       return L.CRS.EPSG3857;
-      break;
       case "EPSG:3395":
       return L.CRS.EPSG3395;
-      break;
       case "EPSG:4326":
       return L.CRS.EPSG4326;
-      break;
       default:
         return this._defineMapCRS(crs, options);
-      break;
     }
   },
 
@@ -158,8 +151,10 @@ L.PolarMap.Map = L.Map.extend({
     var alreadyActive = false;
     var layers = this._layers;
     for (var layer in layers) {
-      alreadyActive = (layers[layer] === tileLayer);
-      if (alreadyActive) break;
+      if (layers.hasOwnProperty(layer)) {
+        alreadyActive = (layers[layer] === tileLayer);
+        if (alreadyActive) break;
+      }
     }
     return alreadyActive;
   }

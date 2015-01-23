@@ -1,10 +1,10 @@
 /*
- PolarMap.js 0.7.0 (5f93d46)
+ PolarMap.js 0.7.0 (312188f)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
 if (typeof(L) === "undefined") {
-  var L = {};
+  L = {};
 }
 
 L.PolarMap = {
@@ -46,13 +46,13 @@ L.PolarMap.Control.Rotation = L.Control.extend({
     return container;
   },
 
-  _rotateCW: function (e) {
+  _rotateCW: function () {
     if (this.options.onRotateCW) {
       this.options.onRotateCW();
     }
   },
 
-  _rotateCCW: function (e) {
+  _rotateCCW: function () {
     if (this.options.onRotateCCW) {
       this.options.onRotateCCW();
     }
@@ -283,6 +283,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
     }
 
     var hash = this.formatHash(this.map);
+
     if (this.options.lastHash != hash) {
       location.replace(hash);
       this.options.lastHash = hash;
@@ -293,12 +294,16 @@ L.PolarMap.Util.Hash = L.Class.extend({
     if(hash.indexOf('#') === 0) {
       hash = hash.substr(1);
     }
-    var args = hash.split("/");
+    var args = hash.split("/"),
+        zoom,
+        lat,
+        lon;
+
     if (args.length === 4) {
-      var baseLayer = args[0],
-          zoom = parseInt(args[1], 10),
-          lat = parseFloat(args[2]),
-          lon = parseFloat(args[3]);
+      var baseLayer = args[0];
+      zoom = parseInt(args[1], 10);
+      lat = parseFloat(args[2]);
+      lon = parseFloat(args[3]);
 
       if (baseLayer === "" || isNaN(zoom) || isNaN(lat) || isNaN(lon)) {
         return false;
@@ -310,9 +315,10 @@ L.PolarMap.Util.Hash = L.Class.extend({
         };
       }
     } else if (args.length === 3) {
-      var zoom = parseInt(args[0], 10),
-      lat = parseFloat(args[1]),
+      zoom = parseInt(args[0], 10);
+      lat = parseFloat(args[1]);
       lon = parseFloat(args[2]);
+
       if (isNaN(zoom) || isNaN(lat) || isNaN(lon)) {
         return false;
       } else {
@@ -347,6 +353,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
       clearInterval(this.options.hashChangeInterval);
       this.options.hashChangeInterval = setInterval(this.onHashChange, 50);
     }
+
     this.options.isListening = true;
   },
 
@@ -358,6 +365,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
     } else {
       clearInterval(this.options.hashChangeInterval);
     }
+
     this.options.isListening = false;
   },
 
@@ -367,6 +375,7 @@ L.PolarMap.Util.Hash = L.Class.extend({
       return;
     }
     var parsed = this.parseHash(hash);
+
     if (parsed) {
       this.options.movingMap = true;
 
@@ -407,7 +416,6 @@ L.PolarMap.Map = L.Map.extend({
 
   initialize: function (id, options) {
     options = L.setOptions(this, options);
-    var baseLayerOptions = options.baseLayer.options;
 
     this._initContainer(id);
     this._initLayout();
@@ -433,7 +441,6 @@ L.PolarMap.Map = L.Map.extend({
 
     // Update when base layer changed from map control
     this.on('baselayerchange', function (e) {
-      var layerOptions = e.layer.options;
       this._update(e.layer);
     });
 
@@ -450,7 +457,6 @@ L.PolarMap.Map = L.Map.extend({
     if (this._usingTileProjection(tileLayer)) {
       console.log("That tile layer is already active.");
     } else {
-      var tileOptions = tileLayer.options;
       // Drop base tile layers
       this._dropTileLayers();
       this._update(tileLayer);
@@ -462,7 +468,7 @@ L.PolarMap.Map = L.Map.extend({
     var resolutions = [];
     for (var zoom = options.minZoom; zoom <= options.maxZoom; zoom++) {
       resolutions.push(options.maxResolution / Math.pow(2, zoom));
-    };
+    }
 
     return new L.Proj.CRS(crs, options.proj4def, {
         origin: options.origin,
@@ -487,16 +493,12 @@ L.PolarMap.Map = L.Map.extend({
     switch(crs) {
       case "EPSG:3857":
       return L.CRS.EPSG3857;
-      break;
       case "EPSG:3395":
       return L.CRS.EPSG3395;
-      break;
       case "EPSG:4326":
       return L.CRS.EPSG4326;
-      break;
       default:
         return this._defineMapCRS(crs, options);
-      break;
     }
   },
 
@@ -548,8 +550,10 @@ L.PolarMap.Map = L.Map.extend({
     var alreadyActive = false;
     var layers = this._layers;
     for (var layer in layers) {
-      alreadyActive = (layers[layer] === tileLayer);
-      if (alreadyActive) break;
+      if (layers.hasOwnProperty(layer)) {
+        alreadyActive = (layers[layer] === tileLayer);
+        if (alreadyActive) break;
+      }
     }
     return alreadyActive;
   }
@@ -587,7 +591,7 @@ for (var i = 0; i < 6; i++) {
   var layer = tiles[t.tileHeader + "EPSG:" + (3571 + i)];
   layer.prev = tiles[t.tileHeader + "EPSG:" + (3571 + prev)];
   layer.next = tiles[t.tileHeader + "EPSG:" + (3571 + next)];
-};
+}
 
 /* PolarMap Library Function */
 
@@ -743,7 +747,7 @@ window.PolarMap = L.Class.extend({
 });
 
 window.polarMap = function (id, options) {
-  return new PolarMap(id, options);
+  return new window.PolarMap(id, options);
 };
 
 
