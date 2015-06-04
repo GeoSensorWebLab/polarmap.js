@@ -15,6 +15,14 @@ describe("Map", function () {
     });
   });
 
+  describe("#remove", function () {
+    it("removes layers before removing self", function () {
+      expect(baseLayer._map).to.not.be(null);
+      map.remove();
+      expect(baseLayer._map).to.be(null);
+    });
+  }),
+
   describe("#loadTileProjection", function () {
     it("returns false if the map is already changing", function () {
       map.options.changingMap = true;

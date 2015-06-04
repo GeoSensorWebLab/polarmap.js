@@ -64,6 +64,17 @@ L.PolarMap.Map = L.Map.extend({
     }
   },
 
+  // Manually remove layers before destroying map.
+  // See https://github.com/Leaflet/Leaflet/issues/2718
+  remove: function () {
+    for (var i in this._layers) {
+      this.removeLayer(this._layers[i]);
+		}
+
+    L.Map.prototype.remove.call(this);
+    return this;
+	},
+
   // Private Functions
   _defineMapCRS: function (crs, options) {
     var resolutions = [];
