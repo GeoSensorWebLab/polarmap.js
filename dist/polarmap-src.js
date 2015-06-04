@@ -1,5 +1,5 @@
 /*
- PolarMap.js 1.0.0 (4cd4971)
+ PolarMap.js 1.0.1 (5fec1bc)
  (c) 2014-2015 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -8,7 +8,7 @@ if (typeof(L) === "undefined") {
 }
 
 L.PolarMap = {
-  version: '1.0.0',
+  version: '1.0.1',
   Control: {},
   Util: {}
 };
@@ -462,6 +462,17 @@ L.PolarMap.Map = L.Map.extend({
       this._update(tileLayer);
     }
   },
+
+  // Manually remove layers before destroying map.
+  // See https://github.com/Leaflet/Leaflet/issues/2718
+  remove: function () {
+    for (var i in this._layers) {
+      this.removeLayer(this._layers[i]);
+		}
+
+    L.Map.prototype.remove.call(this);
+    return this;
+	},
 
   // Private Functions
   _defineMapCRS: function (crs, options) {
