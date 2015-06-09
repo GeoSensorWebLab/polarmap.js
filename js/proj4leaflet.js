@@ -113,7 +113,21 @@
 		},
 
 		scale: function(zoom) {
-			return this._scales[zoom];
+			var iZoom = Math.floor(zoom),
+				baseScale,
+				nextScale,
+				scaleDiff,
+				zDiff;
+			if (zoom === iZoom) {
+				return this._scales[zoom];
+			} else {
+				// Non-integer zoom, interpolate
+				baseScale = this._scales[iZoom];
+				nextScale = this._scales[iZoom + 1];
+				scaleDiff = nextScale - baseScale;
+				zDiff = (zoom - iZoom);
+				return baseScale + scaleDiff * zDiff;
+			}
 		},
 
 		getSize: function(zoom) {
@@ -265,7 +279,9 @@
 		initialize: function(geojson, options) {
 			this._callLevel = 0;
 			L.GeoJSON.prototype.initialize.call(this, null, options);
-			this.addData(geojson);
+			if (geojson) {
+				this.addData(geojson);
+			}
 		},
 
 		addData: function(geojson) {

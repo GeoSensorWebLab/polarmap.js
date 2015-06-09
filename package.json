@@ -38,7 +38,7 @@
     "leaflet": "^0.7.3",
     "mocha": "^2.0.1",
     "proj4": "^2.3.3",
-    "proj4leaflet": "^0.7.0",
+    "proj4leaflet": "^0.7.1",
     "sinon": "^1.10.3",
     "uglify-js": "^2.4.15"
   }
