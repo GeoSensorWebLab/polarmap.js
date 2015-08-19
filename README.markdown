@@ -2,7 +2,7 @@
 
 A JavaScript library that can re-project Leaflet maps and map features.
 
-PolarMap.js is part of the [Arctic Connect project](http://arcticconnect.org), specifically the [Arctic Web Map](http://webmap.arcticconnect.org/) module.
+PolarMap.js is part of the [Arctic Connect project](http://arcticconnect.org), specifically the [Arctic Web Map](http://webmap.arcticconnect.org/) module. We thank [CANARIE](http://www.canarie.ca) for the funding support.
 
 There are two layers to PolarMap.js: the lower-level Leaflet.PolarMap plugin, and the basic PolarMap library. Each has their advantages depending on the situation. The basic PolarMap library has the default loadout of plugins and configuration for Arctic Connect tiles and services. The Leaflet.PolarMap plugin lets the developer pick and choose their integrations, at the trade-off of more code/configuration.
 
