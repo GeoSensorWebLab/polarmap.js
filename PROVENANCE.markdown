@@ -1,0 +1,1 @@
+This library is maintained by James Badger (@openfirmware). Updates and pull requests are merged at my discretion. Releases are provided for new features, bug fixes, and security updates. New releases will also be pushed to NPM and Bower.
