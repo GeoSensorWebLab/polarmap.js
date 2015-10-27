@@ -51,7 +51,13 @@ This library has tests for the lower-level plugin that run using Mocha, Sinon, a
 
 This library contains modified code from the [leaflet-hash](https://github.com/mlevans/leaflet-hash) project. Leaflet-hash is [MIT Licensed](http://opensource.org/licenses/MIT).
 
+## Support
+
+[PolarMap.js](https://github.com/GeoSensorWebLab/polarmap.js) is maintained by James Badger (@openfirmware) and the GeoSensorWeb Lab. If you have issues with the JavaScript library portion, please contact us by email at support@arcticconnect.org or post an issue on the [PolarMap.js issue tracker](https://github.com/GeoSensorWebLab/polarmap.js/issues).
+
+If you are having issue with the underlying map data, such as map inaccuracies, missing data, or general style comments, then please contact support@arcticconnect.org or post an issue on the [Web Map issue tracker](https://github.com/GeoSensorWebLab/awm-styles/issues).
+
 ## License
 
-See LICENSE file.
+PolarMap.js is released under the BSD 2-Clause license (same as Leaflet).
 
