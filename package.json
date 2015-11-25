@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/geosensorweblab/polarmap.js"
+    "url": "https://github.com/GeoSensorWebLab/polarmap.js"
   },
   "keywords": [
     "arctic",
@@ -18,7 +18,7 @@
   ],
   "homepage": "http://webmap.arcticconnect.org/polarmap.html",
   "bugs": {
-    "url": "https://bitbucket.org/geosensorweblab/polarmap.js/issues"
+    "url": "https://github.com/GeoSensorWebLab/polarmap.js/issues"
   },
   "contributors": [
     {
