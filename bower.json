@@ -27,11 +27,8 @@
     "tests"
   ],
   "dependencies": {
-    "leaflet": "0.7.3",
-    "proj4": "2.3.3",
-    "Proj4Leaflet": "https://github.com/kartena/Proj4Leaflet.git#0.7.1"
-  },
-  "resolutions": {
-    "proj4": "2.3.3"
+    "leaflet": "~0.7.3",
+    "proj4": "^2.0.0",
+    "proj4leaflet": "~0.7.1"
   }
 }

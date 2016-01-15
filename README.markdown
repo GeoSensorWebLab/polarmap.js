@@ -10,9 +10,9 @@ There are two layers to PolarMap.js: the lower-level Leaflet.PolarMap plugin, an
 
 The Leaflet.PolarMap plugin and PolarMap library both require the following JavaScript libraries to be available:
 
-* [Leaflet 0.7.3](http://leafletjs.com/)
-* [Proj4js 2.3.3](https://github.com/proj4js/proj4js)
-* [Proj4Leaflet master branch](https://github.com/kartena/Proj4Leaflet/tree/4e445dd765d4e5cfcb156e423c6a0b7b65adf535)
+* [Leaflet 0.7.3 to 0.7.7](http://leafletjs.com/)
+* [Proj4js 2+](https://github.com/proj4js/proj4js)
+* [Proj4Leaflet 0.7.2](https://github.com/kartena/Proj4Leaflet)
 
 Support for other versions of these libraries are not currently known, use at your own risk of bugs or unexpected behaviour.
 
