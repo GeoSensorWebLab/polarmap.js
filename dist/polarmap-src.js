@@ -1,5 +1,5 @@
 /*
- PolarMap.js 1.0.1 (e419051)
+ PolarMap.js 1.0.1 (d4a6bed)
  (c) 2014-2016 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -42,6 +42,11 @@ L.PolarMap.Control.Rotation = L.Control.extend({
             rotationName + '-cw',  container, this._rotateCW);
     this._ccwButton = this._createButton(options.ccwText, options.ccwTitle,
             rotationName + '-ccw', container, this._rotateCCW);
+
+    L.DomEvent.disableClickPropagation(container);
+  	if (!L.Browser.touch) {
+  		L.DomEvent.disableScrollPropagation(container);
+  	}
 
     return container;
   },

@@ -21,6 +21,11 @@ L.PolarMap.Control.Rotation = L.Control.extend({
     this._ccwButton = this._createButton(options.ccwText, options.ccwTitle,
             rotationName + '-ccw', container, this._rotateCCW);
 
+    L.DomEvent.disableClickPropagation(container);
+  	if (!L.Browser.touch) {
+  		L.DomEvent.disableScrollPropagation(container);
+  	}
+
     return container;
   },
 
