@@ -1,5 +1,10 @@
 # Release Notes
 
+### v1.0.2 2016-01-15
+
+* Fix bug where double-clicking the rotation controls would zoom the map
+* Change name of layers to be more self-descriptive
+
 ### v1.0.1 2015-06-04
 
 * Fix bug where removing map did not remove layers from memory
