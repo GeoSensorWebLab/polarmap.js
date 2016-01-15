@@ -1,5 +1,5 @@
 /*
- PolarMap.js 1.0.2 (c2502d9)
+ PolarMap.js 1.1.0 (44f59a8)
  (c) 2014-2016 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -8,7 +8,7 @@ if (typeof(L) === "undefined") {
 }
 
 L.PolarMap = {
-  version: '1.0.2',
+  version: '1.1.0',
   Control: {},
   Util: {}
 };

@@ -1,5 +1,9 @@
 # Release Notes
 
+### v1.1.0 2016-01-15
+
+* Lock to Leaflet 0.7 releases
+
 ### v1.0.2 2016-01-15
 
 * Fix bug where double-clicking the rotation controls would zoom the map
