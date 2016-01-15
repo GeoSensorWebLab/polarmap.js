@@ -75,6 +75,16 @@ It will serve the local directory over HTTP on port 8080.
 
 This library has tests for the lower-level plugin that run using Mocha, Sinon, and Expect.js. They can be run in the browser by opening `spec/index.html` or on the command line with `jake test`.
 
+## Compatibility
+
+Different versions of PolarMap.js are available for different versions of Leaflet.
+
+<table>
+  <tr><th>Leaflet Version</th>  <th>PolarMap.js Version</th></tr>
+  <tr><td>0.7.x</td>            <td>1.1.x</td></tr>
+  <tr><td>1.0.x</td>            <td>2.0.x</td></tr>
+</table>
+
 ## Code Reuse
 
 This library contains modified code from the [leaflet-hash](https://github.com/mlevans/leaflet-hash) project. Leaflet-hash is [MIT Licensed](http://opensource.org/licenses/MIT).
