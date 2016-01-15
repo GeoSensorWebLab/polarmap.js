@@ -3,12 +3,25 @@ var map;
 // Create object to define tile provider settings and transformations. Supports
 // all Leaflet TileLayer options.
 var projectedTiles = {
-  "Arctic Connect: EPSG:3571": L.PolarMap.layer3571,
-  "Arctic Connect: EPSG:3572": L.PolarMap.layer3572,
-  "Arctic Connect: EPSG:3573": L.PolarMap.layer3573,
-  "Arctic Connect: EPSG:3574": L.PolarMap.layer3574,
-  "Arctic Connect: EPSG:3575": L.PolarMap.layer3575,
-  "Arctic Connect: EPSG:3576": L.PolarMap.layer3576
+  "EPSG:3571 Bering Sea": L.PolarMap.layer3571,
+  "EPSG:3572 Alaska"    : L.PolarMap.layer3572,
+  "EPSG:3573 Canada"    : L.PolarMap.layer3573,
+  "EPSG:3574 Atlantic"  : L.PolarMap.layer3574,
+  "EPSG:3575 Europe"    : L.PolarMap.layer3575,
+  "EPSG:3576 Russia"    : L.PolarMap.layer3576
+};
+
+// Return the tile layer that has a key containing `projection`
+var getTileLayerForProjection = function(projection) {
+  for (var key in projectedTiles) {
+    if (projectedTiles.hasOwnProperty(key)) {
+      if (key.indexOf(projection) !== -1) {
+        return projectedTiles[key];
+      }
+    }
+  }
+
+  return null;
 };
 
 // Set up next/prev linked list
@@ -27,7 +40,7 @@ $(document).ready(function() {
   Autosize.enable();
 
   // Load PolarMap
-  var defaultLayer = projectedTiles["Arctic Connect: EPSG:3571"];
+  var defaultLayer = projectedTiles["EPSG:3571 Bering Sea"];
   map = L.PolarMap.map('xmap', {
     baseLayer: defaultLayer,
     center: defaultLayer.options.center,
@@ -84,7 +97,7 @@ $(document).ready(function() {
       value = "EPSG:3571";
     }
 
-    map.loadTileProjection(projectedTiles["Arctic Connect: " + value]);
+    map.loadTileProjection(getTileLayerForProjection(value));
   };
 
   // Automatic Location and Projection Detection
@@ -108,4 +121,3 @@ $(document).ready(function() {
 
   map.locate();
 });
-

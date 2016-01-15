@@ -1,7 +1,6 @@
 /* Strings */
 
 var t = {
-  tileHeader: "Arctic Connect: ",
   attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   locationDetectionError: "Location detection error: "
 };
@@ -9,22 +8,35 @@ var t = {
 /* Tile Layer Configuration */
 
 var tiles = {
-  "Arctic Connect: EPSG:3571": L.PolarMap.layer3571,
-  "Arctic Connect: EPSG:3572": L.PolarMap.layer3572,
-  "Arctic Connect: EPSG:3573": L.PolarMap.layer3573,
-  "Arctic Connect: EPSG:3574": L.PolarMap.layer3574,
-  "Arctic Connect: EPSG:3575": L.PolarMap.layer3575,
-  "Arctic Connect: EPSG:3576": L.PolarMap.layer3576
+  "EPSG:3571 Bering Sea": L.PolarMap.layer3571,
+  "EPSG:3572 Alaska"    : L.PolarMap.layer3572,
+  "EPSG:3573 Canada"    : L.PolarMap.layer3573,
+  "EPSG:3574 Atlantic"  : L.PolarMap.layer3574,
+  "EPSG:3575 Europe"    : L.PolarMap.layer3575,
+  "EPSG:3576 Russia"    : L.PolarMap.layer3576
+};
+
+// Return the tile layer that has a key containing `projection`
+var getTileLayerForProjection = function(projection) {
+  for (var key in tiles) {
+    if (tiles.hasOwnProperty(key)) {
+      if (key.indexOf(projection) !== -1) {
+        return tiles[key];
+      }
+    }
+  }
+
+  return null;
 };
 
 // Set up next/prev linked list
-
-for (var i = 0; i < 6; i++) {
+var keys = Object.keys(tiles).sort();
+for (var i = 0; i < keys.length; i++) {
   var prev = (i === 0) ? 5 : i - 1;
   var next = (i === 5) ? 0 : i + 1;
-  var layer = tiles[t.tileHeader + "EPSG:" + (3571 + i)];
-  layer.prev = tiles[t.tileHeader + "EPSG:" + (3571 + prev)];
-  layer.next = tiles[t.tileHeader + "EPSG:" + (3571 + next)];
+  var layer = tiles[keys[i]];
+  layer.prev = tiles[keys[prev]];
+  layer.next = tiles[keys[next]];
 }
 
 /* PolarMap Library Function */
@@ -62,7 +74,7 @@ window.PolarMap = L.Class.extend({
     /* Map */
 
     this.map = L.PolarMap.map(id, {
-      baseLayer: this.tiles[t.tileHeader + "EPSG:3573"],
+      baseLayer: this.tiles["EPSG:3573 Canada"],
       center: [90, 0],
       zoom: 4
     });
@@ -176,7 +188,7 @@ window.PolarMap = L.Class.extend({
       value = "EPSG:3571";
     }
 
-    this.map.loadTileProjection(this.tiles[t.tileHeader + value]);
+    this.map.loadTileProjection(getTileLayerForProjection(value));
   }
 });
 
