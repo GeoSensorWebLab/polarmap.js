@@ -16,6 +16,34 @@ The Leaflet.PolarMap plugin and PolarMap library both require the following Java
 
 Support for other versions of these libraries are not currently known, use at your own risk of bugs or unexpected behaviour.
 
+## Using PolarMap.js
+
+PolarMap.js has a very similar API to Leaflet, so you should feel right at home. First include the stylesheets:
+
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/polarmap.css" />
+
+Then require the JavaScript:
+
+    <script src="js/jquery.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/proj4.js"></script>
+    <script src="js/proj4leaflet.js"></script>
+    <script src="js/polarmap-src.js"></script>
+
+And then initialize a map the way you would a Leaflet map:
+
+    <body onload="init()">
+    ...
+    <script>
+      function init() {
+        var map = PolarMap('mapContainer');
+      }
+    </script>
+
+And you should be up and running with PolarMap.js. For a more detailed explanation of the API and customization options, please see the [API Documentation](API.markdown).
+
+
 ## Building
 
 It is recommended to download the latest version of PolarMap.js directly from our site. But you can build your own copy from source if you prefer.
@@ -60,4 +88,3 @@ If you are having issue with the underlying map data, such as map inaccuracies, 
 ## License
 
 PolarMap.js is released under the BSD 2-Clause license (same as Leaflet).
-
