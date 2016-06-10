@@ -1,5 +1,11 @@
 # Release Notes
 
+### v1.2.0 2016-06-10
+
+* Add support for loading ArcticWebMap tiles through HTTPS
+* Fix projection extents to better represent alignment between projection and tiles. This means markers may shift by a small amount (< 1 metre) but should now be closer to their projected tile coordinates
+* Add example for comparing OSM tiles side-by-side with ArcticWebMap tiles
+
 ### v1.1.0 2016-01-15
 
 * Lock to Leaflet 0.7 releases
