@@ -2,7 +2,8 @@
  * L.PolarMap.LAEATileLayer is used for tile layers with a LAEA projection.
  */
 
-var extent = 11000000 + 9036842.762 + 667;
+// Extent is half of the WGS84 Ellipsoid equatorial circumference.
+var extent = L.Projection.Mercator.R_MAJOR * Math.PI;
 
 L.PolarMap.LAEATileLayer = L.PolarMap.TileLayer.extend({
   options: {

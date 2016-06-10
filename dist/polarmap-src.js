@@ -1,5 +1,5 @@
 /*
- PolarMap.js 1.1.0 (9e9df9c)
+ PolarMap.js 1.1.0 (506a6b3)
  (c) 2014-2016 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
@@ -99,7 +99,8 @@ L.PolarMap.tileLayer = function (url, options) {
  * L.PolarMap.LAEATileLayer is used for tile layers with a LAEA projection.
  */
 
-var extent = 11000000 + 9036842.762 + 667;
+// Extent is half of the WGS84 Ellipsoid equatorial circumference.
+var extent = L.Projection.Mercator.R_MAJOR * Math.PI;
 
 L.PolarMap.LAEATileLayer = L.PolarMap.TileLayer.extend({
   options: {
