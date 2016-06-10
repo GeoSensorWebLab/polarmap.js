@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/leaflet.css" />
+  <link rel="stylesheet" href="../../../css/polarmap.css" />
+
+  <!-- Load required libraries -->
+  <script src="../../../js/jquery.js"></script>
+  <script src="../../../js/leaflet.js"></script>
+  <script src="../../../js/proj4.js"></script>
+  <script src="../../../js/proj4leaflet.js"></script>
+
+  <!-- Load PolarMap.js -->
+  <script src="../../../dist/polarmap-src.js"></script>
+
+  <!-- Demo javascript -->
+  <script src="demo.js"></script>
+
+  <title>PolarMap.js Layer Alignment Demo</title>
+
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+    }
+    #locations-list {
+      position: absolute;
+      top: 1em;
+      height: 1em;
+      bottom: 1em;
+      width: 50%;
+    }
+    #osm {
+      position: absolute;
+      top: 3em;
+      left: 0;
+      bottom: 0;
+      width: 49.95%;
+    }
+    #polar {
+      position: absolute;
+      top: 3em;
+      right: 0;
+      bottom: 0;
+      width: 49.95%;
+    }
+  </style>
+</head>
+<body>
+  <div id="locations">
+    <select id="locations-list">
+      <option>&mdash;</option>
+    </select>
+  </div>
+  <div id="osm"></div>
+  <div id="polar"></div>
+</body>
+</html>
