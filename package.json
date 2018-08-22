@@ -1,6 +1,6 @@
 {
   "name": "polarmap",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Leaflet library for polar map projection switching",
   "main": "dist/polarmap-src.js",
   "directories": {

@@ -1,5 +1,10 @@
 # Release Notes
 
+### v1.2.1 2018-08-22
+
+* Switch domain for tiles to arcticconnect.ca
+* Switch attribution URL and other service URLs to arcticconnect.ca
+
 ### v1.2.0 2016-06-10
 
 * Add support for loading ArcticWebMap tiles through HTTPS
