@@ -2,7 +2,7 @@
 
 A JavaScript library that can re-project Leaflet maps and map features.
 
-PolarMap.js is part of the [Arctic Connect project](http://arcticconnect.org), specifically the [Arctic Web Map](http://webmap.arcticconnect.org/) module. We thank [CANARIE](http://www.canarie.ca) for the funding support.
+PolarMap.js is part of the [Arctic Connect project](http://arcticconnect.ca), specifically the [Arctic Web Map](http://webmap.arcticconnect.ca/) module. We thank [CANARIE](http://www.canarie.ca) for the funding support.
 
 There are two layers to PolarMap.js: the lower-level Leaflet.PolarMap plugin, and the basic PolarMap library. Each has their advantages depending on the situation. The basic PolarMap library has the default loadout of plugins and configuration for Arctic Connect tiles and services. The Leaflet.PolarMap plugin lets the developer pick and choose their integrations, at the trade-off of more code/configuration.
 
@@ -85,15 +85,17 @@ Different versions of PolarMap.js are available for different versions of Leafle
   <tr><td>1.0.x</td>            <td>2.0.x</td></tr>
 </table>
 
+A version of PolarMap.js for Leaflet 1.0.x is not yet available.
+
 ## Code Reuse
 
 This library contains modified code from the [leaflet-hash](https://github.com/mlevans/leaflet-hash) project. Leaflet-hash is [MIT Licensed](http://opensource.org/licenses/MIT).
 
 ## Support
 
-[PolarMap.js](https://github.com/GeoSensorWebLab/polarmap.js) is maintained by James Badger (@openfirmware) and the GeoSensorWeb Lab. If you have issues with the JavaScript library portion, please contact us by email at support@arcticconnect.org or post an issue on the [PolarMap.js issue tracker](https://github.com/GeoSensorWebLab/polarmap.js/issues).
+[PolarMap.js](https://github.com/GeoSensorWebLab/polarmap.js) is maintained by James Badger (@openfirmware) and the GeoSensorWeb Lab. If you have issues with the JavaScript library portion, please post an issue on the [PolarMap.js issue tracker](https://github.com/GeoSensorWebLab/polarmap.js/issues).
 
-If you are having issue with the underlying map data, such as map inaccuracies, missing data, or general style comments, then please contact support@arcticconnect.org or post an issue on the [Web Map issue tracker](https://github.com/GeoSensorWebLab/awm-styles/issues).
+If you are having issue with the underlying map data, such as map inaccuracies, missing data, or general style comments, then please post an issue on the [Web Map issue tracker](https://github.com/GeoSensorWebLab/awm-styles/issues).
 
 ## License
 

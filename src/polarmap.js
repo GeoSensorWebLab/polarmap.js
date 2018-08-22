@@ -1,7 +1,7 @@
 /* Strings */
 
 var t = {
-  attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   locationDetectionError: "Location detection error: "
 };
 

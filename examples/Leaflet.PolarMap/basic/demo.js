@@ -10,7 +10,7 @@ var projectedTiles = {
   /*
   // URL to tiles is first argument
   "arctic_connect@EPSG:3573":
-    L.PolarMap.tileLayer("http://tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
+    L.PolarMap.tileLayer("http://tiles.arcticconnect.ca/osm_3573/{z}/{x}/{y}.png", {
     // name for searching/querying active projected tile provider. Should be
     // unique.
     name: "arctic_connect@EPSG:3573",
@@ -33,7 +33,7 @@ var projectedTiles = {
     // Default zoom level
     zoom: 15,
     // Map attribution text for tiles and/or data
-    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   })
   */
 

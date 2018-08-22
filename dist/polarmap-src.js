@@ -1,6 +1,6 @@
 /*
- PolarMap.js 1.2.0 (4ead999)
- (c) 2014-2016 Arctic Connect, Geo Sensor Web Lab
+ PolarMap.js 1.2.0 (d94f584)
+ (c) 2014-2018 Arctic Connect, Geo Sensor Web Lab
 */
 (function (window, document, L, undefined) {
 if (typeof(L) === "undefined") {
@@ -129,7 +129,7 @@ L.PolarMap.LAEATileLayer = L.PolarMap.TileLayer.extend({
     continuousWorld: false,
     noWrap: true,
     // map attribution text for tiles and/or data
-    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }
 });
 
@@ -142,7 +142,7 @@ L.PolarMap.laeaTileLayer = function (url, options) {
  * L.PolarMap.layer3571 presets a tile layer with the EPSG:3571 settings.
 */
 
-L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png", {
+L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3571/{z}/{x}/{y}.png", {
   name: "ac_3571",
   crs: "EPSG:3571",
   proj4def: "+proj=laea +lat_0=90 +lon_0=180 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -153,7 +153,7 @@ L.PolarMap.layer3571 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/o
  * L.PolarMap.layer3572 presets a tile layer with the EPSG:3572 settings.
 */
 
-L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3572/{z}/{x}/{y}.png", {
+L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3572/{z}/{x}/{y}.png", {
   name: "ac_3572",
   crs: "EPSG:3572",
   proj4def: "+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -164,7 +164,7 @@ L.PolarMap.layer3572 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/o
  * L.PolarMap.layer3573 presets a tile layer with the EPSG:3573 settings.
 */
 
-L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3573/{z}/{x}/{y}.png", {
+L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3573/{z}/{x}/{y}.png", {
   name: "ac_3573",
   crs: "EPSG:3573",
   proj4def: "+proj=laea +lat_0=90 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -175,7 +175,7 @@ L.PolarMap.layer3573 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/o
  * L.PolarMap.layer3574 presets a tile layer with the EPSG:3574 settings.
 */
 
-L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3574/{z}/{x}/{y}.png", {
+L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3574/{z}/{x}/{y}.png", {
   name: "ac_3574",
   crs: "EPSG:3574",
   proj4def: "+proj=laea +lat_0=90 +lon_0=-40 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -186,7 +186,7 @@ L.PolarMap.layer3574 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/o
  * L.PolarMap.layer3575 presets a tile layer with the EPSG:3575 settings.
 */
 
-L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3575/{z}/{x}/{y}.png", {
+L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3575/{z}/{x}/{y}.png", {
   name: "ac_3575",
   crs: "EPSG:3575",
   proj4def: "+proj=laea +lat_0=90 +lon_0=10 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -197,7 +197,7 @@ L.PolarMap.layer3575 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/o
  * L.PolarMap.layer3576 presets a tile layer with the EPSG:3576 settings.
 */
 
-L.PolarMap.layer3576 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.org/osm_3576/{z}/{x}/{y}.png", {
+L.PolarMap.layer3576 = L.PolarMap.laeaTileLayer("//{s}.tiles.arcticconnect.ca/osm_3576/{z}/{x}/{y}.png", {
   name: "ac_3576",
   crs: "EPSG:3576",
   proj4def: "+proj=laea +lat_0=90 +lon_0=90 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
@@ -584,7 +584,7 @@ L.PolarMap.map = function (id, options) {
 /* Strings */
 
 var t = {
-  attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   locationDetectionError: "Location detection error: "
 };
 

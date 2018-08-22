@@ -18,7 +18,7 @@
     "polar"
   ],
   "license": "BSD-2-Clause",
-  "homepage": "http://webmap.arcticconnect.org/polarmap.html",
+  "homepage": "http://webmap.arcticconnect.ca/polarmap.html",
   "ignore": [
     "**/.*",
     "node_modules",

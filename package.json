@@ -16,7 +16,7 @@
     "maps",
     "polar"
   ],
-  "homepage": "http://webmap.arcticconnect.org/polarmap.html",
+  "homepage": "http://webmap.arcticconnect.ca/polarmap.html",
   "bugs": {
     "url": "https://github.com/GeoSensorWebLab/polarmap.js/issues"
   },

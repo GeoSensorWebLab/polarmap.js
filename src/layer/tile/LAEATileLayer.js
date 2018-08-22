@@ -32,7 +32,7 @@ L.PolarMap.LAEATileLayer = L.PolarMap.TileLayer.extend({
     continuousWorld: false,
     noWrap: true,
     // map attribution text for tiles and/or data
-    attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }
 });
 

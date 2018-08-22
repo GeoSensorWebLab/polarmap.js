@@ -99,7 +99,7 @@ A subclass of `L.TileLayer`. Should be initialized with additional options to de
 ```javascript
 
     // See L.TileLayer documentation for URL template
-    var url = "http://{s}.tiles.arcticconnect.org/osm_3571/{z}/{x}/{y}.png";
+    var url = "http://{s}.tiles.arcticconnect.ca/osm_3571/{z}/{x}/{y}.png";
 
     // Extent is dependent on projection. The following is used for EPSG:3571 to
     // EPSG:3576.
@@ -143,7 +143,7 @@ A subclass of `L.TileLayer`. Should be initialized with additional options to de
 
         // Attribution for the tile layer. This is required for certain tile
         // providers.
-        attribution: 'Map &copy; <a href="http://arcticconnect.org">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        attribution: 'Map &copy; <a href="http://arcticconnect.ca">ArcticConnect</a>. Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 
         // If the tile layer is part of a set of projections that form a 
         // complete circle, then prev/next can link to the next CCW/CW layer in
