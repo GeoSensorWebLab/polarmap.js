@@ -1,5 +1,5 @@
 /*
- * L.PolarMap.Control.Rotation adds two buttons for "rotating" a map.
+ * L.PolarMap.Control.Rotation adds two buttons for "rotating"  a map.
  */
 
 L.PolarMap.Control.Rotation = L.Control.extend({
