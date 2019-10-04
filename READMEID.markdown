@@ -41,8 +41,8 @@ Dan kemudian inisialisasi peta seperti yang Anda lakukan pada peta Leaflet:
       }
     </script>
 ```
-Dan kamu sudah siap menjalankan PolarMap.js. Untuk penjelasan lebih detail dar API dan pilihan pengaturan lainnya, silahkan lihat
-And you should be up and running with PolarMap.js. For a more detailed explanation of the API and customization options, please see the [Dokumentasi API](API.markdown).
+Dan Anda sudah siap menjalankan PolarMap.js. Untuk penjelasan lebih detail dar API dan pilihan pengaturan lainnya, silahkan lihat
+[Dokumentasi API](API.markdown).
 
 
 ## Proses Building
@@ -58,7 +58,7 @@ Dan kemudian buat produk:
 ```
     $ jake build
 ```
-Dua salinan dari PolarMap.js akan terbentu di dalam folder `dist`, satu dengan keterangan dan satu lagi terkompresi oleh uglifier-js.
+Dua salinan dari PolarMap.js akan terbentuk di dalam folder `dist`, satu dengan keterangan dan satu lagi terkompresi oleh uglifier-js.
 
 ## Contoh Hasil
 
