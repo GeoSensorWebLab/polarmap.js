@@ -100,3 +100,4 @@ If you are having issue with the underlying map data, such as map inaccuracies, 
 ## License
 
 PolarMap.js is released under the BSD 2-Clause license (same as Leaflet).
+$ npm Install.
