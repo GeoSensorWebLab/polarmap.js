@@ -20,26 +20,32 @@ Support for other versions of these libraries are not currently known, use at yo
 
 PolarMap.js has a very similar API to Leaflet, so you should feel right at home. First include the stylesheets:
 
-    <link rel="stylesheet" href="css/leaflet.css" />
-    <link rel="stylesheet" href="css/polarmap.css" />
+```html
+<link rel="stylesheet" href="css/leaflet.css" />
+<link rel="stylesheet" href="css/polarmap.css" />
+```
 
 Then require the JavaScript:
 
-    <script src="js/jquery.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="js/proj4.js"></script>
-    <script src="js/proj4leaflet.js"></script>
-    <script src="js/polarmap-src.js"></script>
+```html
+<script src="js/jquery.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/proj4.js"></script>
+<script src="js/proj4leaflet.js"></script>
+<script src="js/polarmap-src.js"></script>
+```
 
 And then initialize a map the way you would a Leaflet map:
 
-    <body onload="init()">
-    ...
-    <script>
-      function init() {
-        var map = PolarMap('mapContainer');
-      }
-    </script>
+```html
+<body onload="init()">
+...
+<script>
+  function init() {
+    var map = PolarMap('mapContainer');
+  }
+</script>
+```
 
 And you should be up and running with PolarMap.js. For a more detailed explanation of the API and customization options, please see the [API Documentation](API.markdown).
 
