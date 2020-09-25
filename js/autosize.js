@@ -7,19 +7,19 @@
 //
 
 (function() {
-  var updateSize = function() {
+  var updateSize = () => {
     $("body").css({
       height: $(window).height(),
       width: $(window).width()
     });
   };
 
-  var enable = function() {
+  var enable = () => {
     $(window).on('resize', updateSize);
     updateSize();
   };
 
-  var disable = function() {
+  var disable = () => {
     $(window).off('resize', updateSize);
   };
 
