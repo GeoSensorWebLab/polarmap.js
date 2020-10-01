@@ -15,7 +15,7 @@ L.PolarMap.Map = L.Map.extend({
     zoom: 1
   },
 
-  initialize: function (id, options) {
+  initialize: (id, options) => {
     options = L.setOptions(this, options);
 
     this._initContainer(id);
@@ -41,7 +41,7 @@ L.PolarMap.Map = L.Map.extend({
     this.callInitHooks();
 
     // Update when base layer changed from map control
-    this.on('baselayerchange', function (e) {
+    this.on('baselayerchange', (e) => {
       this._update(e.layer);
     });
 
@@ -49,7 +49,7 @@ L.PolarMap.Map = L.Map.extend({
   },
 
   // Public Functions
-  loadTileProjection: function (tileLayer) {
+  loadTileProjection: (tileLayer) => {
     if (this.options.changingMap) {
       return false;
     }
@@ -66,7 +66,7 @@ L.PolarMap.Map = L.Map.extend({
 
   // Manually remove layers before destroying map.
   // See https://github.com/Leaflet/Leaflet/issues/2718
-  remove: function () {
+  remove: () => {
     for (var i in this._layers) {
       this.removeLayer(this._layers[i]);
 		}
@@ -76,7 +76,7 @@ L.PolarMap.Map = L.Map.extend({
 	},
 
   // Private Functions
-  _defineMapCRS: function (crs, options) {
+  _defineMapCRS: (crs, options) => {
     var resolutions = [];
     for (var zoom = options.minZoom; zoom <= options.maxZoom; zoom++) {
       resolutions.push(options.maxResolution / Math.pow(2, zoom));
@@ -89,10 +89,10 @@ L.PolarMap.Map = L.Map.extend({
     });
   },
 
-  _dropTileLayers: function () {
+  _dropTileLayers: () => {
     var map = this;
 
-    map.eachLayer(function (layer) {
+    map.eachLayer( (layer) => {
       if (layer instanceof L.TileLayer) {
         map.removeLayer(layer);
       }
@@ -101,7 +101,7 @@ L.PolarMap.Map = L.Map.extend({
 
   // Use default CRS classes for common codes, fallback to custom for all other
   // codes.
-  _setMapCRS: function (crs, options) {
+  _setMapCRS: (crs, options) => {
     switch(crs) {
       case "EPSG:3857":
       return L.CRS.EPSG3857;
@@ -114,7 +114,7 @@ L.PolarMap.Map = L.Map.extend({
     }
   },
 
-  _update: function (layer) {
+  _update: (layer) => {
     if (this.options.changingMap) {
       return false;
     } else {
@@ -135,11 +135,11 @@ L.PolarMap.Map = L.Map.extend({
 
   // This recurses through all the map's layers to update layer positions after
   // their positions moved.
-  _updateAllLayers: function (group) {
+  _updateAllLayers: (group) => {
     var map = this;
 
     if (group.eachLayer) {
-      group.eachLayer(function (layer) {
+      group.eachLayer( (layer) => {
         map._updateAllLayers(layer);
       });
     } else {
@@ -153,12 +153,12 @@ L.PolarMap.Map = L.Map.extend({
     }
   },
 
-  _updateCRSAndLayers: function (layerOptions) {
+  _updateCRSAndLayers: (layerOptions) => {
     this.options.crs = this._setMapCRS(layerOptions.crs, layerOptions);
     this._updateAllLayers(this);
   },
 
-  _usingTileProjection: function (tileLayer) {
+  _usingTileProjection: (tileLayer) => {
     var alreadyActive = false;
     var layers = this._layers;
     for (var layer in layers) {
@@ -171,6 +171,6 @@ L.PolarMap.Map = L.Map.extend({
   }
 });
 
-L.PolarMap.map = function (id, options) {
+L.PolarMap.map = (id, options) => {
   return new L.PolarMap.Map(id, options);
 };
